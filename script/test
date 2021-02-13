@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# test: Run test suite for project. Optionally run an individual test(s).
+#
+
+# Drop out if one of the commands fails
+set -e
+
+echo
+echo "==> Start running tests at $(date "+%H:%M:%S")"
+
+# Ensure we are working from the top of the project
+cd "$(dirname "$0")/.." || exit
+echo "Change directory to: $(pwd)"
+
+# Check all bash scripts
+script/bin/check_scripts
+
+# Check if arguments are passed allowing call to specific test(s).
+if [[ -n $1 ]]
+then
+  npm run test-all "$@"
+else
+  npm run test-all
+fi
+
+echo
+echo "==> Tests finished at $(date "+%H:%M:%S")"
+echo
