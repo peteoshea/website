@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from '../testUtils';
-import { Home } from '../../pages/index';
+import { CV } from '../../pages/cv';
 
-describe('Home page', () => {
+describe('CV page', () => {
   it('matches snapshot', () => {
-    const { asFragment } = render(<Home />, {});
+    const { asFragment } = render(<CV />, {});
     expect(asFragment()).toMatchSnapshot();
   });
 });
