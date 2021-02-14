@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import 'tailwindcss/tailwind.css';
 
-export const Home = (): JSX.Element => (
+export const CV = (): JSX.Element => (
   <>
     <Head>
       <title>CV | Pete O&apos;Shea</title>
@@ -63,4 +63,4 @@ export const Home = (): JSX.Element => (
   </>
 );
 
-export default Home;
+export default CV;
