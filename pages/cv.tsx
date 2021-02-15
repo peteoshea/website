@@ -1,24 +1,35 @@
 import 'tailwindcss/tailwind.css';
 import Footer from '../source/components/footer';
 import Metadata from '../source/components/metadata';
-import CvSection from '../source/components/cvSection';
 import CvEducationSection from '../source/components/cvEducationSection';
 import CvEmploymentSection from '../source/components/cvEmploymentSection';
 import CvPortfolioSection from '../source/components/cvPortfolioSection';
+import CvProfileSection from '../source/components/cvProfileSection';
 import CvSkillsSection from '../source/components/cvSkillsSection';
 
 import Education from '../source/types/education';
 import Job from '../source/types/job';
+import Profile from '../source/types/profile';
 import Project from '../source/types/project';
 import Skill from '../source/types/skill';
 
 export const CV = (): JSX.Element => {
+  const profile: Profile = {
+    summary:
+      'Highly motivated software developer with over 20 years of experience using various languages and development environments. Works well as part of a team, with experience as junior programmer all the way up to lead developer, mentoring junior programmers. Also comfortable working on solo projects from concept all the way through to completion. Strong belief in clean, simple code and always keen to learn new skills.',
+    email: 'mail@peteoshea.co.uk',
+    githubName: 'peteoshea',
+    githubUrl: 'https://github.com/peteoshea',
+    twitter: 'peteoshea',
+    linkedInName: "Pete O'Shea",
+    linkedInUrl: 'https://www.linkedin.com/in/pete-o-shea-9a072126/'
+  };
   const skills: Skill[] = [
     {
-      description: 'Next.js'
+      description: 'Javascript including Node.js, React, Next.js & Vue.js.'
     },
     {
-      description: 'Very experienced with Delphi but can pick up other languages very quickly.'
+      description: 'Very experienced with Delphi but can pick up other languages quickly.'
     },
     {
       description: 'Experience with SQL and database design for MySQL and Firebird databases.'
@@ -36,9 +47,6 @@ export const CV = (): JSX.Element => {
     },
     {
       description: 'Web development using PHP including RESTful API design, implementation and use.'
-    },
-    {
-      description: 'Understanding of HTML, CSS, JavaScript, jQuery, JSON, XML.'
     },
     {
       description: 'Virtualisation including use of Vagrant for PHP development environments.'
@@ -210,48 +218,7 @@ export const CV = (): JSX.Element => {
               </div>
             </h1>
           </div>
-
-          <CvSection title="Profile">
-            <div className="mt-2">
-              Highly motivated software developer with over 20 years of experience using various
-              languages and development environments. Works well as part of a team, with experience
-              as junior programmer all the way up to lead developer, mentoring junior programmers.
-              Also comfortable working on solo projects from concept all the way through to
-              completion. Strong belief in clean, simple code and always keen to learn new skills.
-            </div>
-            <div className="flex justify-evenly items-center mt-2">
-              <div className="mx-2">
-                <a href="mailto:mail@peteoshea.co.uk" className="text-gray-500 hover:text-gray-900">
-                  mail@peteoshea.co.uk
-                </a>
-              </div>
-              <div className="mx-2">
-                <a
-                  href="https://github.com/peteoshea"
-                  className="text-gray-500 hover:text-gray-900"
-                >
-                  peteoshea
-                </a>
-              </div>
-              <div className="mx-2">
-                <a
-                  href="https://twitter.com/peteoshea"
-                  className="text-gray-500 hover:text-gray-900"
-                >
-                  @peteoshea
-                </a>
-              </div>
-              <div className="mx-2">
-                <a
-                  href="https://www.linkedin.com/in/pete-o-shea-9a072126/"
-                  className="text-gray-500 hover:text-gray-900"
-                >
-                  Pete O&apos;Shea
-                </a>
-              </div>
-            </div>
-          </CvSection>
-
+          <CvProfileSection profile={profile} />
           <CvSkillsSection skills={skills} />
           <CvPortfolioSection projects={projects} />
           <CvEmploymentSection jobs={jobs} />
