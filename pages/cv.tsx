@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import 'tailwindcss/tailwind.css';
+import Footer from '../source/components/footer';
 
 export const CV = (): JSX.Element => (
   <>
@@ -43,23 +44,7 @@ export const CV = (): JSX.Element => (
       </div>
     </div>
 
-    <footer className="flex items-center justify-center w-full h-24 px-2">
-      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
-        <img src="/cc.svg" alt="Creative Commons Licence" className="inline h-6 ml-1" />
-        <img src="/by.svg" alt="Attribution" className="inline h-6 ml-1" />
-      </a>
-      <span className="inline ml-1 tracking-tighter">
-        Content on this site is licensed under a{' '}
-        <a
-          rel="license"
-          href="http://creativecommons.org/licenses/by/4.0/"
-          className="tracking-tighter text-gray-500 hover:text-gray-900"
-        >
-          Creative Commons Attribution 4.0 International License
-        </a>
-        .
-      </span>
-    </footer>
+    <Footer />
   </>
 );
 
