@@ -86,7 +86,7 @@ exports[`Home page matches snapshot 1`] = `
     </div>
   </div>
   <footer
-    class="flex items-center justify-center w-full h-24 px-2"
+    class="flex max-w-7xl mx-auto items-end justify-center w-full h-20 px-2 py-4 text-xs"
   >
     <a
       href="http://creativecommons.org/licenses/by/4.0/"
@@ -94,12 +94,12 @@ exports[`Home page matches snapshot 1`] = `
     >
       <img
         alt="Creative Commons Licence"
-        class="inline h-6 ml-1"
+        class="inline h-4 ml-1"
         src="/cc.svg"
       />
       <img
         alt="Attribution"
-        class="inline h-6 ml-1"
+        class="inline h-4 ml-1"
         src="/by.svg"
       />
     </a>
