@@ -3,10 +3,100 @@ import Footer from '../source/components/footer';
 import Metadata from '../source/components/metadata';
 import CvSection from '../source/components/cvSection';
 import CvEducationSection from '../source/components/cvEducationSection';
+import CvEmploymentSection from '../source/components/cvEmploymentSection';
 
 import Education from '../source/types/education';
+import Job from '../source/types/job';
 
 export const CV = (): JSX.Element => {
+  const jobs: Job[] = [
+    {
+      startDate: '2013',
+      endDate: 'Present',
+      title: 'Lead Developer',
+      employer: 'Polaris Elements',
+      location: 'Taunton',
+      description:
+        'Quickly promoted to Lead Developer, managing a team of 5 developers working on multiple projects including Windows applications and services based around POS systems, written in Delphi, web applications, created with PHP, and legacy jBASE database systems. Tasks include:\
+      • Actively developing on all of the Delphi and PHP projects.\
+      • Liaising with clients and partners to define development requirements.\
+      • Creating specification documents and time estimates.\
+      • Allocation of work to ensure the various projects stayed on track.\
+      • Mentoring developers to help improve the quality of code produced.'
+    },
+    {
+      startDate: '2012',
+      endDate: '2013',
+      title: 'Senior Developer',
+      employer: 'Polaris Elements',
+      location: 'Taunton',
+      description:
+        'Re-joined the Delphi team for previous employer after change of ownership. Other tasks:\
+      • Solo project to design and build online loyalty system with a RESTful web service API.\
+      • Chose to write this in PHP using the CodeIgniter framework with a Bootstrap based front-end.\
+      • Implemented a move of all source code from Subversion to Git which greatly improved development flexibility.\
+      • Setting up and maintaining various Linux VMs including Apache and MySQL servers, a company wide mail server and a GitLab server all running on Citrix XenServer hosted on multiple dedicated servers.'
+    },
+    {
+      startDate: '2010',
+      endDate: 'Present',
+      title: 'Self Employed',
+      employer: "Pete O'Shea",
+      location: 'Taunton',
+      description:
+        'Started a small business. Very varied work including:\
+      • Creation of an iOS app to help find suitable ski accommodation.\
+      • Bespoke Delphi application for a waste management company.\
+      • Web site design and setup of e-commerce sites.\
+      • Regular Delphi development for previous employer.\
+      This was the sole source of income for two years but was scaled back after returning to full-time employment. Now just occasional ongoing maintenance of a few websites that are still active.'
+    },
+    {
+      startDate: '2000',
+      endDate: '2010',
+      title: 'Consultant',
+      employer: 'FBH Associates',
+      location: 'Taunton',
+      description:
+        'Started off working on UniVerse, and later jBASE, systems for the first few years. This included system administration of Unix, and later various Linux, systems. Cross trained to Delphi, outside office hours, creating a small Windows application which is still currently in use internally. Soon became an integral part of the Delphi team working on the main POS products. Roles included:\
+      • Delphi development as part of a small team.\
+      • Source control using CVS and later Subversion.\
+      • Craft SQL to access the Firebird databases used to store the POS data.\
+      • Design and create various reports for end users.'
+    },
+    {
+      startDate: '1999',
+      endDate: '1999',
+      title: 'C/C++ Programmer',
+      employer: 'IBM Global Services Australia',
+      location: 'Sydney',
+      description:
+        '3 month contract during a year out travelling the world. Working as part of a team to check code for any Y2K issues and fix, as appropriate. This expanded to checking a variety of different languages including Visual Basic, Java and Unix shell scripts along with C and C++. Some simple Java programming helped locate tokens and automate fixes.'
+    },
+    {
+      startDate: '1997',
+      endDate: '1998',
+      title: 'Analyst Programmer',
+      employer: 'Brithene Films',
+      location: 'Bridgwater',
+      description:
+        'Database programmer for a manufacturing company. Developing mainly with UniVerse BASIC, but some contact with Visual Basic. The work comprised of controlling the entry, storage and analysis of data relating to production, sales and accounts along with maintaining a mainframe system.'
+    },
+    {
+      startDate: '1994',
+      endDate: '1995',
+      title: 'Industrial Trainee',
+      employer: 'ICL (now part of Fujitsu)',
+      location: 'Bracknell',
+      description:
+        'Placement year while studying at university. Roles included the following:\
+      • Programming in C under various Unix based systems.\
+      • Writing shell scripts.\
+      • Building, installing and testing new products on various machines.\
+      • Preparation and execution of presentations for new products.'
+    }
+  ];
+
   const educations: Education[] = [
     {
       startDate: '1992',
@@ -118,10 +208,7 @@ export const CV = (): JSX.Element => {
             <div>TODO</div>
           </CvSection>
 
-          <CvSection title="Employment History">
-            <div>TODO</div>
-          </CvSection>
-
+          <CvEmploymentSection jobs={jobs} />
           <CvEducationSection educations={educations} />
         </main>
       </div>
