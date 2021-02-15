@@ -4,11 +4,19 @@ import Metadata from '../source/components/metadata';
 import CvSection from '../source/components/cvSection';
 import CvEducationSection from '../source/components/cvEducationSection';
 import CvEmploymentSection from '../source/components/cvEmploymentSection';
+import CvPortfolioSection from '../source/components/cvPortfolioSection';
 
 import Education from '../source/types/education';
 import Job from '../source/types/job';
+import Project from '../source/types/project';
 
 export const CV = (): JSX.Element => {
+  const projects: Project[] = [
+    {
+      name: 'This Website',
+      url: 'https://github.com/peteoshea/website/'
+    }
+  ];
   const jobs: Job[] = [
     {
       startDate: '2013',
@@ -96,7 +104,6 @@ export const CV = (): JSX.Element => {
       • Preparation and execution of presentations for new products.'
     }
   ];
-
   const educations: Education[] = [
     {
       startDate: '1992',
@@ -204,10 +211,7 @@ export const CV = (): JSX.Element => {
             <div>TODO</div>
           </CvSection>
 
-          <CvSection title="Portfolio">
-            <div>TODO</div>
-          </CvSection>
-
+          <CvPortfolioSection projects={projects} />
           <CvEmploymentSection jobs={jobs} />
           <CvEducationSection educations={educations} />
         </main>
