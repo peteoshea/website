@@ -5,12 +5,57 @@ import CvSection from '../source/components/cvSection';
 import CvEducationSection from '../source/components/cvEducationSection';
 import CvEmploymentSection from '../source/components/cvEmploymentSection';
 import CvPortfolioSection from '../source/components/cvPortfolioSection';
+import CvSkillsSection from '../source/components/cvSkillsSection';
 
 import Education from '../source/types/education';
 import Job from '../source/types/job';
 import Project from '../source/types/project';
+import Skill from '../source/types/skill';
 
 export const CV = (): JSX.Element => {
+  const skills: Skill[] = [
+    {
+      description: 'Next.js'
+    },
+    {
+      description: 'Very experienced with Delphi but can pick up other languages very quickly.'
+    },
+    {
+      description: 'Experience with SQL and database design for MySQL and Firebird databases.'
+    },
+    {
+      description:
+        'Good working knowledge of Git with previous exposure to other source control systems.'
+    },
+    {
+      description:
+        'Agile development techniques, with Scrum.org Professional Scrum Master I certification.'
+    },
+    {
+      description: 'Unit testing, including use of Test Driven Development.'
+    },
+    {
+      description: 'Web development using PHP including RESTful API design, implementation and use.'
+    },
+    {
+      description: 'Understanding of HTML, CSS, JavaScript, jQuery, JSON, XML.'
+    },
+    {
+      description: 'Virtualisation including use of Vagrant for PHP development environments.'
+    },
+    {
+      description: 'Some recent DevOps exposure, using a combination of Terraform and Ansible.'
+    },
+    {
+      description: 'Use of Python to construct complex Fabric deployment scripts.'
+    },
+    {
+      description: 'Current desktop OS of choice is Windows 10 but experience with MacOS.'
+    },
+    {
+      description: 'System administration skills with Linux (mainly Red Hat based systems).'
+    }
+  ];
   const projects: Project[] = [
     {
       name: 'This Website',
@@ -207,10 +252,7 @@ export const CV = (): JSX.Element => {
             </div>
           </CvSection>
 
-          <CvSection title="Skills">
-            <div>TODO</div>
-          </CvSection>
-
+          <CvSkillsSection skills={skills} />
           <CvPortfolioSection projects={projects} />
           <CvEmploymentSection jobs={jobs} />
           <CvEducationSection educations={educations} />
