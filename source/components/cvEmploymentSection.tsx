@@ -1,4 +1,5 @@
 import Job from '../types/job';
+import CvEmploymentEntry from './cv/employmentEntry';
 import CvSection from './cvSection';
 
 type Props = {
@@ -7,6 +8,9 @@ type Props = {
 
 export const CvEmploymentSection = ({ jobs }: Props): JSX.Element => (
   <CvSection title="Employment History">
+    {jobs.map((job, index) => (
+      <CvEmploymentEntry job={job} key={index} />
+    ))}
     <table className="w-full">
       {jobs.map((job, index) => (
         <>
