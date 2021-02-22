@@ -8,9 +8,9 @@ type Props = {
 export const CvEmploymentSection = ({ jobs }: Props): JSX.Element => (
   <CvSection title="Employment History">
     <table className="w-full">
-      {jobs.map((job) => (
+      {jobs.map((job, index) => (
         <>
-          <tr key={job.title}>
+          <tr key={index}>
             <td className="pt-4 w-1/6 tracking-tighter text-center">
               {job.startDate}-{job.endDate}
             </td>
@@ -19,7 +19,7 @@ export const CvEmploymentSection = ({ jobs }: Props): JSX.Element => (
             <td className="pt-4 w-1/6 text-xs text-right">{job.location}</td>
           </tr>
           {job.description ? (
-            <tr>
+            <tr key={index + '-desc'}>
               <td></td>
               <td colSpan={3} className="text-sm">
                 {job.description}
