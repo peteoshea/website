@@ -431,96 +431,73 @@ exports[`CV page matches snapshot 1`] = `
         >
           Education
         </h2>
-        <table
-          class="w-full"
+        <div
+          class="grid grid-cols-6 gap-x-4 pt-4"
         >
-          <tbody>
-            <tr>
-              <td
-                class="pt-4 w-1/6 tracking-tighter text-center"
-              >
-                1992-1996
-              </td>
-              <td
-                class="pt-4 w-1/2 text-lg font-bold"
-              >
-                Mathematics & Computing BSc (Hons)
-              </td>
-              <td
-                class="pt-4 w-1/6 font-semibold"
-              >
-                University of Bath
-              </td>
-              <td
-                class="pt-4 w-1/6 text-xs text-right"
-              >
-                Bath
-              </td>
-            </tr>
-            <tr>
-              <td
-                class="pt-4 w-1/6 tracking-tighter text-center"
-              >
-                1990-1992
-              </td>
-              <td
-                class="pt-4 w-1/2 text-lg font-bold"
-              >
-                4 A-Levels
-              </td>
-              <td
-                class="pt-4 w-1/6 font-semibold"
-              >
-                Taunton School
-              </td>
-              <td
-                class="pt-4 w-1/6 text-xs text-right"
-              >
-                Taunton
-              </td>
-            </tr>
-            <tr>
-              <td />
-              <td
-                class="text-sm"
-                colspan="3"
-              >
-                Maths (A), Further Maths (C), Physics (C), Business Studies (C)
-              </td>
-            </tr>
-            <tr>
-              <td
-                class="pt-4 w-1/6 tracking-tighter text-center"
-              >
-                1985-1990
-              </td>
-              <td
-                class="pt-4 w-1/2 text-lg font-bold"
-              >
-                9 GCSEs
-              </td>
-              <td
-                class="pt-4 w-1/6 font-semibold"
-              >
-                Taunton School
-              </td>
-              <td
-                class="pt-4 w-1/6 text-xs text-right"
-              >
-                Taunton
-              </td>
-            </tr>
-            <tr>
-              <td />
-              <td
-                class="text-sm"
-                colspan="3"
-              >
-                Maths (A), Physics (A), Chemistry (A), Additional Maths (B), French (B), Biology (B), Business Studies (C), English Literature (C), English Language (C)
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          <div
+            class="tracking-tighter text-center my-auto"
+          >
+            1992-1996
+          </div>
+          <div
+            class="col-span-3 text-lg font-bold my-auto"
+          >
+            Mathematics & Computing BSc (Hons)
+          </div>
+          <div
+            class="col-span-2 font-semibold text-right my-auto"
+          >
+            University of Bath
+          </div>
+        </div>
+        <div
+          class="grid grid-cols-6 gap-x-4 pt-4"
+        >
+          <div
+            class="tracking-tighter text-center my-auto"
+          >
+            1990-1992
+          </div>
+          <div
+            class="col-span-3 text-lg font-bold my-auto"
+          >
+            4 A-Levels
+          </div>
+          <div
+            class="col-span-2 font-semibold text-right my-auto"
+          >
+            Taunton School
+          </div>
+          <div
+            class="col-start-2 col-span-5 text-sm"
+          >
+            Maths (A), Further Maths (C), Physics (C), Business Studies (C)
+          </div>
+        </div>
+        <div
+          class="grid grid-cols-6 gap-x-4 pt-4"
+        >
+          <div
+            class="tracking-tighter text-center my-auto"
+          >
+            1985-1990
+          </div>
+          <div
+            class="col-span-3 text-lg font-bold my-auto"
+          >
+            9 GCSEs
+          </div>
+          <div
+            class="col-span-2 font-semibold text-right my-auto"
+          >
+            Taunton School
+          </div>
+          <div
+            class="col-start-2 col-span-5 text-sm"
+          >
+            Maths (A), Physics (A), Chemistry (A), Additional Maths (B), French (B), Biology (B), Business Studies (C), English Literature (C), English Language (C)
+          </div>
+        </div>
       </div>
     </main>
   </div>
