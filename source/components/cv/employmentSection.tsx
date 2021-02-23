@@ -1,6 +1,6 @@
-import Job from '../types/job';
-import CvEmploymentEntry from './cv/employmentEntry';
-import CvSection from './cvSection';
+import Job from '../../types/job';
+import CvEmploymentEntry from './employmentEntry';
+import CvSection from '../cvSection';
 
 type Props = {
   jobs: Job[];
