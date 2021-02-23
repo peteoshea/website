@@ -3,7 +3,7 @@ import Footer from '../source/components/footer';
 import Metadata from '../source/components/metadata';
 import CvEducationSection from '../source/components/cv/educationSection';
 import CvEmploymentSection from '../source/components/cv/employmentSection';
-import CvPortfolioSection from '../source/components/cvPortfolioSection';
+import CvPortfolioSection from '../source/components/cv/portfolioSection';
 import CvProfileSection from '../source/components/cvProfileSection';
 import CvSkillsSection from '../source/components/cvSkillsSection';
 
