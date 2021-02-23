@@ -5,7 +5,7 @@ import CvEducationSection from '../source/components/cv/educationSection';
 import CvEmploymentSection from '../source/components/cv/employmentSection';
 import CvPortfolioSection from '../source/components/cv/portfolioSection';
 import CvProfileSection from '../source/components/cv/profileSection';
-import CvSkillsSection from '../source/components/cvSkillsSection';
+import CvSkillsSection from '../source/components/cv/skillsSection';
 
 import Education from '../source/types/education';
 import Job from '../source/types/job';
