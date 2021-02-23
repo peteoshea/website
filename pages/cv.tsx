@@ -1,11 +1,11 @@
 import 'tailwindcss/tailwind.css';
 import Footer from '../source/components/footer';
 import Metadata from '../source/components/metadata';
-import CvEducationSection from '../source/components/cvEducationSection';
-import CvEmploymentSection from '../source/components/cvEmploymentSection';
-import CvPortfolioSection from '../source/components/cvPortfolioSection';
-import CvProfileSection from '../source/components/cvProfileSection';
-import CvSkillsSection from '../source/components/cvSkillsSection';
+import CvEducationSection from '../source/components/cv/educationSection';
+import CvEmploymentSection from '../source/components/cv/employmentSection';
+import CvPortfolioSection from '../source/components/cv/portfolioSection';
+import CvProfileSection from '../source/components/cv/profileSection';
+import CvSkillsSection from '../source/components/cv/skillsSection';
 
 import Education from '../source/types/education';
 import Job from '../source/types/job';
