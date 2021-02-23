@@ -1,5 +1,5 @@
 import Education from '../../types/education';
-import CvSection from '../cvSection';
+import CvSection from './section';
 import CvEducationEntry from './educationEntry';
 
 type Props = {

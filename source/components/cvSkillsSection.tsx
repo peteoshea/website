@@ -1,5 +1,5 @@
 import Skill from '../types/skill';
-import CvSection from './cvSection';
+import CvSection from './cv/section';
 
 type Props = {
   skills: Skill[];

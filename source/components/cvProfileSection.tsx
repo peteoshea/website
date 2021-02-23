@@ -1,5 +1,5 @@
 import Profile from '../types/profile';
-import CvSection from './cvSection';
+import CvSection from './cv/section';
 
 type Props = {
   profile: Profile;
