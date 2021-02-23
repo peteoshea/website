@@ -1,5 +1,5 @@
 import React from 'react';
-import { CvEmploymentEntry } from '../../../source/components/cv/employmentEntry';
+import CvEmploymentEntry from '../../../source/components/cv/employmentEntry';
 import Job from '../../../source/types/job';
 import { render } from '../../testUtils';
 

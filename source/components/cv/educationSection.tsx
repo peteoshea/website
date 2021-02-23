@@ -1,6 +1,6 @@
-import Education from '../types/education';
-import CvSection from './cvSection';
-import CvEducationEntry from './cvEducationEntry';
+import Education from '../../types/education';
+import CvSection from '../cvSection';
+import CvEducationEntry from '../cvEducationEntry';
 
 type Props = {
   educations: Education[];
