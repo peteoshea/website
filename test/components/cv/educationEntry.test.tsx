@@ -9,7 +9,7 @@ describe('CvEducationEntry', () => {
     endDate: '1992',
     qualification: '4 A-Levels',
     school: 'Taunton School',
-    location: 'Taunton',
+    location: 'Somerset',
     description: 'Maths (A), Further Maths (C), Physics (C), Business Studies (C)'
   };
 
@@ -33,7 +33,7 @@ describe('CvEducationEntry', () => {
 
   test('contains location', () => {
     const { getByText } = render(<CvEducationEntry education={education} />);
-    const element = getByText(/Taunton/i);
+    const element = getByText(/Somerset/i);
     expect(element).toBeDefined();
   });
 
