@@ -68,6 +68,10 @@ export const CV = (): JSX.Element => {
     {
       name: 'This Website',
       url: 'https://github.com/peteoshea/website/'
+    },
+    {
+      name: 'Saransurf',
+      url: 'https://saransurf.co.uk/'
     }
   ];
   const jobs: Job[] = [
