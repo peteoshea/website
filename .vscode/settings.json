@@ -2,6 +2,7 @@
   "editor.formatOnSave": true,
   "editor.rulers": [100],
   "jest.showCoverageOnLoad": true,
+  "powershell.codeFormatting.preset": "OTBS",
   "workbench.colorCustomizations": {
     "statusBar.background": "#000000"
   }
