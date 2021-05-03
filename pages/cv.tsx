@@ -66,12 +66,14 @@ export const CV = (): JSX.Element => {
   ];
   const projects: Project[] = [
     {
-      name: 'This Website',
-      url: 'https://github.com/peteoshea/website/'
+      name: 'Source for this website',
+      url: 'https://github.com/peteoshea/website/',
+      image: '/peteoshea.co.uk.png'
     },
     {
       name: 'Saransurf',
-      url: 'https://saransurf.co.uk/'
+      url: 'https://saransurf.co.uk/',
+      image: '/saransurf.co.uk.png'
     }
   ];
   const jobs: Job[] = [
