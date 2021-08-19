@@ -1,6 +1,8 @@
 import 'tailwindcss/tailwind.css';
 import Footer from '../source/components/footer';
 import Metadata from '../source/components/metadata';
+import Navbar from '../source/components/navbar';
+
 import CvEducationSection from '../source/components/cv/educationSection';
 import CvEmploymentSection from '../source/components/cv/employmentSection';
 import CvPortfolioSection from '../source/components/cv/portfolioSection';
@@ -195,26 +197,7 @@ export const CV = (): JSX.Element => {
       <Metadata title="CV" />
 
       <div className="relative bg-white overflow-hidden max-w-7xl mx-auto">
-        <div className="relative pt-4 px-4">
-          <nav
-            className="relative flex items-center justify-between h-20 lg:justify-start"
-            aria-label="Global"
-          >
-            <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
-              <div className="flex items-center justify-between w-full md:w-auto">
-                <a href="/">
-                  <img className="h-auto w-auto" src="/favicon-96x96.png" />
-                </a>
-              </div>
-            </div>
-            <div className="block ml-10 pr-4 space-x-8">
-              <a href="/cv" className="font-medium text-gray-500 hover:text-gray-900">
-                CV
-              </a>
-            </div>
-          </nav>
-        </div>
-
+        <Navbar currentPage="CV" />
         <main className="mt-2 mx-auto max-w-7xl px-4">
           <div className="text-center">
             <h1 className="text-4xl tracking-tight font-bold text-gray-900 sm:text-5xl lg:text-6xl">
