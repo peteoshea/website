@@ -28,6 +28,13 @@ describe('Navbar', () => {
     expect(element).toBeDefined();
   });
 
+  test('when currentPage is home does not contain link to home', () => {
+    const { container } = render(<Navbar currentPage="Home" />);
+    const links = container.querySelectorAll('a');
+    const element = Array.from(links).find((element) => element.getAttribute('href') === '/');
+    expect(element).not.toBeDefined();
+  });
+
   test('contains cv', () => {
     const { getByText } = render(<Navbar />);
     const element = getByText(/CV/i);
@@ -40,6 +47,12 @@ describe('Navbar', () => {
     expect(element.getAttribute('href')).toBe('/cv');
   });
 
+  test('when currentPage is cv links to #', () => {
+    const { getByText } = render(<Navbar currentPage="CV" />);
+    const element = getByText(/CV/i);
+    expect(element.getAttribute('href')).toBe('#');
+  });
+
   test('contains blog', () => {
     const { getByText } = render(<Navbar />);
     const element = getByText(/Blog/i);
@@ -50,5 +63,11 @@ describe('Navbar', () => {
     const { getByText } = render(<Navbar />);
     const element = getByText(/Blog/i);
     expect(element.getAttribute('href')).toBe('/blog');
+  });
+
+  test('when currentPage is blog links to #', () => {
+    const { getByText } = render(<Navbar currentPage="Blog" />);
+    const element = getByText(/Blog/i);
+    expect(element.getAttribute('href')).toBe('#');
   });
 });

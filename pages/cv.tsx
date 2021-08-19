@@ -197,7 +197,7 @@ export const CV = (): JSX.Element => {
       <Metadata title="CV" />
 
       <div className="relative bg-white overflow-hidden max-w-7xl mx-auto">
-        <Navbar />
+        <Navbar currentPage="CV" />
         <main className="mt-2 mx-auto max-w-7xl px-4">
           <div className="text-center">
             <h1 className="text-4xl tracking-tight font-bold text-gray-900 sm:text-5xl lg:text-6xl">
