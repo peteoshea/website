@@ -1,6 +1,6 @@
 import React from 'react';
-import CvPortfolioSection from '../../../source/components/cv/portfolioSection';
-import Project from '../../../source/types/project';
+import CvPortfolioSection from 'components/cv/portfolioSection';
+import Project from 'types/project';
 import { render } from '../../testUtils';
 
 describe('CvPortfolioSection', () => {

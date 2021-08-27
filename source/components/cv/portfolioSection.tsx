@@ -1,5 +1,5 @@
-import Project from '../../types/project';
-import CvSection from './section';
+import Project from 'types/project';
+import CvSection from 'components/cv/section';
 
 type Props = {
   projects: Project[];

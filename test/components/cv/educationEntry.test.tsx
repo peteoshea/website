@@ -1,6 +1,6 @@
 import React from 'react';
-import CvEducationEntry from '../../../source/components/cv/educationEntry';
-import Education from '../../../source/types/education';
+import CvEducationEntry from 'components/cv/educationEntry';
+import Education from 'types/education';
 import { render } from '../../testUtils';
 
 describe('CvEducationEntry', () => {

@@ -1,6 +1,6 @@
 import React from 'react';
-import CvProfileSection from '../../../source/components/cv/profileSection';
-import Profile from '../../../source/types/profile';
+import CvProfileSection from 'components/cv/profileSection';
+import Profile from 'types/profile';
 import { render } from '../../testUtils';
 
 describe('CvProfileSection', () => {

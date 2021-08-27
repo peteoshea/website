@@ -1,5 +1,5 @@
 import React from 'react';
-import CvSection from '../../../source/components/cv/section';
+import CvSection from 'components/cv/section';
 import { render } from '../../testUtils';
 
 describe('CvSection', () => {

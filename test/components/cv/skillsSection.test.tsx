@@ -1,6 +1,6 @@
 import React from 'react';
-import CvSkillsSection from '../../../source/components/cv/skillsSection';
-import Skill from '../../../source/types/skill';
+import CvSkillsSection from 'components/cv/skillsSection';
+import Skill from 'types/skill';
 import { render } from '../../testUtils';
 
 describe('CvSkillsSection', () => {
