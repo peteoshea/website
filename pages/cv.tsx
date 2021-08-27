@@ -1,19 +1,19 @@
 import 'tailwindcss/tailwind.css';
-import Footer from '../source/components/footer';
-import Metadata from '../source/components/metadata';
-import Navbar from '../source/components/navbar';
+import Footer from 'components/common/footer';
+import Metadata from 'components/common/metadata';
+import Navbar from 'components/common/navbar';
 
-import CvEducationSection from '../source/components/cv/educationSection';
-import CvEmploymentSection from '../source/components/cv/employmentSection';
-import CvPortfolioSection from '../source/components/cv/portfolioSection';
-import CvProfileSection from '../source/components/cv/profileSection';
-import CvSkillsSection from '../source/components/cv/skillsSection';
+import CvEducationSection from 'components/cv/educationSection';
+import CvEmploymentSection from 'components/cv/employmentSection';
+import CvPortfolioSection from 'components/cv/portfolioSection';
+import CvProfileSection from 'components/cv/profileSection';
+import CvSkillsSection from 'components/cv/skillsSection';
 
-import Education from '../source/types/education';
-import Job from '../source/types/job';
-import Profile from '../source/types/profile';
-import Project from '../source/types/project';
-import Skill from '../source/types/skill';
+import Education from 'types/education';
+import Job from 'types/job';
+import Profile from 'types/profile';
+import Project from 'types/project';
+import Skill from 'types/skill';
 
 export const CV = (): JSX.Element => {
   const profile: Profile = {
