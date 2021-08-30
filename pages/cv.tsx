@@ -1,7 +1,5 @@
 import 'tailwindcss/tailwind.css';
-import Footer from 'components/common/footer';
-import Metadata from 'components/common/metadata';
-import Navbar from 'components/common/navbar';
+import Layout from 'components/common/layout';
 
 import CvEducationSection from 'components/cv/educationSection';
 import CvEmploymentSection from 'components/cv/employmentSection';
@@ -193,30 +191,13 @@ export const CV = (): JSX.Element => {
   ];
 
   return (
-    <>
-      <Metadata title="CV" />
-
-      <div className="relative bg-white overflow-hidden max-w-7xl mx-auto">
-        <Navbar currentPage="CV" />
-        <main className="mt-2 mx-auto max-w-7xl px-4">
-          <div className="text-center">
-            <h1 className="text-4xl tracking-tight font-bold text-gray-900 sm:text-5xl lg:text-6xl">
-              <div className="text-red-800">Pete O&apos;Shea</div>
-              <div className="font-semibold text-2xl sm:text-3xl lg:text-4xl">
-                Curriculum Vitae / Resume
-              </div>
-            </h1>
-          </div>
-          <CvProfileSection profile={profile} />
-          <CvSkillsSection skills={skills} />
-          <CvPortfolioSection projects={projects} />
-          <CvEmploymentSection jobs={jobs} />
-          <CvEducationSection educations={educations} />
-        </main>
-      </div>
-
-      <Footer />
-    </>
+    <Layout title="CV" heading="Pete O'Shea" subheading="Curriculum Vitae / Resume">
+      <CvProfileSection profile={profile} />
+      <CvSkillsSection skills={skills} />
+      <CvPortfolioSection projects={projects} />
+      <CvEmploymentSection jobs={jobs} />
+      <CvEducationSection educations={educations} />
+    </Layout>
   );
 };
 
