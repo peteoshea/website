@@ -4,8 +4,8 @@ import { render } from '../testUtils';
 
 describe('Blog posts page', () => {
   test('contains heading', () => {
-    const { getByText } = render(<Blog />);
-    const element = getByText(/Blog Posts/i);
-    expect(element).toBeDefined();
+    const { container } = render(<Blog />);
+    const element = container.querySelector('h1');
+    expect(element.innerHTML).toBe('Blog Posts');
   });
 });
