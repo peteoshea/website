@@ -12,7 +12,8 @@
     "prepare": "husky install",
     "start": "next start",
     "test": "jest",
-    "test-all": "npm run lint && npm run format && npm run type-check && npm run test",
+    "test-all": "npm run lint && npm run format && npm run type-check && npm run test-coverage",
+    "test-coverage": "jest --coverage",
     "type-check": "tsc --pretty --noEmit"
   },
   "lint-staged": {

@@ -13,6 +13,5 @@ module.exports = {
     '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
     '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/test/__mocks__/fileMock.js'
   },
-  collectCoverage: true,
   collectCoverageFrom: ['pages/*.{js,jsx,ts,tsx}', 'source/**/*.{js,jsx,ts,tsx}']
 };
