@@ -10,8 +10,8 @@ import CvSkillsSection from 'components/cv/skillsSection';
 import Education from 'types/education';
 import Job from 'types/job';
 import Profile from 'types/profile';
-import Project from 'types/project';
 import Skill from 'types/skill';
+import myPortfolio from 'content/cv/myPortfolio';
 
 export const CV = (): JSX.Element => {
   const profile: Profile = {
@@ -62,18 +62,6 @@ export const CV = (): JSX.Element => {
     },
     {
       description: 'System administration skills with Linux (mainly Red Hat based systems).'
-    }
-  ];
-  const projects: Project[] = [
-    {
-      name: 'Source for this website',
-      url: 'https://github.com/peteoshea/website/',
-      image: '/peteoshea.co.uk.png'
-    },
-    {
-      name: 'Saransurf',
-      url: 'https://saransurf.co.uk/',
-      image: '/saransurf.co.uk.png'
     }
   ];
   const jobs: Job[] = [
@@ -191,10 +179,10 @@ export const CV = (): JSX.Element => {
   ];
 
   return (
-    <Layout title="CV" heading="Pete O'Shea" subheading="Curriculum Vitae / Resume">
+    <Layout title="CV" heading="Pete O'Shea" subheading="Curriculum Vitae / Résumé">
       <CvProfileSection profile={profile} />
       <CvSkillsSection skills={skills} />
-      <CvPortfolioSection projects={projects} />
+      <CvPortfolioSection projects={myPortfolio} />
       <CvEmploymentSection jobs={jobs} />
       <CvEducationSection educations={educations} />
     </Layout>
