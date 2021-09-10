@@ -7,7 +7,7 @@ type Props = {
 
 export const CvSkillsSection = ({ skills }: Props): JSX.Element => (
   <CvSection title="Skills">
-    <ul className="list-disc px-10">
+    <ul className="list-disc px-16">
       {skills.map((skill, index) => (
         <li key={index}>{skill.description}</li>
       ))}

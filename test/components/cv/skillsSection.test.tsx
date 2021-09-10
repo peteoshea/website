@@ -19,13 +19,13 @@ describe('CvSkillsSection', () => {
     expect(element).toBeDefined();
   });
 
-  test('contains summary', () => {
+  test('contains first skill', () => {
     const { getByText } = render(<CvSkillsSection skills={skills} />);
     const element = getByText(/Next.js/i);
     expect(element).toBeDefined();
   });
 
-  test('contains email', () => {
+  test('contains second skill', () => {
     const { getByText } = render(<CvSkillsSection skills={skills} />);
     const element = getByText(/Javascript/i);
     expect(element).toBeDefined();
