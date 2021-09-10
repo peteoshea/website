@@ -17,6 +17,14 @@ export const CvProfileSection = ({ profile }: Props): JSX.Element => {
     <CvSection title="Profile">
       <div className="mt-2">{profile.summary}</div>
       <div className="flex flex-col justify-evenly items-center mt-2 sm:flex-row">
+        {profile.githubName ? (
+          <div className="mx-2">
+            <a href={githubUrl} className="flex items-center text-gray-500 hover:text-gray-900">
+              <img src="/GitHub-Mark.svg" alt="GitHub logo" className="h-12 p-2" />
+              <div>{profile.githubName}</div>
+            </a>
+          </div>
+        ) : null}
         {profile.email ? (
           <div className="mx-2">
             <a href={emailUrl} className="flex items-center text-gray-500 hover:text-gray-900">
@@ -25,11 +33,14 @@ export const CvProfileSection = ({ profile }: Props): JSX.Element => {
             </a>
           </div>
         ) : null}
-        {profile.githubName ? (
+        {profile.linkedInName && profile.linkedInUrl ? (
           <div className="mx-2">
-            <a href={githubUrl} className="flex items-center text-gray-500 hover:text-gray-900">
-              <img src="/GitHub-Mark.svg" alt="GitHub logo" className="h-12 p-2" />
-              <div>{profile.githubName}</div>
+            <a
+              href={profile.linkedInUrl}
+              className="flex items-center text-gray-500 hover:text-gray-900"
+            >
+              <img src="/In-Blue-Logo.png" alt="LinkedIn logo" className="h-12 p-3" />
+              <div>{profile.linkedInName}</div>
             </a>
           </div>
         ) : null}
