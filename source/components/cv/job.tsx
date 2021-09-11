@@ -1,13 +1,14 @@
-import Job from '../../types/job';
+import Job from 'types/job';
 
 type Props = {
   job: Job;
 };
 
-export const CvEmploymentEntry = ({ job }: Props): JSX.Element => (
+export const CvJob = ({ job }: Props): JSX.Element => (
   <div className="grid grid-cols-3 md:grid-cols-12 md:gap-x-2 pt-4">
     <div className="col-start-3 md:col-start-1 md:col-span-2 tracking-tighter text-right md:text-center my-auto">
-      {job.startDate}-{job.endDate}
+      {job.startDate}
+      {job.startDate != job.endDate ? '-' + (job.endDate ? job.endDate : 'Present') : ''}
     </div>
     <div className="row-start-1 md:row-start-auto col-span-2 md:col-span-5 text-lg font-bold my-auto">
       {job.title}
@@ -22,4 +23,4 @@ export const CvEmploymentEntry = ({ job }: Props): JSX.Element => (
   </div>
 );
 
-export default CvEmploymentEntry;
+export default CvJob;

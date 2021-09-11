@@ -1,15 +1,15 @@
-import Education from '../../types/education';
-import CvSection from './section';
-import CvEducationEntry from './educationEntry';
+import CvSection from 'components/cv/section';
+import CvQualification from 'components/cv/qualification';
+import Qualification from 'types/qualification';
 
 type Props = {
-  educations: Education[];
+  qualifications: Qualification[];
 };
 
-export const CvEducationSection = ({ educations }: Props): JSX.Element => (
+export const CvEducationSection = ({ qualifications }: Props): JSX.Element => (
   <CvSection title="Education">
-    {educations.map((education, index) => (
-      <CvEducationEntry education={education} key={index} />
+    {qualifications.map((qualification, index) => (
+      <CvQualification qualification={qualification} key={index} />
     ))}
   </CvSection>
 );

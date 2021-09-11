@@ -1,7 +1,7 @@
 import 'tailwindcss/tailwind.css';
-import Footer from '../source/components/footer';
-import Metadata from '../source/components/metadata';
-import Navbar from '../source/components/navbar';
+import Footer from 'components/common/footer';
+import Metadata from 'components/common/metadata';
+import Navbar from 'components/common/navbar';
 
 export const Home = (): JSX.Element => (
   <>

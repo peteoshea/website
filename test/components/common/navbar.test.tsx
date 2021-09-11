@@ -1,6 +1,6 @@
 import React from 'react';
-import Navbar from '../../source/components/navbar';
-import { render } from '../testUtils';
+import Navbar from 'components/common/navbar';
+import { render } from '../../testUtils';
 
 describe('Navbar', () => {
   test('contains nav tag', () => {

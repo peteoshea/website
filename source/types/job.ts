@@ -1,6 +1,6 @@
 type Job = {
   startDate: string;
-  endDate: string;
+  endDate?: string;
   title: string;
   employer: string;
   location: string;

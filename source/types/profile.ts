@@ -1,11 +1,11 @@
 type Profile = {
-  summary: string;
   email?: string;
   githubName?: string;
   githubUrl?: string;
-  twitter?: string;
   linkedInName?: string;
   linkedInUrl?: string;
+  summary: string;
+  twitter?: string;
 };
 
 export default Profile;

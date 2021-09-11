@@ -1,6 +1,6 @@
 import React from 'react';
-import CvSkillsSection from '../../../source/components/cv/skillsSection';
-import Skill from '../../../source/types/skill';
+import CvSkillsSection from 'components/cv/skillsSection';
+import Skill from 'types/skill';
 import { render } from '../../testUtils';
 
 describe('CvSkillsSection', () => {
@@ -19,13 +19,13 @@ describe('CvSkillsSection', () => {
     expect(element).toBeDefined();
   });
 
-  test('contains summary', () => {
+  test('contains first skill', () => {
     const { getByText } = render(<CvSkillsSection skills={skills} />);
     const element = getByText(/Next.js/i);
     expect(element).toBeDefined();
   });
 
-  test('contains email', () => {
+  test('contains second skill', () => {
     const { getByText } = render(<CvSkillsSection skills={skills} />);
     const element = getByText(/Javascript/i);
     expect(element).toBeDefined();
