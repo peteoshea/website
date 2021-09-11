@@ -7,19 +7,15 @@ import CvPortfolioSection from 'components/cv/portfolioSection';
 import CvProfileSection from 'components/cv/profileSection';
 import CvSkillsSection from 'components/cv/skillsSection';
 
-import myPortfolio from 'content/cv/myPortfolio';
-import myEducation from 'content/cv/myEducation';
-import myProfile from 'content/cv/myProfile';
-import mySkills from 'content/cv/mySkills';
-import myEmployment from 'content/cv/myEmployment';
+import myCv from 'content/cv/myCv';
 
 export const CV = (): JSX.Element => (
   <Layout title="CV" heading="Pete O'Shea" subheading="Curriculum Vitae / Résumé">
-    <CvProfileSection profile={myProfile} />
-    <CvSkillsSection skills={mySkills} />
-    <CvPortfolioSection projects={myPortfolio} />
-    <CvEmploymentSection jobs={myEmployment} />
-    <CvEducationSection qualifications={myEducation} />
+    <CvProfileSection profile={myCv.profile} />
+    <CvSkillsSection skills={myCv.skills} />
+    <CvPortfolioSection projects={myCv.portfolio} />
+    <CvEmploymentSection jobs={myCv.employment} />
+    <CvEducationSection qualifications={myCv.education} />
   </Layout>
 );
 
