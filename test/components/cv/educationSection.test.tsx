@@ -1,21 +1,22 @@
 import React from 'react';
-import CvEducationSection from 'components/cv/educationSection';
-import Education from 'types/education';
 import { render } from '../../testUtils';
 
+import CvEducationSection from 'components/cv/educationSection';
+import Qualification from 'types/qualification';
+
 describe('CvEducationSection', () => {
-  const educations: Education[] = [
+  const qualifications: Qualification[] = [
     {
       startDate: '1992',
       endDate: '1996',
-      qualification: 'Mathematics & Computing BSc (Hons)',
+      name: 'Mathematics & Computing BSc (Hons)',
       school: 'University of Bath',
       location: 'Bath'
     },
     {
       startDate: '1990',
       endDate: '1992',
-      qualification: '4 A-Levels',
+      name: '4 A-Levels',
       school: 'Taunton School',
       location: 'Taunton',
       description: 'Maths (A), Further Maths (C), Physics (C), Business Studies (C)'
@@ -23,19 +24,19 @@ describe('CvEducationSection', () => {
   ];
 
   test('contains heading', () => {
-    const { getByText } = render(<CvEducationSection educations={educations} />);
+    const { getByText } = render(<CvEducationSection qualifications={qualifications} />);
     const element = getByText(/Education/i);
     expect(element).toBeDefined();
   });
 
   test('contains first education', () => {
-    const { getByText } = render(<CvEducationSection educations={educations} />);
+    const { getByText } = render(<CvEducationSection qualifications={qualifications} />);
     const element = getByText(/University of Bath/i);
     expect(element).toBeDefined();
   });
 
   test('contains second education', () => {
-    const { getByText } = render(<CvEducationSection educations={educations} />);
+    const { getByText } = render(<CvEducationSection qualifications={qualifications} />);
     const element = getByText(/Taunton School/i);
     expect(element).toBeDefined();
   });

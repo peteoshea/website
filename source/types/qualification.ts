@@ -1,9 +1,10 @@
 type Qualification = {
-  date: string;
-  description?: string;
-  location: string;
   name: string;
+  startDate: string;
+  endDate?: string;
+  description?: string;
   school: string;
+  location: string;
   url?: string;
 };
 

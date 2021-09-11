@@ -1,20 +1,23 @@
 import Qualification from 'types/qualification';
 
 export const alevels: Qualification = {
-  date: '1992',
+  startDate: '1990',
+  endDate: '1992',
   description: 'Maths (A), Further Maths (C), Physics (C), Business Studies (C)',
   location: 'Taunton',
   name: '4 A-Levels',
   school: 'Taunton School'
 };
 export const degree: Qualification = {
-  date: '1996',
+  startDate: '1992',
+  endDate: '1996',
   location: 'Bath',
   name: 'Mathematics & Computing BSc (Hons)',
   school: 'University of Bath'
 };
 export const gcses: Qualification = {
-  date: '1990',
+  startDate: '1985',
+  endDate: '1990',
   description:
     'Maths (A), Physics (A), Chemistry (A), ' +
     'Additional Maths (B), French (B), Biology (B), ' +
@@ -24,7 +27,8 @@ export const gcses: Qualification = {
   school: 'Taunton School'
 };
 export const scrumMaster: Qualification = {
-  date: '2016',
+  startDate: '2016',
+  endDate: '2016',
   description: 'Attended a 2-day course before taking the exam at home',
   location: 'London',
   name: 'Professional Scrum Master I (PSM I)',

@@ -1,8 +1,12 @@
 import myEducation, { alevels, degree, gcses, scrumMaster } from 'content/cv/myEducation';
 
 describe('myEducation', () => {
-  test('GCSEs date is 1990', () => {
-    expect(gcses.date).toBe('1990');
+  test('GCSEs start date is 1985', () => {
+    expect(gcses.startDate).toBe('1985');
+  });
+
+  test('GCSEs end date is 1990', () => {
+    expect(gcses.endDate).toBe('1990');
   });
 
   test('GCSEs description is set', () => {
@@ -33,8 +37,12 @@ describe('myEducation', () => {
     expect(myEducation).toContain(gcses);
   });
 
-  test('A-levels date is 1992', () => {
-    expect(alevels.date).toBe('1992');
+  test('A-levels start date is 1990', () => {
+    expect(alevels.startDate).toBe('1990');
+  });
+
+  test('A-levels end date is 1992', () => {
+    expect(alevels.endDate).toBe('1992');
   });
 
   test('A-levels description is set', () => {
@@ -67,8 +75,12 @@ describe('myEducation', () => {
     expect(myEducation).toContain(gcses);
   });
 
-  test('Degree date is 1996', () => {
-    expect(degree.date).toBe('1996');
+  test('Degree start date is 1992', () => {
+    expect(degree.startDate).toBe('1992');
+  });
+
+  test('Degree end date is 1996', () => {
+    expect(degree.endDate).toBe('1996');
   });
 
   test('Degree description is not set', () => {
@@ -95,8 +107,12 @@ describe('myEducation', () => {
     expect(myEducation).toContain(degree);
   });
 
-  test('Scrum master date is 2016', () => {
-    expect(scrumMaster.date).toBe('2016');
+  test('Scrum master start date is 2016', () => {
+    expect(scrumMaster.startDate).toBe('2016');
+  });
+
+  test('Scrum master end date is 2016', () => {
+    expect(scrumMaster.endDate).toBe('2016');
   });
 
   test('Scrum master name is set', () => {
