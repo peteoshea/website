@@ -26,7 +26,6 @@ export const fbh: Job = {
 };
 export const freelance: Job = {
   startDate: '2010',
-  endDate: 'Present',
   title: 'Freelance Software Developer',
   employer: 'Self Employed',
   location: 'Home',
@@ -62,7 +61,6 @@ export const icl: Job = {
 };
 export const polarisLeadDeveloper: Job = {
   startDate: '2013',
-  endDate: 'Present',
   title: 'Lead Developer',
   employer: 'Polaris Elements',
   location: 'Taunton',

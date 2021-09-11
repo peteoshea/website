@@ -13,8 +13,8 @@ describe('myEmployment', () => {
     expect(polarisLeadDeveloper.startDate).toBe('2013');
   });
 
-  test('polaris lead developer job has end date of present', () => {
-    expect(polarisLeadDeveloper.endDate).toBe('Present');
+  test('polaris lead developer job has no end date', () => {
+    expect(polarisLeadDeveloper.endDate).not.toBeDefined();
   });
 
   test('polaris lead developer job has title of lead developer', () => {
@@ -86,8 +86,8 @@ describe('myEmployment', () => {
     expect(freelance.startDate).toBe('2010');
   });
 
-  test('freelance job has end date of present', () => {
-    expect(freelance.endDate).toBe('Present');
+  test('freelance job has no end date', () => {
+    expect(freelance.endDate).not.toBeDefined();
   });
 
   test('freelance job has title of freelance software developer', () => {

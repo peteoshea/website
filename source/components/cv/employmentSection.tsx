@@ -1,5 +1,5 @@
 import Job from 'types/job';
-import CvEmploymentEntry from 'components/cv/employmentEntry';
+import CvJob from 'components/cv/job';
 import CvSection from 'components/cv/section';
 
 type Props = {
@@ -9,7 +9,7 @@ type Props = {
 export const CvEmploymentSection = ({ jobs }: Props): JSX.Element => (
   <CvSection title="Employment History">
     {jobs.map((job, index) => (
-      <CvEmploymentEntry job={job} key={index} />
+      <CvJob job={job} key={index} />
     ))}
   </CvSection>
 );
