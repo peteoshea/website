@@ -1,4 +1,3 @@
-import 'tailwindcss/tailwind.css';
 import Layout from 'components/common/layout';
 
 import CvEducationSection from 'components/cv/educationSection';

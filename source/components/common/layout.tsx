@@ -1,3 +1,4 @@
+import 'tailwindcss/tailwind.css';
 import Footer from 'components/common/footer';
 import Metadata from 'components/common/metadata';
 import Navbar from 'components/common/navbar';
