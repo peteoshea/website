@@ -31,11 +31,11 @@ describe('myEmployment', () => {
 
   test('polaris lead developer job description is set', () => {
     expect(polarisLeadDeveloper.description).toBe(
-      'Quickly promoted to Lead Developer, managing a team of 5 developers working on multiple projects including Windows applications and services based around POS systems, written in Delphi, web applications, created with PHP, and legacy jBASE database systems. Tasks include:\n' +
+      'Quickly promoted to Lead Developer, managing a team of 5 developers working on multiple projects including Windows applications and services based around POS systems, written in Delphi, web applications, created with PHP. Tasks include:\n' +
         '- Actively developing on all of the Delphi and PHP projects.\n' +
         '- Allocation of work to ensure the various projects stayed on track.\n' +
         '- Mentoring developers to help improve the quality of code produced.\n' +
-        '- Unit testing, including getting a lot of legacy Delphi code under test.\n' +
+        '- Unit testing, including getting a lot of legacy Delphi code under test.\n\n' +
         'After a few years, due to the implementation of Scrum and some company restructuring, I stopped managing a team but kept the title as leading by example and mentoring were still part of the role:\n' +
         '- Mainly working on the flagship POS product writing Delphi code using TDD.\n' +
         '- Create and maintain infrastructure as code using Terraform and Ansible for various projects.\n' +
@@ -108,7 +108,7 @@ describe('myEmployment', () => {
         '- Creation of an iOS app to help find suitable ski accommodation.\n' +
         '- Bespoke Delphi application for a waste management company.\n' +
         '- Web site design and setup of e-commerce sites.\n' +
-        '- Regular Delphi development for previous employer.\n' +
+        '- Regular Delphi development for previous employer.\n\n' +
         'This was the sole source of income for two years but was scaled back after returning to full-time employment. Now just occasional ongoing maintenance and tinkering on personal projects.'
     );
   });
