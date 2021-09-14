@@ -1,3 +1,4 @@
+import Markdown from 'components/common/markdown';
 import Job from 'types/job';
 
 type Props = {
@@ -18,7 +19,9 @@ export const CvJob = ({ job }: Props): JSX.Element => (
     </div>
     <div className="text-xs text-right my-auto">{job.location}</div>
     {job.description ? (
-      <div className="col-span-3 md:col-start-3 md:col-span-10 text-sm">{job.description}</div>
+      <div className="col-span-3 md:col-start-3 md:col-span-10 text-sm">
+        <Markdown content={job.description} />
+      </div>
     ) : null}
   </div>
 );

@@ -10,6 +10,7 @@ describe('CvJob', () => {
   const employer = 'Polaris Elements';
   const location = 'Taunton';
   const description = 'Quickly promoted, managing a team of 5 developers.';
+  const descriptionWithMarkdown = 'Quickly promoted, managing a team of **5** developers.';
 
   const job: Job = {
     startDate: startDate,
@@ -18,6 +19,14 @@ describe('CvJob', () => {
     employer: employer,
     location: location,
     description: description
+  };
+  const jobWithMarkdown: Job = {
+    startDate: startDate,
+    endDate: endDate,
+    title: title,
+    employer: employer,
+    location: location,
+    description: descriptionWithMarkdown
   };
   const jobWithoutDescription: Job = {
     startDate: startDate,
@@ -103,5 +112,12 @@ describe('CvJob', () => {
   test('does not contain description if not set', () => {
     const { container } = render(<CvJob job={jobWithoutDescription} />);
     expect(container.innerHTML).not.toContain(description);
+  });
+
+  test('converts markdown in description', () => {
+    const { container } = render(<CvJob job={jobWithMarkdown} />);
+    expect(container.innerHTML).toContain(
+      '<p>Quickly promoted, managing a team of <strong>5</strong> developers.</p>'
+    );
   });
 });

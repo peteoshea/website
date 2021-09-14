@@ -1,0 +1,3 @@
+.markdown ul {
+  @apply list-disc px-10 py-2;
+}
