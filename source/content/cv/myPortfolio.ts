@@ -1,14 +1,8 @@
 import Project from 'types/project';
 
-export const loyalty: Project = {
-  description:
-    'I created the initial loyalty system for Polaris Elements solo, although it has been worked on by others since then. It is written in PHP using the CodeIgniter framework. There is a Bootstrap UI and a REST API for the backend connecting to a MySQL database.',
-  name: 'Polaris Loyalty',
-  url: 'https://polaris-elements.co.uk/solutions/polaris-infinity/'
-};
 export const thisWebsite: Project = {
   description:
-    'Personal website created with Next.js. Written in TypesScript using TailwindCSS. Jest helped achieve 100% test coverage. Automatic type checking and linting with Husky, Prettier and ESLint. GitHub actions to automatically apply dependency updates and to ensure all tests pass before allowing merge of PR.',
+    'Personal website created with Next.js. Written in TypesScript using TailwindCSS. Jest helped achieve 100% code coverage. Automatic type checking and linting with Husky, Prettier and ESLint. GitHub actions to automatically apply dependency updates and to ensure all tests pass before allowing merge of PR.',
   image: '/peteoshea.co.uk.png',
   name: 'Source for this website',
   url: 'https://github.com/peteoshea/website/'
@@ -27,6 +21,6 @@ export const skipad: Project = {
   url: 'https://youtu.be/BnXpRpjBIzE'
 };
 
-const myPortfolio: Project[] = [thisWebsite, saransurf, skipad, loyalty];
+const myPortfolio: Project[] = [thisWebsite, skipad];
 
 export default myPortfolio;
