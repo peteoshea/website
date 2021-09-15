@@ -36,9 +36,9 @@ describe('myEmployment', () => {
         '- Allocation of work to ensure the various projects stayed on track.\n' +
         '- Mentoring developers to help improve the quality of code produced.\n' +
         '- Unit testing, including getting a lot of legacy Delphi code under test.\n\n' +
-        'After a few years, due to the implementation of Scrum and some company restructuring, I stopped managing a team but kept the title as leading by example and mentoring were still part of the role:\n' +
+        'After a few years, due to the implementation of Scrum and some company restructuring, no longer manage a team but kept the title as leading by example and mentoring were still an essential part of the role:\n' +
         '- Mainly working on the flagship POS product writing Delphi code using TDD.\n' +
-        '- Create and maintain infrastructure as code using Terraform and Ansible for various projects.\n' +
+        '- Create and maintain infrastructure as code for AWS resources using Terraform and Ansible on various projects.\n' +
         '- Occasional work on other projects using both PHP & JavaScript, specifically React.\n' +
         '- Performed the role of Scrum Master during our initial switch over to an agile approach.'
     );
@@ -72,7 +72,7 @@ describe('myEmployment', () => {
     expect(polarisSeniorDeveloper.description).toBe(
       'Re-joined the Delphi team for previous employer after change of ownership and company name. Other tasks:\n' +
         '- Solo project to design and build online loyalty system with a RESTful web service API.\n' +
-        '- Chose to write this in PHP using the CodeIgniter framework with a Bootstrap based front-end.\n' +
+        '- Wrote this in PHP using the CodeIgniter framework with a Bootstrap based front-end using a MySQL database.\n' +
         '- Implemented a move of all source code from Subversion to Git which greatly improved development flexibility.\n' +
         '- Setting up and maintaining various Linux VMs including Apache and MySQL servers, a company wide mail server and a GitLab server all running on Citrix XenServer hosted on multiple dedicated servers.'
     );
@@ -107,7 +107,7 @@ describe('myEmployment', () => {
       'Started a small business. Very varied work including:\n' +
         '- Creation of an iOS app to help find suitable ski accommodation.\n' +
         '- Bespoke Delphi application for a waste management company.\n' +
-        '- Web site design and setup of e-commerce sites.\n' +
+        '- Web site design and setup of e-commerce sites, including use of Crystallize GraphQL API.\n' +
         '- Regular Delphi development for previous employer.\n\n' +
         'This was the sole source of income for two years but was scaled back after returning to full-time employment. Now just occasional ongoing maintenance and tinkering on personal projects.'
     );

@@ -23,7 +23,7 @@ describe('myProfile', () => {
 
   test('summary is set', () => {
     expect(myProfile.summary).toBe(
-      'Highly motivated software developer with over 20 years of experience using various languages and development environments. Works well as part of a team, with experience as junior programmer all the way up to lead developer, mentoring junior programmers. Also comfortable working on solo projects from concept all the way through to completion. Strong belief in clean, simple code, preferable using TDD, and always keen to learn new skills.'
+      'Highly motivated software developer with over 20 years of experience using various languages and development environments. Works well as part of a team, with experience from junior programmer all the way up to lead developer, mentoring junior programmers, and peers. Also comfortable working on solo projects from concept all the way through to completion. Strong belief in clean, simple code, preferable using agile TDD, and always keen to learn new skills.'
     );
   });
 

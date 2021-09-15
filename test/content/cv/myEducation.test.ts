@@ -128,7 +128,7 @@ describe('myEducation', () => {
   });
 
   test('Scrum master description is set', () => {
-    expect(scrumMaster.description).toBe('Attended a 2-day course before taking the exam at home');
+    expect(scrumMaster.description).toBe('Attended a 2-day course before taking the test at home.');
   });
 
   test('Scrum master url is set', () => {
