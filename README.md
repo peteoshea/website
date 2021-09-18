@@ -1,6 +1,7 @@
 # Personal Website
 
 [![CI](https://github.com/peteoshea/website/workflows/CI/badge.svg)](https://github.com/peteoshea/website/actions)
+[![codecov](https://codecov.io/gh/peteoshea/website/branch/main/graph/badge.svg?token=GP89HBTPI9)](https://codecov.io/gh/peteoshea/website)
 
 This website is based on my [Next.js template](https://github.com/peteoshea/nextjs-template).
 
