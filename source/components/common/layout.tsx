@@ -7,18 +7,18 @@ type Props = {
   children?: React.ReactNode;
   heading?: string;
   subheading?: string;
-  title: string;
+  pageTitle: string;
 };
 
-export const Layout = ({ children, heading, subheading, title }: Props): JSX.Element => {
+export const Layout = ({ children, heading, subheading, pageTitle }: Props): JSX.Element => {
   let pageHeading = heading;
   if (!heading) {
-    pageHeading = title;
+    pageHeading = pageTitle;
   }
 
   return (
     <>
-      <Metadata title={title} />
+      <Metadata pageTitle={pageTitle} />
       <div className="relative bg-white max-w-7xl mx-auto">
         <Navbar />
         <header className="mt-2 px-4 tracking-tight text-center">

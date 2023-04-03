@@ -9,7 +9,7 @@ import CvSkillsSection from 'components/cv/skillsSection';
 import myCv from 'content/cv/myCv';
 
 export const CV = (): JSX.Element => (
-  <Layout title="CV" heading="Pete O'Shea" subheading="Curriculum Vitae / Résumé">
+  <Layout pageTitle="CV" heading="Pete O'Shea" subheading="Curriculum Vitae / Résumé">
     <CvProfileSection profile={myCv.profile} />
     <CvSkillsSection skills={myCv.skills} />
     <CvPortfolioSection projects={myCv.portfolio} />

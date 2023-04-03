@@ -4,29 +4,29 @@ import { render } from '../../testUtils';
 
 describe('Page layout', () => {
   const subheading = 'subheading for page';
-  const title = 'Page Title';
+  const pageTitle = 'Page Title';
 
   test('contains nav tag', () => {
-    const { container } = render(<Layout title={title} />);
+    const { container } = render(<Layout pageTitle={pageTitle} />);
     const element = container.querySelector('nav');
     expect(element).not.toBeNull();
   });
 
   test('contains footer tag', () => {
-    const { container } = render(<Layout title={title} />);
+    const { container } = render(<Layout pageTitle={pageTitle} />);
     const element = container.querySelector('footer');
     expect(element).not.toBeNull();
   });
 
   test('contains main tag', () => {
-    const { container } = render(<Layout title={title} />);
+    const { container } = render(<Layout pageTitle={pageTitle} />);
     const element = container.querySelector('main');
     expect(element).not.toBeNull();
   });
 
   test('main tag contains children', () => {
     const { container } = render(
-      <Layout title={title}>
+      <Layout pageTitle={pageTitle}>
         <p>Child Text</p>
       </Layout>
     );
@@ -35,47 +35,47 @@ describe('Page layout', () => {
   });
 
   test('contains header tag', () => {
-    const { container } = render(<Layout title={title} />);
+    const { container } = render(<Layout pageTitle={pageTitle} />);
     const element = container.querySelector('header');
     expect(element).not.toBeNull();
   });
 
   test('header contains h1 tag', () => {
-    const { container } = render(<Layout title={title} />);
+    const { container } = render(<Layout pageTitle={pageTitle} />);
     const header = container.querySelector('header');
     const element = header.querySelector('h1');
     expect(element).not.toBeNull();
   });
 
-  test('header h1 tag contains title', () => {
-    const { container } = render(<Layout title={title} />);
+  test('header h1 tag contains title by default', () => {
+    const { container } = render(<Layout pageTitle={pageTitle} />);
     const element = container.querySelector('header').querySelector('h1');
-    expect(element.innerHTML).toBe(title);
+    expect(element.innerHTML).toBe(pageTitle);
   });
 
-  test('header h1 tag contains heading if set', () => {
+  test('header h1 tag contains heading when set', () => {
     const heading = 'Option Page Heading';
-    const { container } = render(<Layout title={title} heading={heading} />);
+    const { container } = render(<Layout pageTitle={pageTitle} heading={heading} />);
     const element = container.querySelector('header').querySelector('h1');
     expect(element.innerHTML).toBe(heading);
   });
 
-  test('header does not contains h2 tag', () => {
-    const { container } = render(<Layout title={title} />);
+  test('header does not contain h2 tag by default', () => {
+    const { container } = render(<Layout pageTitle={pageTitle} />);
     const header = container.querySelector('header');
     const element = header.querySelector('h2');
     expect(element).toBeNull();
   });
 
   test('header contains h2 tag when subheading set', () => {
-    const { container } = render(<Layout title={title} subheading={subheading} />);
+    const { container } = render(<Layout pageTitle={pageTitle} subheading={subheading} />);
     const header = container.querySelector('header');
     const element = header.querySelector('h2');
     expect(element).not.toBeNull();
   });
 
-  test('header h1 tag contains title', () => {
-    const { container } = render(<Layout title={title} subheading={subheading} />);
+  test('header h2 tag contains subheading when set', () => {
+    const { container } = render(<Layout pageTitle={pageTitle} subheading={subheading} />);
     const element = container.querySelector('header').querySelector('h2');
     expect(element.innerHTML).toBe(subheading);
   });
