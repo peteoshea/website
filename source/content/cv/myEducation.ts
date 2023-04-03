@@ -29,7 +29,6 @@ export const gcses: Qualification = {
 export const scrumMaster: Qualification = {
   startDate: '2016',
   endDate: '2016',
-  description: 'Attended a 2-day course before taking the test at home.',
   location: 'London',
   name: 'Professional Scrum Master I (PSM I)',
   school: 'Scrum.org',
