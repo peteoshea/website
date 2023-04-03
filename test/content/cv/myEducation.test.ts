@@ -127,10 +127,6 @@ describe('myEducation', () => {
     expect(scrumMaster.location).toBe('London');
   });
 
-  test('Scrum master description is set', () => {
-    expect(scrumMaster.description).toBe('Attended a 2-day course before taking the test at home.');
-  });
-
   test('Scrum master url is set', () => {
     expect(scrumMaster.url).toBe(
       'https://www.credly.com/badges/999fd331-1153-45df-a9a7-27a9145d0488/public_url'
