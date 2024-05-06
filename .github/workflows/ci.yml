@@ -48,7 +48,7 @@ jobs:
         shell: pwsh
 
       - name: Check code coverage
-        uses: codecov/codecov-action@v3.1.5
+        uses: codecov/codecov-action@v4.3.1
         with:
           token: ${{secrets.CODECOV_TOKEN}}
           files: ./coverage/coverage-final.json
