@@ -75,14 +75,14 @@ describe('CvEducationEntry', () => {
 
   test('contains date range', () => {
     const { container } = render(<CvQualification qualification={qualification} />);
-    expect(container.innerHTML).toContain(startDate + '-' + endDate);
+    expect(container.innerHTML).toContain(startDate + '–' + endDate);
   });
 
   test('does not contain date range when start and end date same', () => {
     const { container } = render(
       <CvQualification qualification={qualificationWithSameStartAndEndDate} />
     );
-    expect(container.innerHTML).not.toContain(startDate + '-' + startDate);
+    expect(container.innerHTML).not.toContain(startDate + '–' + startDate);
   });
 
   test('contains qualification name', () => {

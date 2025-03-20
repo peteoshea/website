@@ -9,7 +9,7 @@ export const CvQualification = ({ qualification }: Props): JSX.Element => (
     <div className="col-start-3 md:col-start-1 md:col-span-2 tracking-tighter text-right md:text-center my-auto">
       {qualification.startDate}
       {qualification.startDate != qualification.endDate
-        ? '-' + (qualification.endDate ? qualification.endDate : 'Present')
+        ? '–' + (qualification.endDate ? qualification.endDate : 'Present')
         : ''}
     </div>
     <div className="row-start-1 md:row-start-auto col-span-2 md:col-span-5 text-lg font-bold my-auto">

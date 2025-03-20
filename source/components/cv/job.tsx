@@ -9,7 +9,7 @@ export const CvJob = ({ job }: Props): JSX.Element => (
   <div className="grid grid-cols-3 md:grid-cols-12 md:gap-x-2 pt-4">
     <div className="col-start-3 md:col-start-1 md:col-span-2 tracking-tighter text-right md:text-center my-auto">
       {job.startDate}
-      {job.startDate != job.endDate ? '-' + (job.endDate ? job.endDate : 'Present') : ''}
+      {job.startDate != job.endDate ? '–' + (job.endDate ? job.endDate : 'Present') : ''}
     </div>
     <div className="row-start-1 md:row-start-auto col-span-2 md:col-span-5 text-lg font-bold my-auto">
       {job.title}
