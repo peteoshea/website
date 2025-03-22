@@ -9,16 +9,15 @@ describe('CV page', () => {
     expect(element).toBeDefined();
   });
 
-  test('contains profile', () => {
+  test('contains personal statement', () => {
     const { getByText } = render(<CV />);
-    const element = getByText(/Profile/i);
+    const element = getByText(/Personal Statement/i);
     expect(element).toBeDefined();
   });
 
-  test('contains skills', () => {
+  test('contains core skills', () => {
     const { getByText } = render(<CV />);
-    // Removed case insensitive check as this word is repeated on the page as well as the heading.
-    const element = getByText(/Skills/);
+    const element = getByText(/Core Skills/i);
     expect(element).toBeDefined();
   });
 
