@@ -13,7 +13,7 @@ describe('myEducation', () => {
     expect(gcses.description).toBe(
       'Maths (A), Physics (A), Chemistry (A), ' +
         'Additional Maths (B), French (B), Biology (B), ' +
-        'English Language (C), English Literature (C), Business Studies (C)'
+        'Business Studies (C), English Language (C), English Literature (C)'
     );
   });
 
