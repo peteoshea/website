@@ -5,6 +5,7 @@ type Profile = {
   linkedInName?: string;
   linkedInUrl?: string;
   summary: string;
+  title?: string;
   twitter?: string;
 };
 

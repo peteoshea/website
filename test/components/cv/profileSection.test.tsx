@@ -10,15 +10,26 @@ describe('CvProfileSection', () => {
   const linkedInName = "Pete O'Shea";
   const linkedInUrl = 'https://www.linkedin.com/in/pete-o-shea-9a072126/';
   const summary = 'Highly motivated software developer with over 20 years of experience.';
+  const title = 'Personal Statement';
   const twitter = 'twitter-name';
 
   const minimalProfile: Profile = {
     summary: summary
   };
 
-  test('contains profile heading', () => {
+  test('contains profile heading for minimal profile', () => {
     const { getByText } = render(<CvProfileSection profile={minimalProfile} />);
     const element = getByText(/Profile/i);
+    expect(element).toBeDefined();
+  });
+
+  test('contains profile heading as specified', () => {
+    const profile: Profile = {
+      ...minimalProfile,
+      title
+    };
+    const { getByText } = render(<CvProfileSection profile={profile} />);
+    const element = getByText(/Personal Statement/i);
     expect(element).toBeDefined();
   });
 

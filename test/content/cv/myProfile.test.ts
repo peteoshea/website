@@ -27,7 +27,11 @@ describe('myProfile', () => {
     );
   });
 
-  test('twitter handle is set to peteoshea', () => {
-    expect(myProfile.twitter).toBe('peteoshea');
+  test('title is set', () => {
+    expect(myProfile.title).toBe('Personal Statement');
+  });
+
+  test('twitter handle is not set', () => {
+    expect(myProfile.twitter).not.toBeDefined();
   });
 });
