@@ -4,7 +4,7 @@
   "license": "ISC",
   "version": "1.0.0",
   "scripts": {
-    "build": "next build",
+    "build": "next build --turbopack",
     "dev": "next dev",
     "format": "prettier --write .",
     "lint": "eslint . --ext ts --ext tsx --ext js",
