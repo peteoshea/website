@@ -1,70 +1,46 @@
-import Skill from 'types/skill';
+import Skills from 'types/skills';
 
-export const agile: Skill = {
-  description:
-    'Agile development techniques, specifically Scrum, including some time as Scrum Master.'
-};
-export const ci: Skill = {
-  description: 'CI (Continuous Integration) using GitHub Actions, Jenkins, Travis and CircleCI.'
-};
-export const delphi: Skill = {
-  description:
-    'Very experienced with Delphi, used as my main development environment for many years.'
-};
-export const desktop: Skill = {
-  description: 'Current desktop OS of choice is Windows 11 but spent some time with MacOS.'
-};
-export const devops: Skill = {
-  description:
-    'DevOps experience setting up and maintaining various AWS resources with Terraform and Ansible.'
-};
-export const git: Skill = {
-  description: 'Good working knowledge of Git using GitHub, BitBucket and GitLab.'
-};
-export const javascript: Skill = {
-  description:
-    'Javascript mainly using Node.js, React & Next.js with some brief exposure to Svelte & Vue.js.'
-};
-export const php: Skill = {
-  description:
-    'Full stack development using PHP including RESTful API design, implementation and use.'
-};
-export const python: Skill = {
-  description: 'Use of Python to construct complex Fabric deployment scripts.'
-};
-export const scripting: Skill = {
-  description: 'Automation using scripting languages like bash and PowerShell.'
-};
-export const sql: Skill = {
-  description: 'Lots of practise writing SQL and designing MySQL and Firebird databases.'
-};
-export const sysadmin: Skill = {
-  description: 'System administration skills with Linux (mainly Red Hat/Debian based systems).'
-};
-export const tdd: Skill = {
-  description:
-    'A love of TDD (Test Driven Development) which I feel has really improved my code quality.'
-};
-export const vagrant: Skill = {
-  description:
-    'Virtualisation of development environments using Vagrant. (Looking to make more use of Docker)'
-};
+export const agile =
+  'Agile development techniques, specifically Scrum, including some time as Scrum Master.';
+export const apis = 'Experience designing, implementing and using RESTful and GraphQL APIs.';
+export const ci =
+  'Automation using scripting languages like bash, including CI/CD using GitHub Actions.';
+export const delphi =
+  'Very experienced with Delphi, used as my main development environment for many years.';
+export const desktop = 'Current desktop OS of choice is Windows 11 but some experience with MacOS.';
+export const devops =
+  'DevOps/IaC experience, managing mainly AWS resources, with Terraform and Ansible.';
+export const docker =
+  'Using Docker and dev containers to ensure consistency across different environments.';
+export const fullstack =
+  'Full stack developer with experience of a variety of, mainly object oriented, languages.';
+export const git = 'Good working knowledge of Git using GitHub, BitBucket and GitLab.';
+export const javascript =
+  'JavaScript/TypeScript using Node.js, React & Next.js with brief exposure to Svelte & Vue.js.';
+export const languages =
+  'Extensive use of Delphi and PHP but have also worked with C, C#, Objective C, Python & Rust.';
+export const sql = 'Lots of practise writing SQL and designing MySQL and Firebird databases.';
+export const sysadmin =
+  'System administration skills with Linux (mainly Red Hat and Debian based systems).';
+export const tdd =
+  'A love of Test Driven Development, which drives high code quality and maintainability.';
 
-const mySkills: Skill[] = [
-  javascript,
-  php,
-  delphi,
-  tdd,
-  devops,
-  ci,
-  sysadmin,
-  agile,
-  git,
-  sql,
-  desktop,
-  scripting,
-  python,
-  vagrant
-];
+const mySkills: Skills = {
+  bulletPoints: [
+    fullstack,
+    tdd,
+    javascript,
+    languages,
+    devops,
+    sysadmin,
+    ci,
+    docker,
+    agile,
+    git,
+    apis,
+    desktop
+  ],
+  title: 'Core Skills'
+};
 
 export default mySkills;

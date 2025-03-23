@@ -78,12 +78,12 @@ describe('CvJob', () => {
 
   test('contains date range', () => {
     const { container } = render(<CvJob job={job} />);
-    expect(container.innerHTML).toContain(startDate + '-' + endDate);
+    expect(container.innerHTML).toContain(startDate + '–' + endDate);
   });
 
   test('does not contain date range when start and end date same', () => {
     const { container } = render(<CvJob job={jobWithSameStartAndEndDate} />);
-    expect(container.innerHTML).not.toContain(startDate + '-' + startDate);
+    expect(container.innerHTML).not.toContain(startDate + '–' + startDate);
   });
 
   test('contains job title', () => {

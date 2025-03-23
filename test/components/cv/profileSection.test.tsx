@@ -10,15 +10,26 @@ describe('CvProfileSection', () => {
   const linkedInName = "Pete O'Shea";
   const linkedInUrl = 'https://www.linkedin.com/in/pete-o-shea-9a072126/';
   const summary = 'Highly motivated software developer with over 20 years of experience.';
+  const title = 'Personal Statement';
   const twitter = 'twitter-name';
 
   const minimalProfile: Profile = {
     summary: summary
   };
 
-  test('contains profile heading', () => {
+  test('contains profile heading for minimal profile', () => {
     const { getByText } = render(<CvProfileSection profile={minimalProfile} />);
     const element = getByText(/Profile/i);
+    expect(element).toBeDefined();
+  });
+
+  test('contains profile heading as specified', () => {
+    const profile: Profile = {
+      ...minimalProfile,
+      title
+    };
+    const { getByText } = render(<CvProfileSection profile={profile} />);
+    const element = getByText(/Personal Statement/i);
     expect(element).toBeDefined();
   });
 
@@ -40,7 +51,7 @@ describe('CvProfileSection', () => {
   test('contains email icon when email specified', () => {
     const profile: Profile = {
       ...minimalProfile,
-      email: email
+      email
     };
     const { container } = render(<CvProfileSection profile={profile} />);
     const images = container.querySelectorAll('img');
@@ -53,7 +64,7 @@ describe('CvProfileSection', () => {
   test('contains email when specified', () => {
     const profile: Profile = {
       ...minimalProfile,
-      email: email
+      email
     };
     const { getByText } = render(<CvProfileSection profile={profile} />);
     const element = getByText(email);
@@ -63,7 +74,7 @@ describe('CvProfileSection', () => {
   test('contains mailto link for email when specified', () => {
     const profile: Profile = {
       ...minimalProfile,
-      email: email
+      email
     };
     const { container } = render(<CvProfileSection profile={profile} />);
     const links = container.querySelectorAll('a');
@@ -85,7 +96,7 @@ describe('CvProfileSection', () => {
   test('contains github logo when github name specified', () => {
     const profile: Profile = {
       ...minimalProfile,
-      githubName: githubName
+      githubName
     };
     const { container } = render(<CvProfileSection profile={profile} />);
     const images = container.querySelectorAll('img');
@@ -98,7 +109,7 @@ describe('CvProfileSection', () => {
   test('contains github name when specified', () => {
     const profile: Profile = {
       ...minimalProfile,
-      githubName: githubName
+      githubName
     };
     const { getByText } = render(<CvProfileSection profile={profile} />);
     const element = getByText(githubName);
@@ -108,7 +119,7 @@ describe('CvProfileSection', () => {
   test('contains link to github profile when just github name is specified', () => {
     const profile: Profile = {
       ...minimalProfile,
-      githubName: githubName
+      githubName
     };
     const { container } = render(<CvProfileSection profile={profile} />);
     const links = container.querySelectorAll('a');
@@ -121,8 +132,8 @@ describe('CvProfileSection', () => {
   test('contains link to github profile when specified', () => {
     const profile: Profile = {
       ...minimalProfile,
-      githubName: githubName, // Needs the name for the github section to appear
-      githubUrl: githubUrl
+      githubName, // Needs the name for the github section to appear
+      githubUrl
     };
     const { container } = render(<CvProfileSection profile={profile} />);
     const links = container.querySelectorAll('a');
@@ -142,7 +153,7 @@ describe('CvProfileSection', () => {
   test('contains twitter logo when twitter specified', () => {
     const profile: Profile = {
       ...minimalProfile,
-      twitter: twitter
+      twitter
     };
     const { container } = render(<CvProfileSection profile={profile} />);
     const images = container.querySelectorAll('img');
@@ -155,7 +166,7 @@ describe('CvProfileSection', () => {
   test('contains twitter handle when specified', () => {
     const profile: Profile = {
       ...minimalProfile,
-      twitter: twitter
+      twitter
     };
     const { getByText } = render(<CvProfileSection profile={profile} />);
     const element = getByText('@' + twitter);
@@ -165,7 +176,7 @@ describe('CvProfileSection', () => {
   test('contains link to twitter profile when specified', () => {
     const profile: Profile = {
       ...minimalProfile,
-      twitter: twitter
+      twitter
     };
     const { container } = render(<CvProfileSection profile={profile} />);
     const links = container.querySelectorAll('a');
@@ -187,7 +198,7 @@ describe('CvProfileSection', () => {
   test('does not contain linked in logo when just linked in name is specified', () => {
     const profile: Profile = {
       ...minimalProfile,
-      linkedInName: linkedInName
+      linkedInName
     };
     const { container } = render(<CvProfileSection profile={profile} />);
     const images = container.querySelectorAll('img');
@@ -200,7 +211,7 @@ describe('CvProfileSection', () => {
   test('does not contain linked in logo when just linked in url is specified', () => {
     const profile: Profile = {
       ...minimalProfile,
-      linkedInUrl: linkedInUrl
+      linkedInUrl
     };
     const { container } = render(<CvProfileSection profile={profile} />);
     const images = container.querySelectorAll('img');
@@ -213,8 +224,8 @@ describe('CvProfileSection', () => {
   test('contains linked in logo when both linked in name and url are specified', () => {
     const profile: Profile = {
       ...minimalProfile,
-      linkedInName: linkedInName,
-      linkedInUrl: linkedInUrl
+      linkedInName,
+      linkedInUrl
     };
     const { container } = render(<CvProfileSection profile={profile} />);
     const images = container.querySelectorAll('img');
@@ -227,8 +238,8 @@ describe('CvProfileSection', () => {
   test('contains linked in name when both linked in name and url are specified', () => {
     const profile: Profile = {
       ...minimalProfile,
-      linkedInName: linkedInName,
-      linkedInUrl: linkedInUrl
+      linkedInName,
+      linkedInUrl
     };
     const { getByText } = render(<CvProfileSection profile={profile} />);
     const element = getByText(linkedInName);
@@ -238,8 +249,8 @@ describe('CvProfileSection', () => {
   test('contains link to linked in profile when both linked in name and url are specified', () => {
     const profile: Profile = {
       ...minimalProfile,
-      linkedInName: linkedInName,
-      linkedInUrl: linkedInUrl
+      linkedInName,
+      linkedInUrl
     };
     const { container } = render(<CvProfileSection profile={profile} />);
     const links = container.querySelectorAll('a');

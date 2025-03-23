@@ -1,18 +1,21 @@
-import Skill from 'types/skill';
+import Skills from 'types/skills';
 import CvSection from 'components/cv/section';
 
 type Props = {
-  skills: Skill[];
+  skills: Skills;
 };
 
-export const CvSkillsSection = ({ skills }: Props): JSX.Element => (
-  <CvSection title="Skills">
-    <ul className="list-disc px-16">
-      {skills.map((skill, index) => (
-        <li key={index}>{skill.description}</li>
-      ))}
-    </ul>
-  </CvSection>
-);
+export const CvSkillsSection = ({ skills }: Props): JSX.Element => {
+  const title = skills.title ?? 'Skills';
+  return (
+    <CvSection title={title}>
+      <ul className="list-disc px-16">
+        {skills.bulletPoints.map((skill, index) => (
+          <li key={index}>{skill}</li>
+        ))}
+      </ul>
+    </CvSection>
+  );
+};
 
 export default CvSkillsSection;

@@ -7,6 +7,7 @@ type Props = {
 
 export const CvProfileSection = ({ profile }: Props): JSX.Element => {
   const emailUrl = 'mailto:' + profile.email;
+  const title = profile.title ?? 'Profile';
   const twitterUrl = 'https://twitter.com/' + profile.twitter;
   let githubUrl = profile.githubUrl;
   if (profile.githubName && !profile.githubUrl) {
@@ -14,7 +15,7 @@ export const CvProfileSection = ({ profile }: Props): JSX.Element => {
   }
 
   return (
-    <CvSection title="Profile">
+    <CvSection title={title}>
       <div className="mt-2">{profile.summary}</div>
       <div className="flex flex-col justify-evenly items-center mt-2 sm:flex-row">
         {profile.githubName ? (
