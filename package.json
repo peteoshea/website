@@ -28,14 +28,14 @@
   "dependencies": {
     "micromark": "^2.11.4",
     "next": "^15.2.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@testing-library/react": "^15.0.4",
+    "@testing-library/react": "^16.2.0",
     "@types/jest": "^29.5.12",
     "@types/node": "^22.10.5",
-    "@types/react": "^18.2.74",
+    "@types/react": "^19.0.12",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^6.21.0",
     "autoprefixer": "^10.4.19",
