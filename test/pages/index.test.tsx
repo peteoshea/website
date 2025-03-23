@@ -1,5 +1,7 @@
 import React from 'react';
+import { describe, expect, test } from 'vitest';
 import { render } from '../testUtils';
+
 import { Home } from '../../pages/index';
 
 describe('Home page', () => {

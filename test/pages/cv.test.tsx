@@ -1,6 +1,8 @@
 import React from 'react';
-import CV from '../../pages/cv';
+import { describe, expect, test } from 'vitest';
 import { render } from '../testUtils';
+
+import CV from '@/pages/cv';
 
 describe('CV page', () => {
   test('contains heading', () => {

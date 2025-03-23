@@ -1,4 +1,5 @@
 import React from 'react';
+import { describe, expect, test } from 'vitest';
 import { render } from '../../testUtils';
 
 import CvEducationSection from '@/source/components/cv/educationSection';

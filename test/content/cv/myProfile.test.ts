@@ -1,3 +1,5 @@
+import { describe, expect, test } from 'vitest';
+
 import myProfile from '@/source/content/cv/myProfile';
 
 describe('myProfile', () => {

@@ -1,3 +1,5 @@
+import { describe, expect, test } from 'vitest';
+
 import myCv from '@/source/content/cv/myCv';
 import myEducation from '@/source/content/cv/myEducation';
 import myEmployment from '@/source/content/cv/myEmployment';

@@ -1,7 +1,9 @@
 import React from 'react';
+import { describe, expect, test } from 'vitest';
+import { render } from '../../testUtils';
+
 import CvProfileSection from '@/source/components/cv/profileSection';
 import Profile from '@/source/types/profile';
-import { render } from '../../testUtils';
 
 describe('CvProfileSection', () => {
   const email = 'mail@peteoshea.co.uk';

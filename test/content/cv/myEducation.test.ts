@@ -1,3 +1,5 @@
+import { describe, expect, test } from 'vitest';
+
 import myEducation, { alevels, degree, gcses, scrumMaster } from '@/source/content/cv/myEducation';
 
 describe('myEducation', () => {
