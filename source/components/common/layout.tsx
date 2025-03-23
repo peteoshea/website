@@ -1,5 +1,4 @@
 import React from 'react';
-import 'tailwindcss/tailwind.css';
 
 import Footer from 'components/common/footer';
 import Metadata from 'components/common/metadata';
