@@ -5,19 +5,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout project source
-        uses: actions/checkout@v4.1.2
+        uses: actions/checkout@v4.2.2
 
       - name: Read Node.js version from .nvmrc
         run: echo "##[set-output name=NVMRC;]$(cat .nvmrc)"
         id: nvmrc
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4.0.2
+        uses: actions/setup-node@v4.3.0
         with:
           node-version: ${{steps.nvmrc.outputs.NVMRC}}
 
       - name: Cache Node.js modules
-        uses: actions/cache@v4.0.2
+        uses: actions/cache@v4.2.3
         with:
           path: ~/.npm
           key: ${{runner.OS}}-node-${{steps.nvmrc.outputs.NVMRC}}-${{hashFiles('**/package-lock.json')}}
@@ -32,7 +32,7 @@ jobs:
 
       - name: Cache PowerShell modules
         id: cache-powershell-modules
-        uses: actions/cache@v4.0.2
+        uses: actions/cache@v4.2.3
         with:
           path: ~/.local/share/powershell/Modules
           # Include a date as a manual cache buster if you want to install newer module versions
@@ -48,7 +48,7 @@ jobs:
         shell: pwsh
 
       - name: Check code coverage
-        uses: codecov/codecov-action@v3.1.5
+        uses: codecov/codecov-action@v5.4.0
         with:
           token: ${{secrets.CODECOV_TOKEN}}
           files: ./coverage/coverage-final.json
