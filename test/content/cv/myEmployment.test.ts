@@ -8,7 +8,7 @@ import myEmployment, {
   icl,
   polarisLeadDeveloper,
   polarisSeniorDeveloper
-} from '@/source/content/cv/myEmployment';
+} from '../../../source/content/cv/myEmployment';
 
 describe('myEmployment', () => {
   test('polaris lead developer job has start date of 2013', () => {

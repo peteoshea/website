@@ -1,6 +1,10 @@
 import { describe, expect, test } from 'vitest';
 
-import myPortfolio, { saransurf, skipad, thisWebsite } from '@/source/content/cv/myPortfolio';
+import myPortfolio, {
+  saransurf,
+  skipad,
+  thisWebsite
+} from '../../../source/content/cv/myPortfolio';
 
 describe('myPortfolio', () => {
   test('this website description is set', () => {

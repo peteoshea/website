@@ -2,7 +2,7 @@ import React from 'react';
 import { describe, expect, test } from 'vitest';
 import { render } from '../testUtils';
 
-import CV from '@/pages/cv';
+import CV from '../../pages/cv';
 
 describe('CV page', () => {
   test('contains heading', () => {

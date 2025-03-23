@@ -2,7 +2,7 @@ import React from 'react';
 import { describe, expect, test } from 'vitest';
 import { render } from '../../testUtils';
 
-import Markdown from '@/source/components/common/markdown';
+import Markdown from '../../../source/components/common/markdown';
 
 describe('Markdown', () => {
   test('contains a div', () => {

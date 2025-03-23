@@ -2,7 +2,7 @@ import React from 'react';
 import { describe, expect, test } from 'vitest';
 import { render } from '../testUtils';
 
-import Blog from '@/pages/blog';
+import Blog from '../../pages/blog';
 
 describe('Blog posts page', () => {
   test('contains heading', () => {

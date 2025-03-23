@@ -2,8 +2,8 @@ import React from 'react';
 import { describe, expect, test } from 'vitest';
 import { render } from '../../testUtils';
 
-import CvSkillsSection from '@/source/components/cv/skillsSection';
-import Skill from '@/source/types/skill';
+import CvSkillsSection from '../../../source/components/cv/skillsSection';
+import Skill from '../../../source/types/skill';
 
 describe('CvSkillsSection', () => {
   const skills: Skill[] = [

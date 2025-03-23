@@ -2,8 +2,8 @@ import React from 'react';
 import { describe, expect, test } from 'vitest';
 import { render } from '../../testUtils';
 
-import CvPortfolioSection from '@/source/components/cv/portfolioSection';
-import Project from '@/source/types/project';
+import CvPortfolioSection from '../../../source/components/cv/portfolioSection';
+import Project from '../../../source/types/project';
 
 describe('CvPortfolioSection', () => {
   const firstProject: Project = {

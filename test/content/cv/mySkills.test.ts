@@ -15,7 +15,7 @@ import mySkills, {
   sysadmin,
   tdd,
   vagrant
-} from '@/source/content/cv/mySkills';
+} from '../../../source/content/cv/mySkills';
 
 describe('mySkills', () => {
   test('agile description is set', () => {

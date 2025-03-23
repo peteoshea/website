@@ -2,8 +2,8 @@ import React from 'react';
 import { describe, expect, test } from 'vitest';
 import { render } from '../../testUtils';
 
-import CvQualification from '@/source/components/cv/qualification';
-import Qualification from '@/source/types/qualification';
+import CvQualification from '../../../source/components/cv/qualification';
+import Qualification from '../../../source/types/qualification';
 
 describe('CvEducationEntry', () => {
   const description = 'Maths (A), Further Maths (C), Physics (C), Business Studies (C)';

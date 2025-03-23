@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '../../testUtils';
 import { describe, expect, test } from 'vitest';
 
-import CvSection from '@/source/components/cv/section';
+import CvSection from '../../../source/components/cv/section';
 
 describe('CvSection', () => {
   const title = 'Section Title';

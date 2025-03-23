@@ -1,11 +1,11 @@
 import { describe, expect, test } from 'vitest';
 
-import myCv from '@/source/content/cv/myCv';
-import myEducation from '@/source/content/cv/myEducation';
-import myEmployment from '@/source/content/cv/myEmployment';
-import myPortfolio from '@/source/content/cv/myPortfolio';
-import myProfile from '@/source/content/cv/myProfile';
-import mySkills from '@/source/content/cv/mySkills';
+import myCv from '../../../source/content/cv/myCv';
+import myEducation from '../../../source/content/cv/myEducation';
+import myEmployment from '../../../source/content/cv/myEmployment';
+import myPortfolio from '../../../source/content/cv/myPortfolio';
+import myProfile from '../../../source/content/cv/myProfile';
+import mySkills from '../../../source/content/cv/mySkills';
 
 describe('myCv', () => {
   test('contains my profile', () => {

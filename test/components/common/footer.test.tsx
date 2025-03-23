@@ -2,7 +2,7 @@ import React from 'react';
 import { describe, expect, test } from 'vitest';
 import { render } from '../../testUtils';
 
-import Footer from '@/source/components/common/footer';
+import Footer from '../../../source/components/common/footer';
 
 describe('Footer', () => {
   test('contains footer tag', () => {

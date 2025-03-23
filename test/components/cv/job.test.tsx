@@ -2,8 +2,8 @@ import React from 'react';
 import { describe, expect, test } from 'vitest';
 import { render } from '../../testUtils';
 
-import CvJob from '@/source/components/cv/job';
-import Job from '@/source/types/job';
+import CvJob from '../../../source/components/cv/job';
+import Job from '../../../source/types/job';
 
 describe('CvJob', () => {
   const startDate = '2013';
