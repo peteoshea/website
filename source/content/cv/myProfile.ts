@@ -1,4 +1,4 @@
-import Profile from 'types/profile';
+import Profile from '@/source/types/profile';
 
 const myProfile: Profile = {
   email: 'mail@peteoshea.co.uk',

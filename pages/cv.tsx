@@ -1,12 +1,12 @@
 import React from 'react';
 
-import CvEducationSection from 'components/cv/educationSection';
-import CvEmploymentSection from 'components/cv/employmentSection';
-import CvPortfolioSection from 'components/cv/portfolioSection';
-import CvProfileSection from 'components/cv/profileSection';
-import CvSkillsSection from 'components/cv/skillsSection';
-import Layout from 'components/common/layout';
-import myCv from 'content/cv/myCv';
+import CvEducationSection from '@/source/components/cv/educationSection';
+import CvEmploymentSection from '@/source/components/cv/employmentSection';
+import CvPortfolioSection from '@/source/components/cv/portfolioSection';
+import CvProfileSection from '@/source/components/cv/profileSection';
+import CvSkillsSection from '@/source/components/cv/skillsSection';
+import Layout from '@/source/components/common/layout';
+import myCv from '@/source/content/cv/myCv';
 
 export const CV = (): React.JSX.Element => (
   <Layout pageTitle="CV" heading="Pete O'Shea" subheading="Curriculum Vitae / Résumé">

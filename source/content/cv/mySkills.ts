@@ -1,4 +1,4 @@
-import Skill from 'types/skill';
+import Skill from '@/source/types/skill';
 
 export const agile: Skill = {
   description:

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import CvSection from 'components/cv/section';
-import CvQualification from 'components/cv/qualification';
-import Qualification from 'types/qualification';
+import CvSection from '@/source/components/cv/section';
+import CvQualification from '@/source/components/cv/qualification';
+import Qualification from '@/source/types/qualification';
 
 type Props = {
   qualifications: Qualification[];

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '../../testUtils';
 
-import CvSection from 'components/cv/section';
+import CvSection from '@/source/components/cv/section';
 
 describe('CvSection', () => {
   const title = 'Section Title';

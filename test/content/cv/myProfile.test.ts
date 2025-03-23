@@ -1,4 +1,4 @@
-import myProfile from 'content/cv/myProfile';
+import myProfile from '@/source/content/cv/myProfile';
 
 describe('myProfile', () => {
   test('email is set to mail@peteoshea.co.uk', () => {

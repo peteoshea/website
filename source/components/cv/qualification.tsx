@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Qualification from 'types/qualification';
+import Qualification from '@/source/types/qualification';
 
 type Props = {
   qualification: Qualification;

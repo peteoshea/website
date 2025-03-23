@@ -1,7 +1,7 @@
 import React from 'react';
 
-import CvSection from 'components/cv/section';
-import Project from 'types/project';
+import CvSection from '@/source/components/cv/section';
+import Project from '@/source/types/project';
 
 type Props = {
   projects: Project[];

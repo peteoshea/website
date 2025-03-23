@@ -1,4 +1,4 @@
-import Project from 'types/project';
+import Project from '@/source/types/project';
 
 export const thisWebsite: Project = {
   description:

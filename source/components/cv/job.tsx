@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Job from 'types/job';
-import Markdown from 'components/common/markdown';
+import Job from '@/source/types/job';
+import Markdown from '@/source/components/common/markdown';
 
 type Props = {
   job: Job;

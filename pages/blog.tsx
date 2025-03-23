@@ -1,4 +1,4 @@
-import Layout from 'components/common/layout';
+import Layout from '@/source/components/common/layout';
 import React from 'react';
 
 export const Blog = (): React.JSX.Element => (

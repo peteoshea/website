@@ -1,4 +1,4 @@
-import myEducation, { alevels, degree, gcses, scrumMaster } from 'content/cv/myEducation';
+import myEducation, { alevels, degree, gcses, scrumMaster } from '@/source/content/cv/myEducation';
 
 describe('myEducation', () => {
   test('GCSEs start date is 1985', () => {

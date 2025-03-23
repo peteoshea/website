@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from 'components/common/layout';
+import Layout from '@/source/components/common/layout';
 import { render } from '../../testUtils';
 
 describe('Page layout', () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import CvSection from 'components/cv/section';
-import Profile from 'types/profile';
+import CvSection from '@/source/components/cv/section';
+import Profile from '@/source/types/profile';
 
 type Props = {
   profile: Profile;

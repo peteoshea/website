@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from 'components/common/navbar';
+import Navbar from '@/source/components/common/navbar';
 import { render } from '../../testUtils';
 
 describe('Navbar', () => {

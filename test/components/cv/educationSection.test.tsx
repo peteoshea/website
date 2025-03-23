@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '../../testUtils';
 
-import CvEducationSection from 'components/cv/educationSection';
-import Qualification from 'types/qualification';
+import CvEducationSection from '@/source/components/cv/educationSection';
+import Qualification from '@/source/types/qualification';
 
 describe('CvEducationSection', () => {
   const qualifications: Qualification[] = [

@@ -1,4 +1,4 @@
-import Footer from 'components/common/footer';
+import Footer from '@/source/components/common/footer';
 import React from 'react';
 import { render } from '../../testUtils';
 

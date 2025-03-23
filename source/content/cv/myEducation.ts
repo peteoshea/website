@@ -1,4 +1,4 @@
-import Qualification from 'types/qualification';
+import Qualification from '@/source/types/qualification';
 
 export const alevels: Qualification = {
   startDate: '1990',

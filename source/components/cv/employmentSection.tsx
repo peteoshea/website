@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Job from 'types/job';
-import CvJob from 'components/cv/job';
-import CvSection from 'components/cv/section';
+import Job from '@/source/types/job';
+import CvJob from '@/source/components/cv/job';
+import CvSection from '@/source/components/cv/section';
 
 type Props = {
   jobs: Job[];

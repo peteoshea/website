@@ -1,4 +1,4 @@
-import Job from 'types/job';
+import Job from '@/source/types/job';
 
 export const brithene: Job = {
   startDate: '1997',

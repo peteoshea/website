@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Skill from 'types/skill';
-import CvSection from 'components/cv/section';
+import Skill from '@/source/types/skill';
+import CvSection from '@/source/components/cv/section';
 
 type Props = {
   skills: Skill[];

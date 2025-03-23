@@ -1,6 +1,6 @@
 import React from 'react';
-import CvJob from 'components/cv/job';
-import Job from 'types/job';
+import CvJob from '@/source/components/cv/job';
+import Job from '@/source/types/job';
 import { render } from '../../testUtils';
 
 describe('CvJob', () => {

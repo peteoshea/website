@@ -1,4 +1,4 @@
-import Markdown from 'components/common/markdown';
+import Markdown from '@/source/components/common/markdown';
 import React from 'react';
 import { render } from '../../testUtils';
 

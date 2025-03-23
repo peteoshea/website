@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Footer from 'components/common/footer';
-import Metadata from 'components/common/metadata';
-import Navbar from 'components/common/navbar';
+import Footer from '@/source/components/common/footer';
+import Metadata from '@/source/components/common/metadata';
+import Navbar from '@/source/components/common/navbar';
 
 type Props = {
   children?: React.ReactNode;

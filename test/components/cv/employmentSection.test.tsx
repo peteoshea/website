@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '../../testUtils';
 
-import CvEmploymentSection from 'components/cv/employmentSection';
-import Job from 'types/job';
+import CvEmploymentSection from '@/source/components/cv/employmentSection';
+import Job from '@/source/types/job';
 
 describe('CvEmploymentSection', () => {
   const jobs: Job[] = [
