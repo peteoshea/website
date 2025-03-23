@@ -9,7 +9,7 @@
     "format": "prettier --write .",
     "lint": "eslint . --ext ts --ext tsx --ext js",
     "lint-staged": "lint-staged",
-    "prepare": "husky install",
+    "prepare": "husky",
     "start": "next start",
     "test": "jest",
     "test-all": "npm run lint && npm run format && npm run type-check && npm run test-coverage",
