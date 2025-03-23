@@ -1,10 +1,12 @@
+import React from 'react';
+
 import Qualification from 'types/qualification';
 
 type Props = {
   qualification: Qualification;
 };
 
-export const CvQualification = ({ qualification }: Props): JSX.Element => (
+export const CvQualification = ({ qualification }: Props): React.JSX.Element => (
   <div className="grid grid-cols-3 md:grid-cols-12 md:gap-x-2 pt-4">
     <div className="col-start-3 md:col-start-1 md:col-span-2 tracking-tighter text-right md:text-center my-auto">
       {qualification.startDate}

@@ -1,10 +1,11 @@
 import Head from 'next/head';
+import React from 'react';
 
 type Props = {
   pageTitle?: string;
 };
 
-export const Metadata = ({ pageTitle }: Props): JSX.Element => {
+export const Metadata = ({ pageTitle }: Props): React.JSX.Element => {
   const title = `${pageTitle ? pageTitle + ' | ' : ''}Pete O'Shea`;
 
   return (

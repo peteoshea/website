@@ -1,11 +1,13 @@
-import Project from 'types/project';
+import React from 'react';
+
 import CvSection from 'components/cv/section';
+import Project from 'types/project';
 
 type Props = {
   projects: Project[];
 };
 
-export const CvPortfolioSection = ({ projects }: Props): JSX.Element => (
+export const CvPortfolioSection = ({ projects }: Props): React.JSX.Element => (
   <CvSection title="Portfolio">
     <div className="flex flex-col">
       {projects.map((project, index) => (

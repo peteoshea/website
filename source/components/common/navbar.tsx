@@ -1,8 +1,10 @@
+import React from 'react';
+
 type Props = {
   currentPage?: string;
 };
 
-export const Navbar = ({ currentPage }: Props): JSX.Element => (
+export const Navbar = ({ currentPage }: Props): React.JSX.Element => (
   <div className="relative pt-4 px-4">
     <nav
       className="relative flex items-center justify-between h-24 lg:justify-start"

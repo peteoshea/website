@@ -1,11 +1,13 @@
-import Markdown from 'components/common/markdown';
+import React from 'react';
+
 import Job from 'types/job';
+import Markdown from 'components/common/markdown';
 
 type Props = {
   job: Job;
 };
 
-export const CvJob = ({ job }: Props): JSX.Element => (
+export const CvJob = ({ job }: Props): React.JSX.Element => (
   <div className="grid grid-cols-3 md:grid-cols-12 md:gap-x-2 pt-4">
     <div className="col-start-3 md:col-start-1 md:col-span-2 tracking-tighter text-right md:text-center my-auto">
       {job.startDate}

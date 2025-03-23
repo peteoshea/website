@@ -1,4 +1,6 @@
+import React from 'react';
 import 'tailwindcss/tailwind.css';
+
 import Footer from 'components/common/footer';
 import Metadata from 'components/common/metadata';
 import Navbar from 'components/common/navbar';
@@ -10,7 +12,7 @@ type Props = {
   pageTitle: string;
 };
 
-export const Layout = ({ children, heading, subheading, pageTitle }: Props): JSX.Element => {
+export const Layout = ({ children, heading, subheading, pageTitle }: Props): React.JSX.Element => {
   let pageHeading = heading;
   if (!heading) {
     pageHeading = pageTitle;

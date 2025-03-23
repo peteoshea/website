@@ -1,11 +1,13 @@
-import Profile from 'types/profile';
+import React from 'react';
+
 import CvSection from 'components/cv/section';
+import Profile from 'types/profile';
 
 type Props = {
   profile: Profile;
 };
 
-export const CvProfileSection = ({ profile }: Props): JSX.Element => {
+export const CvProfileSection = ({ profile }: Props): React.JSX.Element => {
   const emailUrl = 'mailto:' + profile.email;
   const twitterUrl = 'https://twitter.com/' + profile.twitter;
   let githubUrl = profile.githubUrl;
