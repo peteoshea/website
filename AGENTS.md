@@ -24,3 +24,12 @@ The five triage roles are `needs-triage`, `needs-info`, `ready-for-agent`, `read
 ### Domain docs
 
 Single-context layout: one `GLOSSARY.md` + `docs/adr/` at the repo root. See `docs/agents/domain.md`.
+
+### Git workflow
+
+Branches and commits follow the money-app style. See `docs/agents/git-workflow.md`.
+
+### Test-driven development
+
+Every code change is a red → green loop: a failing test committed alone (🧪), then the
+implementation that makes it pass (matching change emoji). See `docs/agents/tdd.md`.
