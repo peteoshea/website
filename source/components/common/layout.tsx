@@ -10,7 +10,7 @@ type Props = {
   pageTitle: string;
 };
 
-export const Layout = ({ children, heading, subheading, pageTitle }: Props): JSX.Element => {
+export const Layout = ({ children, heading, subheading, pageTitle }: Props): React.JSX.Element => {
   let pageHeading = heading;
   if (!heading) {
     pageHeading = pageTitle;

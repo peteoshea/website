@@ -3,7 +3,7 @@ import Footer from 'components/common/footer';
 import Metadata from 'components/common/metadata';
 import Navbar from 'components/common/navbar';
 
-export const Home = (): JSX.Element => (
+export const Home = (): React.JSX.Element => (
   <>
     <Metadata />
 

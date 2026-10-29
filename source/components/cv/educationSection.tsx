@@ -6,7 +6,7 @@ type Props = {
   qualifications: Qualification[];
 };
 
-export const CvEducationSection = ({ qualifications }: Props): JSX.Element => (
+export const CvEducationSection = ({ qualifications }: Props): React.JSX.Element => (
   <CvSection title="Education">
     {qualifications.map((qualification, index) => (
       <CvQualification qualification={qualification} key={index} />

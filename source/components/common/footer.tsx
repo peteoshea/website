@@ -1,4 +1,4 @@
-export const Footer = (): JSX.Element => (
+export const Footer = (): React.JSX.Element => (
   <footer className="flex max-w-7xl mx-auto items-end justify-center w-full h-20 px-2 py-4 text-xs">
     <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
       <img src="/cc.svg" alt="Creative Commons Licence" className="inline h-4 ml-1" />
