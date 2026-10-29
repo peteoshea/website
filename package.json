@@ -43,7 +43,7 @@
     "autoprefixer": "^10.6.2",
     "eslint": "^9.23.0",
     "eslint-config-next": "^16.4.3",
-    "eslint-config-prettier": "^10.1.1",
+    "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react": "^7.34.1",
     "globals": "^16.0.0",
     "husky": "^9.1.7",
