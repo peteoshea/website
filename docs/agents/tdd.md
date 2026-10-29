@@ -26,7 +26,7 @@ Agree the seam before writing tests. This repo's seams are:
   user-visible behaviour of the Next.js pages router).
 - **Source modules** — `source/types/`, `source/*` (data shapes, helpers, pure functions).
 
-Run tests with `npm test` (Jest). Coverage is enforced via `npm run test-coverage`.
+Run tests with `npm test` (Vitest). Coverage is enforced via `npm run test-coverage`.
 
 ## Async UI state
 

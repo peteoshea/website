@@ -1,5 +1,5 @@
 import markdownStyle from 'components/common/markdown.module.css';
-import micromark from 'micromark';
+import { micromark } from 'micromark';
 
 type Props = {
   content: string;
