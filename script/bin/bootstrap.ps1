@@ -8,9 +8,7 @@ $basePath = Split-Path -Path $scriptPath -Parent
 # Install anything that requires admin priviledges
 $packagesFilePath = "$basePath\chocolatey-packages"
 $chocolateyPackages = Test-Path -Path "$packagesFilePath" -PathType Leaf
-$packageJson = "$basePath\package.json"
-$nodePackages = Test-Path -Path "$packageJson" -PathType Leaf
-if ($chocolateyPackages -Or $nodePackages) {
+if ($chocolateyPackages) {
   & "$binPath\admin.ps1"
   if ($LastExitCode) {
     Write-Output "Admin script failed with exit code: $LastExitCode"
@@ -46,7 +44,22 @@ if (Test-Path -Path "$packagesFilePath" -PathType Leaf) {
 }
 
 # If package.json file exists then ensure Node.js is setup and run `npm install`
+$packageJson = "$basePath\package.json"
+$nodePackages = Test-Path -Path "$packageJson" -PathType Leaf
 if ($nodePackages) {
+  # Setup appropriate version of Node.js from .nvmrc
+  $nvmrc = "$basePath\.nvmrc"
+  if (Test-Path -Path "$nvmrc" -PathType Leaf) {
+    Write-Output "`n==> Installing appropriate version of Node.js..."
+    $nodeVersion = Get-Content -Path "$nvmrc"
+    nvm install $nodeVersion
+    nvm use $nodeVersion
+  }
+  Write-Output "Where is npm running from:"
+  where.exe npm
+  Write-Output "What version of npm:"
+  npm -v
+
   Write-Output "`n==> Installing npm dependencies..."
   Push-Location "$basePath"
   Write-Output "Change directory to: $(Get-Location)"

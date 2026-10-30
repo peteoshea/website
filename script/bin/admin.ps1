@@ -63,22 +63,5 @@ if (Test-Path -Path "$packagesFilePath" -PathType Leaf) {
 # Call Chocolatey script to apply changes to the current sessions environment
 Update-SessionEnvironment
 
-# If package.json file exists then ensure Node.js is intalled as `nvm use` requires admin rights
-$packageJson = "$basePath\package.json"
-if (Test-Path -Path "$packageJson" -PathType Leaf) {
-  # Setup appropriate version of Node.js from .nvmrc
-  $nvmrc = "$basePath\.nvmrc"
-  if (Test-Path -Path "$nvmrc" -PathType Leaf) {
-    Write-Output "`n==> Installing appropriate version of Node.js..."
-    $nodeVersion = Get-Content -Path "$nvmrc"
-    nvm install $nodeVersion
-    nvm use $nodeVersion
-  }
-  Write-Output "Where is npm running from:"
-  where.exe npm
-  Write-Output "What version of npm:"
-  npm -v
-}
-
 # Wait for user response in case this was spawned as a separate process
 Read-Host -Prompt "`nPress <ENTER> to continue"
