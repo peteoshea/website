@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Project from 'types/project';
 import CvSection from 'components/cv/section';
 
@@ -15,11 +16,14 @@ export const CvPortfolioSection = ({ projects }: Props): React.JSX.Element => (
             className="flex flex-col sm:flex-row items-center text-gray-500 hover:text-gray-900 hover:bg-gray-50"
           >
             {project.image ? (
-              <img
-                src={project.image}
+              <Image
+                src={project.image.src}
                 alt={project.name}
+                width={project.image.width}
+                height={project.image.height}
+                priority={index === 0}
                 className={
-                  'w-1/2 sm:w-1/3 object-contain max-h-60 md:max-h-72 p-4' +
+                  'w-1/2 sm:w-1/3 h-auto object-contain max-h-60 md:max-h-72 p-4' +
                   (index % 2 ? ' order-last' : '')
                 }
               />

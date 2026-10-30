@@ -4,7 +4,7 @@ import { defineConfig } from 'vitest/config';
 const sourceDir = path.resolve(process.cwd(), 'source');
 
 export default defineConfig({
-  esbuild: { jsx: 'automatic' },
+  oxc: { jsx: { runtime: 'automatic' } },
   resolve: {
     alias: {
       // Source modules are importable by bare name. This mirrors the previous
@@ -24,6 +24,9 @@ export default defineConfig({
   },
   test: {
     environment: 'jsdom',
+    // vmThreads reuses one worker per thread instead of spawning a process per
+    // file, which cuts jsdom startup cost while keeping per-file isolation.
+    pool: 'vmThreads',
     globals: true,
     include: ['test/**/*.{test,spec}.{ts,tsx,js,jsx}'],
     exclude: ['**/node_modules/**', '**/.next/**', '**/out/**', '**/dist/**'],
