@@ -5,15 +5,40 @@ $binPath = Split-Path -Path $PSCommandPath -Parent
 $scriptPath = Split-Path -Path $binPath -Parent
 $basePath = Split-Path -Path $scriptPath -Parent
 
-# Install anything that requires admin priviledges
-$packagesFilePath = "$basePath\chocolatey-packages"
-$chocolateyPackages = Test-Path -Path "$packagesFilePath" -PathType Leaf
-if ($chocolateyPackages) {
-  & "$binPath\admin.ps1"
-  if ($LastExitCode) {
-    Write-Output "Admin script failed with exit code: $LastExitCode"
-    Exit $LastExitCode
-  }
+# Ensure PowerShell is installed and up to date
+if (-not (Get-Command pwsh -ErrorAction SilentlyContinue)) {
+  Write-Output "==> Installing PowerShell..."
+  winget install Microsoft.PowerShell --exact
+} else {
+  Write-Output "==> PowerShell is already installed. Checking for updates..."
+  winget upgrade Microsoft.PowerShell --exact
+}
+
+# Install PSScriptAnalyzer, but only when it is missing or out of date
+$pssaName = 'PSScriptAnalyzer'
+$pssaInstalled = Get-Module -ListAvailable -Name $pssaName |
+  Sort-Object -Property Version -Descending |
+  Select-Object -First 1
+
+if ($pssaInstalled) {
+  $pssaLatest = Find-Module -Name $pssaName -ErrorAction SilentlyContinue |
+    Select-Object -First 1
+}
+
+if (-not $pssaInstalled -or ($pssaLatest -and $pssaInstalled.Version -lt $pssaLatest.Version)) {
+  $installedVersion = if ($pssaInstalled) { $pssaInstalled.Version } else { 'none' }
+  $latestVersion = if ($pssaLatest) { $pssaLatest.Version } else { 'unknown' }
+  Write-Output "===> Installing PSScriptAnalyzer... (installed: $installedVersion, latest: $latestVersion)"
+  Install-Module -Name $pssaName -Force
+} else {
+  Write-Output "PSScriptAnalyzer $($pssaInstalled.Version) is already up to date, skipping install..."
+}
+
+$pssaInstalled = Get-Module -ListAvailable -Name $pssaName |
+  Sort-Object -Property Version -Descending |
+  Select-Object -First 1
+if (-not $pssaInstalled) {
+  throw "PSScriptAnalyzer installation failed"
 }
 
 function Install-WinGetPackage {
