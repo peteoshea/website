@@ -36,6 +36,7 @@ export const Home = (): React.JSX.Element => (
           alt=""
           width={1824}
           height={1216}
+          priority
         />
       </div>
     </div>
