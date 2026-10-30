@@ -89,10 +89,6 @@ if ($nodePackages) {
   Push-Location "$basePath"
   Write-Output "Change directory to: $(Get-Location)"
 
-  Write-Output "Where is npm running from:"
-  where.exe npm
-  Write-Output "What version of npm:"
-  npm -v
   Write-Output "Install npm packages..."
   npm install
   Write-Output "Checking for outdated packages..."
