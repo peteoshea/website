@@ -18,7 +18,7 @@ describe('Navbar', () => {
   test('contains img with logo', () => {
     const { container } = render(<Navbar />);
     const element = container.querySelector('img');
-    expect(element.getAttribute('src')).toBe('/favicon-96x96.png');
+    expect(element.getAttribute('src')).toMatch(/^\/_next\/image\?url=%2Ffavicon-96x96\.png/);
   });
 
   test('logo image has alt text', () => {
