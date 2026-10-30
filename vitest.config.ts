@@ -4,7 +4,7 @@ import { defineConfig } from 'vitest/config';
 const sourceDir = path.resolve(process.cwd(), 'source');
 
 export default defineConfig({
-  esbuild: { jsx: 'automatic' },
+  oxc: { jsx: { runtime: 'automatic' } },
   resolve: {
     alias: {
       // Source modules are importable by bare name. This mirrors the previous
