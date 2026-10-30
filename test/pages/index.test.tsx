@@ -20,4 +20,10 @@ describe('Home page', () => {
     const element = getByText(/Creative Commons Attribution 4.0 International License/i);
     expect(element).toBeDefined();
   });
+
+  test('hero image loads eagerly because it is the LCP element', () => {
+    const { container } = render(<Home />);
+    const element = container.querySelector('img[src*="Writing-Tools"]');
+    expect(element.getAttribute('loading')).toBe('eager');
+  });
 });
