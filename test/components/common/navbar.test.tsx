@@ -21,6 +21,12 @@ describe('Navbar', () => {
     expect(element.getAttribute('src')).toBe('/favicon-96x96.png');
   });
 
+  test('logo image has alt text', () => {
+    const { container } = render(<Navbar />);
+    const element = container.querySelector('img');
+    expect(element.getAttribute('alt')).toBeTruthy();
+  });
+
   test('contains link to home', () => {
     const { container } = render(<Navbar />);
     const links = container.querySelectorAll('a');
