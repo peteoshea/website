@@ -5,7 +5,7 @@ type Props = {
   skills: Skills;
 };
 
-export const CvSkillsSection = ({ skills }: Props): JSX.Element => {
+export const CvSkillsSection = ({ skills }: Props): React.JSX.Element => {
   const title = skills.title ?? 'Skills';
   return (
     <CvSection title={title}>

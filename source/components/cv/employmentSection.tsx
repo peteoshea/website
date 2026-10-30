@@ -6,7 +6,7 @@ type Props = {
   jobs: Job[];
 };
 
-export const CvEmploymentSection = ({ jobs }: Props): JSX.Element => (
+export const CvEmploymentSection = ({ jobs }: Props): React.JSX.Element => (
   <CvSection title="Employment History">
     {jobs.map((job, index) => (
       <CvJob job={job} key={index} />

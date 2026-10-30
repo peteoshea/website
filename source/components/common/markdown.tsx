@@ -1,11 +1,11 @@
 import markdownStyle from 'components/common/markdown.module.css';
-import micromark from 'micromark';
+import { micromark } from 'micromark';
 
 type Props = {
   content: string;
 };
 
-export const Markdown = ({ content }: Props): JSX.Element => (
+export const Markdown = ({ content }: Props): React.JSX.Element => (
   <div
     className={markdownStyle.markdown}
     dangerouslySetInnerHTML={{ __html: micromark(content) }}

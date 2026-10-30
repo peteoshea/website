@@ -5,7 +5,7 @@ type Props = {
   profile: Profile;
 };
 
-export const CvProfileSection = ({ profile }: Props): JSX.Element => {
+export const CvProfileSection = ({ profile }: Props): React.JSX.Element => {
   const emailUrl = 'mailto:' + profile.email;
   const title = profile.title ?? 'Profile';
   const twitterUrl = 'https://twitter.com/' + profile.twitter;
