@@ -21,6 +21,7 @@ export const CvPortfolioSection = ({ projects }: Props): React.JSX.Element => (
                 alt={project.name}
                 width={project.image.width}
                 height={project.image.height}
+                priority={index === 0}
                 className={
                   'w-1/2 sm:w-1/3 h-auto object-contain max-h-60 md:max-h-72 p-4' +
                   (index % 2 ? ' order-last' : '')
