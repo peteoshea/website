@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Profile from 'types/profile';
 import CvSection from 'components/cv/section';
 
@@ -23,7 +24,14 @@ export const CvProfileSection = ({ profile }: Props): React.JSX.Element => {
             href={githubUrl}
             className="flex items-center text-gray-500 hover:text-gray-900 hover:bg-gray-50 px-2"
           >
-            <img src="/GitHub-Mark.svg" alt="GitHub logo" className="h-12 p-2" />
+            <Image
+              src="/GitHub-Mark.svg"
+              alt="GitHub logo"
+              width={128}
+              height={125}
+              unoptimized
+              className="h-12 w-auto p-2"
+            />
             <div>{profile.githubName}</div>
           </a>
         ) : null}
@@ -32,7 +40,13 @@ export const CvProfileSection = ({ profile }: Props): React.JSX.Element => {
             href={emailUrl}
             className="flex items-center text-gray-500 hover:text-gray-900 hover:bg-gray-50 px-2"
           >
-            <img src="/favicon-96x96.png" alt="Email icon" className="h-12 p-2" />
+            <Image
+              src="/favicon-96x96.png"
+              alt="Email icon"
+              width={96}
+              height={96}
+              className="h-12 w-auto p-2"
+            />
             <div>{profile.email}</div>
           </a>
         ) : null}
@@ -41,7 +55,13 @@ export const CvProfileSection = ({ profile }: Props): React.JSX.Element => {
             href={profile.linkedInUrl}
             className="flex items-center text-gray-500 hover:text-gray-900 hover:bg-gray-50 px-2"
           >
-            <img src="/In-Blue-Logo.png" alt="LinkedIn logo" className="h-12 p-3" />
+            <Image
+              src="/In-Blue-Logo.png"
+              alt="LinkedIn logo"
+              width={256}
+              height={256}
+              className="h-12 w-auto p-3"
+            />
             <div>{profile.linkedInName}</div>
           </a>
         ) : null}
@@ -50,7 +70,14 @@ export const CvProfileSection = ({ profile }: Props): React.JSX.Element => {
             href={twitterUrl}
             className="flex items-center text-gray-500 hover:text-gray-900 hover:bg-gray-50 px-2"
           >
-            <img src="/TwitterLogo.svg" alt="Twitter logo" className="h-12 p-3" />
+            <Image
+              src="/TwitterLogo.svg"
+              alt="Twitter logo"
+              width={248}
+              height={204}
+              unoptimized
+              className="h-12 w-auto p-3"
+            />
             <div>@{profile.twitter}</div>
           </a>
         ) : null}
