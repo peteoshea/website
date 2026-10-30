@@ -70,4 +70,10 @@ describe('CvPortfolioSection', () => {
     );
     expect(element).toBeDefined();
   });
+
+  test('first project image is not lazy-loaded because it can be the LCP element', () => {
+    const { container } = render(<CvPortfolioSection projects={[projectWithImage]} />);
+    const element = container.querySelector('img');
+    expect(element.getAttribute('loading')).not.toBe('lazy');
+  });
 });
