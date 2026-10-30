@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 type Props = {
   currentPage?: string;
 };
@@ -11,7 +13,13 @@ export const Navbar = ({ currentPage }: Props): React.JSX.Element => (
       <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
         <div className="flex items-center justify-between w-full md:w-auto">
           <a href={currentPage == 'Home' ? '#' : '/'}>
-            <img className="h-auto w-auto" src="/favicon-96x96.png" alt="Home" />
+            <Image
+              className="h-auto w-auto"
+              src="/favicon-96x96.png"
+              alt="Home"
+              width={96}
+              height={96}
+            />
           </a>
         </div>
       </div>
