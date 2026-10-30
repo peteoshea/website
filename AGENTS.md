@@ -27,7 +27,7 @@ Single-context layout: one `GLOSSARY.md` + `docs/adr/` at the repo root. See `do
 
 ### Git workflow
 
-Branches and commits follow the money-app style. See `docs/agents/git-workflow.md`.
+Branches and commits should follow the guidelines in `docs/agents/git-workflow.md`.
 
 ### Test-driven development
 
