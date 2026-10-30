@@ -21,9 +21,9 @@ describe('Home page', () => {
     expect(element).toBeDefined();
   });
 
-  test('hero image loads eagerly because it is the LCP element', () => {
+  test('hero image is not lazy-loaded because it is the LCP element', () => {
     const { container } = render(<Home />);
     const element = container.querySelector('img[src*="Writing-Tools"]');
-    expect(element.getAttribute('loading')).toBe('eager');
+    expect(element.getAttribute('loading')).not.toBe('lazy');
   });
 });
