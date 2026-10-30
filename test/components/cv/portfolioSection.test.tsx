@@ -16,7 +16,7 @@ describe('CvPortfolioSection', () => {
   const projectWithImage: Project = {
     name: 'Project With Image',
     url: 'https://example.com/withDescription',
-    image: '/test.png'
+    image: { src: '/test.png', width: 800, height: 600 }
   };
   const projects: Project[] = [firstProject, projectWithDescription, projectWithImage];
 
@@ -65,8 +65,8 @@ describe('CvPortfolioSection', () => {
   test('contains image for project with image', () => {
     const { container } = render(<CvPortfolioSection projects={projects} />);
     const images = container.querySelectorAll('img');
-    const element = Array.from(images).find(
-      (element) => element.getAttribute('src') === projectWithImage.image
+    const element = Array.from(images).find((element) =>
+      element.getAttribute('src')?.startsWith('/_next/image?url=%2Ftest.png')
     );
     expect(element).toBeDefined();
   });
