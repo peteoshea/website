@@ -2,6 +2,10 @@ import React from 'react';
 import { render } from '../testUtils';
 import { Home } from '../../pages/index';
 
+vi.mock('next/head', () => ({
+  default: ({ children }: { children: React.ReactNode }) => <>{children}</>
+}));
+
 describe('Home page', () => {
   test('contains heading', () => {
     const { getByText } = render(<Home />);
@@ -25,5 +29,10 @@ describe('Home page', () => {
     const { container } = render(<Home />);
     const element = container.querySelector('img[src*="Writing-Tools"]');
     expect(element.getAttribute('loading')).not.toBe('lazy');
+  });
+
+  test('title names the Home page', () => {
+    render(<Home />);
+    expect(document.querySelector('title').textContent).toBe("Home | Pete O'Shea");
   });
 });
