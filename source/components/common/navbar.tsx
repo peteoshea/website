@@ -39,6 +39,14 @@ export const Navbar = ({ currentPage }: Props): React.JSX.Element => (
           CV
         </a>
       </div>
+      <div className="block px-4">
+        <a
+          href={currentPage == 'About' ? '#' : '/about'}
+          className="font-medium text-gray-500 hover:text-gray-900"
+        >
+          About
+        </a>
+      </div>
     </nav>
   </div>
 );
