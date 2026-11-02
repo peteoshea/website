@@ -79,4 +79,17 @@ describe('Page layout', () => {
     const element = container.querySelector('header').querySelector('h2');
     expect(element.innerHTML).toBe(subheading);
   });
+
+  const navLink = (container: HTMLElement, label: string) =>
+    Array.from(container.querySelectorAll('nav a')).find((a) => a.textContent === label);
+
+  test('navbar marks the page named by pageTitle as current', () => {
+    const { container } = render(<Layout pageTitle="CV" />);
+    expect(navLink(container, 'CV').getAttribute('href')).toBe('#');
+  });
+
+  test('navbar marks currentPage as current when it differs from pageTitle', () => {
+    const { container } = render(<Layout pageTitle="Blog Posts" currentPage="Blog" />);
+    expect(navLink(container, 'Blog').getAttribute('href')).toBe('#');
+  });
 });
