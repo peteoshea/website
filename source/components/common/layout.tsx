@@ -8,9 +8,16 @@ type Props = {
   heading?: string;
   subheading?: string;
   pageTitle: string;
+  currentPage?: string;
 };
 
-export const Layout = ({ children, heading, subheading, pageTitle }: Props): React.JSX.Element => {
+export const Layout = ({
+  children,
+  heading,
+  subheading,
+  pageTitle,
+  currentPage = pageTitle
+}: Props): React.JSX.Element => {
   let pageHeading = heading;
   if (!heading) {
     pageHeading = pageTitle;
@@ -20,7 +27,7 @@ export const Layout = ({ children, heading, subheading, pageTitle }: Props): Rea
     <>
       <Metadata pageTitle={pageTitle} />
       <div className="relative bg-white max-w-7xl mx-auto">
-        <Navbar />
+        <Navbar currentPage={currentPage} />
         <header className="mt-2 px-4 tracking-tight text-center">
           <h1 className="text-red-800 font-bold text-4xl sm:text-5xl lg:text-6xl">{pageHeading}</h1>
           {subheading ? (
