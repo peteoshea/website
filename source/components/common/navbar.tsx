@@ -4,6 +4,12 @@ type Props = {
   currentPage?: string;
 };
 
+const links = [
+  { label: 'Blog', href: '/blog' },
+  { label: 'CV', href: '/cv' },
+  { label: 'About', href: '/about' }
+];
+
 export const Navbar = ({ currentPage }: Props): React.JSX.Element => (
   <div className="relative pt-4 px-4">
     <nav
@@ -23,30 +29,16 @@ export const Navbar = ({ currentPage }: Props): React.JSX.Element => (
           </a>
         </div>
       </div>
-      <div className="block px-4">
-        <a
-          href={currentPage == 'Blog' ? '#' : '/blog'}
-          className="font-medium text-gray-500 hover:text-gray-900"
-        >
-          Blog
-        </a>
-      </div>
-      <div className="block px-4">
-        <a
-          href={currentPage == 'CV' ? '#' : '/cv'}
-          className="font-medium text-gray-500 hover:text-gray-900"
-        >
-          CV
-        </a>
-      </div>
-      <div className="block px-4">
-        <a
-          href={currentPage == 'About' ? '#' : '/about'}
-          className="font-medium text-gray-500 hover:text-gray-900"
-        >
-          About
-        </a>
-      </div>
+      {links.map(({ label, href }) => (
+        <div key={label} className="block px-4">
+          <a
+            href={currentPage == label ? '#' : href}
+            className="font-medium text-gray-500 hover:text-gray-900"
+          >
+            {label}
+          </a>
+        </div>
+      ))}
     </nav>
   </div>
 );
