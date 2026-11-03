@@ -1,3 +1,4 @@
+import Markdown from 'components/common/markdown';
 import CvSection from 'components/cv/section';
 import TimelineEntry from 'types/timelineEntry';
 
@@ -17,12 +18,23 @@ export const CvTimeline = ({ title, entries }: Props): React.JSX.Element => (
             : ''}
         </div>
         <div className="row-start-1 md:row-start-auto col-span-2 md:col-span-5 text-lg font-bold my-auto">
-          {entry.title}
+          {entry.url ? (
+            <a href={entry.url} className="text-gray-500 hover:text-gray-900">
+              {entry.title}
+            </a>
+          ) : (
+            entry.title
+          )}
         </div>
         <div className="col-span-2 md:col-span-4 font-semibold md:text-center my-auto">
           {entry.organisation}
         </div>
         <div className="text-xs text-right my-auto">{entry.location}</div>
+        {entry.description ? (
+          <div className="col-span-3 md:col-start-3 md:col-span-10 text-sm">
+            <Markdown content={entry.description} />
+          </div>
+        ) : null}
       </div>
     ))}
   </CvSection>
