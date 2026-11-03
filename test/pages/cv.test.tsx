@@ -33,6 +33,18 @@ describe('CV page', () => {
     expect(element).toBeDefined();
   });
 
+  test('lists employment history under its own heading', () => {
+    const { getByRole, getByText } = render(<CV />);
+    expect(getByRole('heading', { name: 'Employment History' })).toBeDefined();
+    expect(getByText('FBH Associates')).toBeDefined();
+  });
+
+  test('lists education under its own heading', () => {
+    const { getByRole, getByText } = render(<CV />);
+    expect(getByRole('heading', { name: 'Education' })).toBeDefined();
+    expect(getByText('University of Bath')).toBeDefined();
+  });
+
   test('contains education', () => {
     const { getByText } = render(<CV />);
     const element = getByText(/Education/i);
