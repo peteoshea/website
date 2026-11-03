@@ -1,0 +1,35 @@
+import React from 'react';
+import CvTimeline from 'components/cv/timeline';
+import TimelineEntry from 'types/timelineEntry';
+import { render } from '../../testUtils';
+
+describe('CvTimeline', () => {
+  const entry: TimelineEntry = {
+    startDate: '2013',
+    endDate: '2021',
+    title: 'Lead Developer',
+    organisation: 'Polaris Elements',
+    location: 'Taunton'
+  };
+
+  test('contains heading', () => {
+    const { getByText } = render(<CvTimeline title="Employment History" entries={[entry]} />);
+    expect(getByText('Employment History')).toBeDefined();
+  });
+
+  test('contains entry title, organisation and location', () => {
+    const { getByText } = render(<CvTimeline title="Employment History" entries={[entry]} />);
+    expect(getByText('Lead Developer')).toBeDefined();
+    expect(getByText('Polaris Elements')).toBeDefined();
+    expect(getByText('Taunton')).toBeDefined();
+  });
+
+  test('contains every entry', () => {
+    const second: TimelineEntry = { ...entry, title: 'Consultant', organisation: 'FBH Associates' };
+    const { getByText } = render(
+      <CvTimeline title="Employment History" entries={[entry, second]} />
+    );
+    expect(getByText('Lead Developer')).toBeDefined();
+    expect(getByText('Consultant')).toBeDefined();
+  });
+});
