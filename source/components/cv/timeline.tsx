@@ -1,5 +1,6 @@
 import Markdown from 'components/common/markdown';
 import CvSection from 'components/cv/section';
+import formatDateRange from 'content/cv/formatDateRange';
 import TimelineEntry from 'types/timelineEntry';
 
 type Props = {
@@ -12,10 +13,7 @@ export const CvTimeline = ({ title, entries }: Props): React.JSX.Element => (
     {entries.map((entry, index) => (
       <div className="grid grid-cols-3 md:grid-cols-12 md:gap-x-2 pt-4" key={index}>
         <div className="col-start-3 md:col-start-1 md:col-span-2 tracking-tighter text-right md:text-center my-auto">
-          {entry.startDate}
-          {entry.startDate != entry.endDate
-            ? '–' + (entry.endDate ? entry.endDate : 'Present')
-            : ''}
+          {formatDateRange(entry.startDate, entry.endDate)}
         </div>
         <div className="row-start-1 md:row-start-auto col-span-2 md:col-span-5 text-lg font-bold my-auto">
           {entry.url ? (
