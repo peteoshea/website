@@ -33,6 +33,43 @@ describe('CvTimeline', () => {
     expect(getByText('Consultant')).toBeDefined();
   });
 
+  describe('description', () => {
+    const renderWith = (description?: string): string =>
+      render(<CvTimeline title="T" entries={[{ ...entry, description }]} />).container.innerHTML;
+
+    test('shows the description', () => {
+      expect(renderWith('Managed a team of 5 developers.')).toContain(
+        'Managed a team of 5 developers.'
+      );
+    });
+
+    test('converts markdown in the description', () => {
+      expect(renderWith('Managed a team of **5** developers.')).toContain(
+        '<p>Managed a team of <strong>5</strong> developers.</p>'
+      );
+    });
+
+    test('shows no description block when not set', () => {
+      expect(renderWith(undefined)).not.toContain('<p>');
+    });
+  });
+
+  describe('url', () => {
+    test('links the title to the url when set', () => {
+      const { getByText } = render(
+        <CvTimeline title="T" entries={[{ ...entry, url: 'https://example.com/' }]} />
+      );
+      expect(getByText('Lead Developer').closest('a')?.getAttribute('href')).toBe(
+        'https://example.com/'
+      );
+    });
+
+    test('does not link the title when url not set', () => {
+      const { getByText } = render(<CvTimeline title="T" entries={[entry]} />);
+      expect(getByText('Lead Developer').closest('a')).toBeNull();
+    });
+  });
+
   describe('date range', () => {
     const renderDates = (dates: Pick<TimelineEntry, 'startDate' | 'endDate'>): string =>
       render(<CvTimeline title="T" entries={[{ ...entry, ...dates }]} />).container.innerHTML;
