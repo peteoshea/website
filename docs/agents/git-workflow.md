@@ -44,6 +44,7 @@ The emoji carries the type; do not also write `feat:` / `fix:` in front of it.
 | 📝    | Documentation only                                                                                            |
 | 🔧    | Add or update configuration files                                                                             |
 | 🔨    | Add or update development scripts                                                                             |
+| 🙈    | Add or update a .gitignore file                                                                               |
 | 🧪    | Adding a failing test — the RED step of the TDD loop                                                          |
 | ✅    | Adding a passing test, or fixing a test                                                                       |
 | 👷    | CI changes                                                                                                    |
