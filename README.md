@@ -19,6 +19,6 @@ or
 > .\script\server.ps1
 ```
 
-You should now be running in development mode on [http://localhost:3000](http://localhost:3000).
+You should now be running in development mode on [http://localhost:3010](http://localhost:3010).
 
 This runs `next dev` to get start in development mode rather than `next start` which start a production server. Note that `next` is installed as a node package locally so the `next` command isn't necessarily available directly from the command line so it is actually called using `npm run dev`.
