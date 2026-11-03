@@ -6,9 +6,9 @@ Generic agent instructions for this repo. Repo-specific details are recorded in 
 
 - `npm run build` — Next.js production build
 - `npm run dev` — `next dev` on http://localhost:3000
-- `npm test` — Jest
+- `npm test` — Vitest (`npm run test-coverage` adds coverage)
 - `npm run lint` — eslint (eslint.config.mjs)
-- `npm run type-check` — `tsc --noEmit`
+- `npm run type-check` — `next typegen` (creates the untracked `next-env.d.ts`), then `tsc --noEmit`
 - `npm run format` — prettier
 
 ## Agent skills

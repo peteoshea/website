@@ -6,7 +6,7 @@ import Navbar from 'components/common/navbar';
 
 export const Home = (): React.JSX.Element => (
   <>
-    <Metadata />
+    <Metadata pageTitle="Home" />
 
     <div className="relative bg-white overflow-hidden max-w-7xl mx-auto">
       <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-72">

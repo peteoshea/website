@@ -44,12 +44,15 @@ The emoji carries the type; do not also write `feat:` / `fix:` in front of it.
 | 📝    | Documentation only                                                                                            |
 | 🔧    | Add or update configuration files                                                                             |
 | 🔨    | Add or update development scripts                                                                             |
+| 🙈    | Add or update a .gitignore file                                                                               |
 | 🧪    | Adding a failing test — the RED step of the TDD loop                                                          |
 | ✅    | Adding a passing test, or fixing a test                                                                       |
 | 👷    | CI changes                                                                                                    |
 | 🚦    | Add or change a quality gate that can fail the build or CI — coverage thresholds, lint rules, required checks |
 | 🚀    | Deploy / release                                                                                              |
 | ⬆️    | Dependency bump                                                                                               |
+| ➕    | Add a dependency                                                                                              |
+| ➖    | Remove a dependency                                                                                           |
 | 🔥    | Removing code or files                                                                                        |
 | 🚚    | Moving or renaming files                                                                                      |
 | 💥    | Breaking change                                                                                               |
@@ -59,7 +62,7 @@ The emoji carries the type; do not also write `feat:` / `fix:` in front of it.
 | 🏗️    | Scaffolding, architecture, project structure                                                                  |
 | 🎉    | Initial commit                                                                                                |
 
-There is no generic "chore" bucket — pick the most specific emoji that fits (🔧 config, 🔨 dev scripts, 👷 CI, ⬆️ deps, 🏗️ architecture).
+There is no generic "chore" bucket — pick the most specific emoji that fits (🔧 config, 🔨 dev scripts, 👷 CI, ⬆️/➕/➖ deps, 🏗️ architecture).
 
 Subject: imperative, no trailing period, under ~70 characters. Write the _why_ in the body when it isn't obvious from the diff.
 

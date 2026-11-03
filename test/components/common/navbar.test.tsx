@@ -76,4 +76,22 @@ describe('Navbar', () => {
     const element = getByText(/Blog/i);
     expect(element.getAttribute('href')).toBe('#');
   });
+
+  test('contains about link to /about', () => {
+    const { getByText } = render(<Navbar />);
+    const element = getByText(/About/);
+    expect(element.getAttribute('href')).toBe('/about');
+  });
+
+  test('about link comes after cv link', () => {
+    const { container } = render(<Navbar />);
+    const labels = Array.from(container.querySelectorAll('nav a')).map((a) => a.textContent);
+    expect(labels).toEqual(['', 'Blog', 'CV', 'About']);
+  });
+
+  test('when currentPage is about links to #', () => {
+    const { getByText } = render(<Navbar currentPage="About" />);
+    const element = getByText(/About/);
+    expect(element.getAttribute('href')).toBe('#');
+  });
 });
