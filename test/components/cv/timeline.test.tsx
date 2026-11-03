@@ -32,4 +32,23 @@ describe('CvTimeline', () => {
     expect(getByText('Lead Developer')).toBeDefined();
     expect(getByText('Consultant')).toBeDefined();
   });
+
+  describe('date range', () => {
+    const renderDates = (dates: Pick<TimelineEntry, 'startDate' | 'endDate'>): string =>
+      render(<CvTimeline title="T" entries={[{ ...entry, ...dates }]} />).container.innerHTML;
+
+    test('shows start and end date as a range', () => {
+      expect(renderDates({ startDate: '2013', endDate: '2021' })).toContain('2013–2021');
+    });
+
+    test('shows Present when end date not set', () => {
+      expect(renderDates({ startDate: '2013', endDate: undefined })).toContain('2013–Present');
+    });
+
+    test('shows a single date when start and end date are the same', () => {
+      const html = renderDates({ startDate: '2013', endDate: '2013' });
+      expect(html).toContain('2013');
+      expect(html).not.toContain('2013–2013');
+    });
+  });
 });
