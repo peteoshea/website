@@ -99,4 +99,25 @@ describe('Navbar', () => {
     const element = getByText(/About/);
     expect(element.getAttribute('href')).toBe('#');
   });
+
+  test('highlights the link for the current page and only that link', () => {
+    const { getByText } = render(<Navbar currentPage="CV" />);
+    const cv = getByText('CV');
+    const about = getByText('About');
+    expect(cv.getAttribute('aria-current')).toBe('page');
+    expect(cv.className).toContain('text-red-900');
+    expect(about.getAttribute('aria-current')).toBeNull();
+    expect(about.className).not.toContain('text-red-900');
+  });
+
+  test('when currentSection is given its link goes to the section and is highlighted', () => {
+    const { getByText } = render(
+      <Navbar sections={visibleSections} currentPage="A post" currentSection="Systems" />
+    );
+    const systems = getByText('Systems');
+    expect(systems.getAttribute('href')).toBe('/systems');
+    expect(systems.getAttribute('aria-current')).toBe('true');
+    expect(systems.className).toContain('text-red-900');
+    expect(getByText('Ramblings').className).not.toContain('text-red-900');
+  });
 });
