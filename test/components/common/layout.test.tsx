@@ -89,7 +89,7 @@ describe('Page layout', () => {
   });
 
   test('navbar marks currentPage as current when it differs from pageTitle', () => {
-    const { container } = render(<Layout pageTitle="Blog Posts" currentPage="Blog" />);
-    expect(navLink(container, 'Blog').getAttribute('href')).toBe('#');
+    const { container } = render(<Layout pageTitle="Curriculum Vitae" currentPage="CV" />);
+    expect(navLink(container, 'CV').getAttribute('href')).toBe('#');
   });
 });
