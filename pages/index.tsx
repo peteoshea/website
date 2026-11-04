@@ -1,10 +1,17 @@
 import 'tailwindcss/index.css';
+import type { GetStaticProps } from 'next';
 import Image from 'next/image';
 import Footer from 'components/common/footer';
 import Metadata from 'components/common/metadata';
 import Navbar from 'components/common/navbar';
+import { getVisibleSections } from 'content/posts/posts';
+import { Section } from 'types/section';
 
-export const Home = (): React.JSX.Element => (
+type Props = {
+  sections?: Section[];
+};
+
+export const Home = ({ sections }: Props): React.JSX.Element => (
   <>
     <Metadata pageTitle="Home" />
 
@@ -19,7 +26,7 @@ export const Home = (): React.JSX.Element => (
         >
           <polygon points="50,0 100,0 50,100 0,100" />
         </svg>
-        <Navbar currentPage="Home" />
+        <Navbar currentPage="Home" sections={sections} />
         <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 lg:px-8 lg:mt-20">
           <div className="sm:text-center lg:text-left">
             <h1 className="text-4xl tracking-tight font-bold text-gray-900 sm:text-5xl lg:text-6xl">
@@ -44,5 +51,9 @@ export const Home = (): React.JSX.Element => (
     <Footer />
   </>
 );
+
+export const getStaticProps: GetStaticProps<Props> = async () => ({
+  props: { sections: getVisibleSections() }
+});
 
 export default Home;

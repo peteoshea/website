@@ -1,7 +1,14 @@
+import type { GetStaticProps } from 'next';
 import Layout from 'components/common/layout';
+import { getVisibleSections } from 'content/posts/posts';
+import { Section } from 'types/section';
 
-export const About = (): React.JSX.Element => (
-  <Layout pageTitle="About">
+type Props = {
+  sections?: Section[];
+};
+
+export const About = ({ sections }: Props): React.JSX.Element => (
+  <Layout pageTitle="About" sections={sections}>
     <section className="mt-4">
       <h2 className="mb-2 text-2xl font-bold">Who am I?</h2>
       <p className="mb-2">
@@ -47,5 +54,9 @@ export const About = (): React.JSX.Element => (
     </section>
   </Layout>
 );
+
+export const getStaticProps: GetStaticProps<Props> = async () => ({
+  props: { sections: getVisibleSections() }
+});
 
 export default About;

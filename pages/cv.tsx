@@ -1,3 +1,4 @@
+import type { GetStaticProps } from 'next';
 import Layout from 'components/common/layout';
 
 import CvPortfolioSection from 'components/cv/portfolioSection';
@@ -6,10 +7,21 @@ import CvSkillsSection from 'components/cv/skillsSection';
 import CvTimeline from 'components/cv/timeline';
 
 import myCv from 'content/cv/myCv';
+import { getVisibleSections } from 'content/posts/posts';
 import { jobToTimelineEntry, qualificationToTimelineEntry } from 'content/cv/timelineEntries';
+import { Section } from 'types/section';
 
-export const CV = (): React.JSX.Element => (
-  <Layout pageTitle="CV" heading="Pete O'Shea" subheading="Curriculum Vitae / Résumé">
+type Props = {
+  sections?: Section[];
+};
+
+export const CV = ({ sections }: Props): React.JSX.Element => (
+  <Layout
+    pageTitle="CV"
+    sections={sections}
+    heading="Pete O'Shea"
+    subheading="Curriculum Vitae / Résumé"
+  >
     <CvProfileSection profile={myCv.profile} />
     <CvSkillsSection skills={myCv.skills} />
     <CvPortfolioSection projects={myCv.portfolio} />
@@ -17,5 +29,9 @@ export const CV = (): React.JSX.Element => (
     <CvTimeline title="Education" entries={myCv.education.map(qualificationToTimelineEntry)} />
   </Layout>
 );
+
+export const getStaticProps: GetStaticProps<Props> = async () => ({
+  props: { sections: getVisibleSections() }
+});
 
 export default CV;
