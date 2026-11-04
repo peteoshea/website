@@ -1,5 +1,5 @@
 import path from 'node:path';
-import { getPost, getPosts } from 'content/posts/posts';
+import { getPost, getPosts, getVisibleSections } from 'content/posts/posts';
 
 const fixtureRoot = path.resolve(__dirname, '../../fixtures/content');
 
@@ -30,5 +30,19 @@ describe('getPost', () => {
       summary: 'Written second.',
       content: '\nNewer **body**.\n'
     });
+  });
+});
+
+describe('getVisibleSections', () => {
+  test('returns only the sections that have posts, in navigation order', () => {
+    const slugs = getVisibleSections(fixtureRoot).map((section) => section.slug);
+    expect(slugs).toEqual(['ramblings', 'systems']);
+  });
+
+  test('each visible section carries its name, description and header image', () => {
+    const [ramblings] = getVisibleSections(fixtureRoot);
+    expect(ramblings.name).toBe('Ramblings');
+    expect(ramblings.description).not.toBe('');
+    expect(ramblings.image).toBe('/images/sections/ramblings.svg');
   });
 });
