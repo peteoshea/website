@@ -1,5 +1,5 @@
 import path from 'node:path';
-import { getPosts } from 'content/posts/posts';
+import { getPost, getPosts } from 'content/posts/posts';
 
 const fixtureRoot = path.resolve(__dirname, '../../fixtures/content');
 
@@ -18,5 +18,17 @@ describe('getPosts', () => {
 
   test('returns no posts for a section folder that does not exist', () => {
     expect(getPosts('missing', fixtureRoot)).toEqual([]);
+  });
+});
+
+describe('getPost', () => {
+  test('returns a single post with its markdown body', () => {
+    expect(getPost('ramblings', 'newer-post', fixtureRoot)).toEqual({
+      slug: 'newer-post',
+      title: 'A newer post',
+      date: '2026-03-02',
+      summary: 'Written second.',
+      content: '\nNewer **body**.\n'
+    });
   });
 });
