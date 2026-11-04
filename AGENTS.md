@@ -11,6 +11,11 @@ Generic agent instructions for this repo. Repo-specific details are recorded in 
 - `npm run type-check` — `next typegen` (creates the untracked `next-env.d.ts`), then `tsc --noEmit`
 - `npm run format` — prettier
 
+## Dependencies
+
+Keep every dependency block in `package.json` alphabetically sorted. `npm install <pkg>` sorts
+for you; when editing the file by hand, sort to match.
+
 ## Agent skills
 
 ### Issue tracker
