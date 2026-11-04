@@ -23,11 +23,10 @@
   },
   "lint-staged": {
     "*.@(js|ts|tsx)": [
-      "eslint",
-      "prettier --write"
+      "eslint"
     ],
-    "@(*.@(json|md|yml)|.*rc)": [
-      "prettier --write"
+    "*": [
+      "prettier --write --ignore-unknown"
     ]
   },
   "dependencies": {
