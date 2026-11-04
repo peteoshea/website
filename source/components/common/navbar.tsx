@@ -9,7 +9,7 @@ type Props = {
 };
 
 const linkStyle = 'font-medium text-gray-500 hover:text-gray-900';
-const currentLinkStyle = 'font-bold text-red-900';
+const currentLinkStyle = 'font-bold text-red-900 hover:text-red-950';
 
 const pageLinks = [
   { label: 'CV', href: '/cv' },
