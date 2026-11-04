@@ -12,6 +12,12 @@ describe('Page layout', () => {
     expect(element).not.toBeNull();
   });
 
+  test('navbar links to the sections given', () => {
+    const sections = [{ slug: 'systems', name: 'Systems', description: 'S', image: '/s.svg' }];
+    const { getByText } = render(<Layout pageTitle={pageTitle} sections={sections} />);
+    expect(getByText('Systems').getAttribute('href')).toBe('/systems');
+  });
+
   test('contains footer tag', () => {
     const { container } = render(<Layout pageTitle={pageTitle} />);
     const element = container.querySelector('footer');
