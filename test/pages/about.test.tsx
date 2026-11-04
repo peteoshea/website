@@ -1,6 +1,12 @@
 import React from 'react';
-import About from '../../pages/about';
+import About, { getStaticProps } from '../../pages/about';
 import { render } from '../testUtils';
+
+const systemsSection = { slug: 'systems', name: 'Systems', description: 'S', image: '/s.svg' };
+
+vi.mock('content/posts/posts', () => ({
+  getVisibleSections: () => [systemsSection]
+}));
 
 describe('About page', () => {
   test('contains heading About', () => {
@@ -37,5 +43,16 @@ describe('About page', () => {
       (a) => a.textContent === 'About'
     );
     expect(link.getAttribute('href')).toBe('#');
+  });
+});
+
+describe('About page sections', () => {
+  test('static props carry the visible sections', async () => {
+    expect(await getStaticProps({})).toEqual({ props: { sections: [systemsSection] } });
+  });
+
+  test('navbar links to the sections given', () => {
+    const { getByText } = render(<About sections={[systemsSection]} />);
+    expect(getByText('Systems').getAttribute('href')).toBe('/systems');
   });
 });

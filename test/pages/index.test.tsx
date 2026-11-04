@@ -1,9 +1,15 @@
 import React from 'react';
 import { render } from '../testUtils';
-import { Home } from '../../pages/index';
+import { Home, getStaticProps } from '../../pages/index';
 
 vi.mock('next/head', () => ({
   default: ({ children }: { children: React.ReactNode }) => <>{children}</>
+}));
+
+const systemsSection = { slug: 'systems', name: 'Systems', description: 'S', image: '/s.svg' };
+
+vi.mock('content/posts/posts', () => ({
+  getVisibleSections: () => [systemsSection]
 }));
 
 describe('Home page', () => {
@@ -34,5 +40,16 @@ describe('Home page', () => {
   test('title names the Home page', () => {
     render(<Home />);
     expect(document.querySelector('title').textContent).toBe("Home | Pete O'Shea");
+  });
+});
+
+describe('Home page sections', () => {
+  test('static props carry the visible sections', async () => {
+    expect(await getStaticProps({})).toEqual({ props: { sections: [systemsSection] } });
+  });
+
+  test('navbar links to the sections given', () => {
+    const { getByText } = render(<Home sections={[systemsSection]} />);
+    expect(getByText('Systems').getAttribute('href')).toBe('/systems');
   });
 });
