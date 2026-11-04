@@ -34,3 +34,6 @@ export const getPosts = (section: string, contentRoot = defaultContentRoot): Pos
     })
     .sort((a, b) => b.date.localeCompare(a.date));
 };
+
+export const getPost = (section: string, slug: string, contentRoot = defaultContentRoot): Post =>
+  readPost(path.join(contentRoot, section, `${slug}.md`));
