@@ -18,6 +18,16 @@ describe('Page layout', () => {
     expect(getByText('Systems').getAttribute('href')).toBe('/systems');
   });
 
+  test('navbar highlights the current section while linking to it', () => {
+    const sections = [{ slug: 'systems', name: 'Systems', description: 'S', image: '/s.svg' }];
+    const { getByText } = render(
+      <Layout pageTitle="A post" sections={sections} currentSection="Systems" />
+    );
+    const link = getByText('Systems');
+    expect(link.getAttribute('href')).toBe('/systems');
+    expect(link.getAttribute('aria-current')).toBe('true');
+  });
+
   test('contains footer tag', () => {
     const { container } = render(<Layout pageTitle={pageTitle} />);
     const element = container.querySelector('footer');

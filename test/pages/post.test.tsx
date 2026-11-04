@@ -60,9 +60,11 @@ describe('Post page', () => {
     expect(link.getAttribute('href')).toBe('/ramblings');
   });
 
-  test('navbar marks its section as current', () => {
+  test('navbar links back to its section and highlights it', () => {
     const { getByText } = renderPage();
-    expect(getByText('Ramblings', { selector: 'nav a' }).getAttribute('href')).toBe('#');
+    const link = getByText('Ramblings', { selector: 'nav a' });
+    expect(link.getAttribute('href')).toBe('/ramblings');
+    expect(link.getAttribute('aria-current')).toBe('true');
   });
 });
 
