@@ -120,4 +120,9 @@ describe('Navbar', () => {
     expect(systems.className).toContain('text-red-900');
     expect(getByText('Ramblings').className).not.toContain('text-red-900');
   });
+
+  test('the highlighted link darkens further on hover', () => {
+    const { getByText } = render(<Navbar currentPage="CV" />);
+    expect(getByText('CV').className).toContain('hover:text-red-950');
+  });
 });
