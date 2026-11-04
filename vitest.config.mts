@@ -39,7 +39,8 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       reportsDirectory: 'coverage',
-      include: ['pages/**/*.{js,jsx,ts,tsx}', 'source/**/*.{js,jsx,ts,tsx}']
+      include: ['pages/**/*.{js,jsx,ts,tsx}', 'source/**/*.{js,jsx,ts,tsx}'],
+      thresholds: { statements: 100, branches: 100, functions: 100, lines: 100 }
     }
   }
 });

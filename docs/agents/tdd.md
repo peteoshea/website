@@ -22,13 +22,20 @@ which this frontend repo owns (no API routes; data fetching is client-side / SSG
 
 Agree the seam before writing tests. This repo's seams are:
 
-- **Page rendering** — each page in `pages/` (`index`, `cv`, `blog`, `about`): rendering and
-  user-visible behaviour of the Next.js pages router.
+- **Page rendering** — each page in `pages/` (`index`, `cv`, `about`, and the Section and Post
+  pages `[section]/index` and `[section]/[slug]`): rendering, user-visible behaviour and the
+  `getStaticPaths` / `getStaticProps` contract of the Next.js pages router. Page tests stub
+  `content/posts/posts` so routing never depends on which real Posts exist.
 - **Components** — `source/components/` (shared layout pieces such as `Layout`, `Navbar`,
   `Metadata`, and the CV sections).
 - **Source modules** — `source/types/`, `source/*` (data shapes, helpers, pure functions).
+  The Posts module (`source/content/posts/`) is tested against fixture folders in
+  `test/fixtures/content/`, never the real Posts.
 
-Run tests with `npm test` (Vitest). Coverage is enforced via `npm run test-coverage`.
+Run tests with `npm test` (Vitest). `npm run test-coverage` fails below 100% statements,
+branches, functions or lines, and CI runs it. Every new branch gets a test. Where a line truly
+cannot be reached from a test, mark it `/* v8 ignore next */` with a comment giving the reason,
+and leave the threshold alone.
 
 ## Async UI state
 

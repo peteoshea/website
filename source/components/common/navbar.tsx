@@ -1,46 +1,68 @@
 import Image from 'next/image';
+import { Section } from 'types/section';
 
 type Props = {
   currentPage?: string;
+  // The Section the current page belongs to (e.g. on a Post page): highlighted but still a link.
+  currentSection?: string;
+  sections?: Section[];
 };
 
-const links = [
-  { label: 'Blog', href: '/blog' },
+const linkStyle = 'font-medium text-gray-500 hover:text-gray-900';
+const currentLinkStyle = 'font-bold text-red-900 hover:text-red-950';
+
+const pageLinks = [
   { label: 'CV', href: '/cv' },
   { label: 'About', href: '/about' }
 ];
 
-export const Navbar = ({ currentPage }: Props): React.JSX.Element => (
-  <div className="relative pt-4 px-4">
-    <nav
-      className="relative flex items-center justify-between h-24 lg:justify-start"
-      aria-label="navigation"
-    >
-      <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
-        <div className="flex items-center justify-between w-full md:w-auto">
-          <a href={currentPage == 'Home' ? '#' : '/'}>
-            <Image
-              className="h-auto w-auto"
-              src="/favicon-96x96.png"
-              alt="Home"
-              width={96}
-              height={96}
-            />
-          </a>
+export const Navbar = ({
+  currentPage,
+  currentSection,
+  sections = []
+}: Props): React.JSX.Element => {
+  const links = [
+    ...sections.map(({ name, slug }) => ({ label: name, href: `/${slug}` })),
+    ...pageLinks
+  ];
+
+  return (
+    <div className="relative pt-4 px-4">
+      <nav
+        className="relative flex items-center justify-between h-24 lg:justify-start"
+        aria-label="navigation"
+      >
+        <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
+          <div className="flex items-center justify-between w-full md:w-auto">
+            <a href={currentPage == 'Home' ? '#' : '/'}>
+              <Image
+                className="h-auto w-auto"
+                src="/favicon-96x96.png"
+                alt="Home"
+                width={96}
+                height={96}
+              />
+            </a>
+          </div>
         </div>
-      </div>
-      {links.map(({ label, href }) => (
-        <div key={label} className="block px-4">
-          <a
-            href={currentPage == label ? '#' : href}
-            className="font-medium text-gray-500 hover:text-gray-900"
-          >
-            {label}
-          </a>
-        </div>
-      ))}
-    </nav>
-  </div>
-);
+        {links.map(({ label, href }) => {
+          const isCurrentPage = label === currentPage;
+          const isCurrentSection = label === currentSection;
+          return (
+            <div key={label} className="block px-4">
+              <a
+                href={isCurrentPage ? '#' : href}
+                aria-current={isCurrentPage ? 'page' : isCurrentSection ? 'true' : undefined}
+                className={isCurrentPage || isCurrentSection ? currentLinkStyle : linkStyle}
+              >
+                {label}
+              </a>
+            </div>
+          );
+        })}
+      </nav>
+    </div>
+  );
+};
 
 export default Navbar;

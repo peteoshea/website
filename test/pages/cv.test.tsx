@@ -1,6 +1,12 @@
 import React from 'react';
-import CV from '../../pages/cv';
+import CV, { getStaticProps } from '../../pages/cv';
 import { render } from '../testUtils';
+
+const systemsSection = { slug: 'systems', name: 'Systems', description: 'S', image: '/s.svg' };
+
+vi.mock('content/posts/posts', () => ({
+  getVisibleSections: () => [systemsSection]
+}));
 
 describe('CV page', () => {
   test('contains heading', () => {
@@ -49,5 +55,16 @@ describe('CV page', () => {
     const { getByText } = render(<CV />);
     const element = getByText(/Education/i);
     expect(element).toBeDefined();
+  });
+});
+
+describe('CV page sections', () => {
+  test('static props carry the visible sections', async () => {
+    expect(await getStaticProps({})).toEqual({ props: { sections: [systemsSection] } });
+  });
+
+  test('navbar links to the sections given', () => {
+    const { getByText } = render(<CV sections={[systemsSection]} />);
+    expect(getByText('Systems').getAttribute('href')).toBe('/systems');
   });
 });

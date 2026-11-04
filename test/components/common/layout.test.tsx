@@ -12,6 +12,22 @@ describe('Page layout', () => {
     expect(element).not.toBeNull();
   });
 
+  test('navbar links to the sections given', () => {
+    const sections = [{ slug: 'systems', name: 'Systems', description: 'S', image: '/s.svg' }];
+    const { getByText } = render(<Layout pageTitle={pageTitle} sections={sections} />);
+    expect(getByText('Systems').getAttribute('href')).toBe('/systems');
+  });
+
+  test('navbar highlights the current section while linking to it', () => {
+    const sections = [{ slug: 'systems', name: 'Systems', description: 'S', image: '/s.svg' }];
+    const { getByText } = render(
+      <Layout pageTitle="A post" sections={sections} currentSection="Systems" />
+    );
+    const link = getByText('Systems');
+    expect(link.getAttribute('href')).toBe('/systems');
+    expect(link.getAttribute('aria-current')).toBe('true');
+  });
+
   test('contains footer tag', () => {
     const { container } = render(<Layout pageTitle={pageTitle} />);
     const element = container.querySelector('footer');
@@ -89,7 +105,7 @@ describe('Page layout', () => {
   });
 
   test('navbar marks currentPage as current when it differs from pageTitle', () => {
-    const { container } = render(<Layout pageTitle="Blog Posts" currentPage="Blog" />);
-    expect(navLink(container, 'Blog').getAttribute('href')).toBe('#');
+    const { container } = render(<Layout pageTitle="Curriculum Vitae" currentPage="CV" />);
+    expect(navLink(container, 'CV').getAttribute('href')).toBe('#');
   });
 });
