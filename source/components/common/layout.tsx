@@ -10,6 +10,7 @@ type Props = {
   subheading?: string;
   pageTitle: string;
   currentPage?: string;
+  currentSection?: string;
   sections?: Section[];
 };
 
@@ -19,6 +20,7 @@ export const Layout = ({
   subheading,
   pageTitle,
   currentPage = pageTitle,
+  currentSection,
   sections
 }: Props): React.JSX.Element => {
   let pageHeading = heading;
@@ -30,7 +32,7 @@ export const Layout = ({
     <>
       <Metadata pageTitle={pageTitle} />
       <div className="relative bg-white max-w-7xl mx-auto">
-        <Navbar currentPage={currentPage} sections={sections} />
+        <Navbar currentPage={currentPage} currentSection={currentSection} sections={sections} />
         <header className="mt-2 px-4 tracking-tight text-center">
           <h1 className="text-red-800 font-bold text-4xl sm:text-5xl lg:text-6xl">{pageHeading}</h1>
           {subheading ? (
