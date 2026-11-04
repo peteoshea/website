@@ -2,6 +2,7 @@ import 'tailwindcss/index.css';
 import Footer from 'components/common/footer';
 import Metadata from 'components/common/metadata';
 import Navbar from 'components/common/navbar';
+import { Section } from 'types/section';
 
 type Props = {
   children?: React.ReactNode;
@@ -9,6 +10,7 @@ type Props = {
   subheading?: string;
   pageTitle: string;
   currentPage?: string;
+  sections?: Section[];
 };
 
 export const Layout = ({
@@ -16,7 +18,8 @@ export const Layout = ({
   heading,
   subheading,
   pageTitle,
-  currentPage = pageTitle
+  currentPage = pageTitle,
+  sections
 }: Props): React.JSX.Element => {
   let pageHeading = heading;
   if (!heading) {
@@ -27,7 +30,7 @@ export const Layout = ({
     <>
       <Metadata pageTitle={pageTitle} />
       <div className="relative bg-white max-w-7xl mx-auto">
-        <Navbar currentPage={currentPage} />
+        <Navbar currentPage={currentPage} sections={sections} />
         <header className="mt-2 px-4 tracking-tight text-center">
           <h1 className="text-red-800 font-bold text-4xl sm:text-5xl lg:text-6xl">{pageHeading}</h1>
           {subheading ? (
