@@ -8,13 +8,13 @@ const ramblings: Section = {
   slug: 'ramblings',
   name: 'Ramblings',
   description: 'Thoughts and opinions.',
-  image: '/images/sections/ramblings.svg'
+  image: '/images/section-ramblings.svg'
 };
 const systems: Section = {
   slug: 'systems',
   name: 'Systems',
   description: 'How I build things.',
-  image: '/images/sections/systems.svg'
+  image: '/images/section-systems.svg'
 };
 const posts: PostSummary[] = [
   { slug: 'second', title: 'Second post', date: '2026-03-02', summary: 'The newer one.' },

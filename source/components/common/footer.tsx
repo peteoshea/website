@@ -4,7 +4,7 @@ export const Footer = (): React.JSX.Element => (
   <footer className="flex max-w-7xl mx-auto items-end justify-center w-full h-20 px-2 py-4 text-xs">
     <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
       <Image
-        src="/cc.svg"
+        src="/images/cc.svg"
         alt="Creative Commons Licence"
         width={64}
         height={64}
@@ -12,7 +12,7 @@ export const Footer = (): React.JSX.Element => (
         className="inline h-4 w-auto ml-1"
       />
       <Image
-        src="/by.svg"
+        src="/images/by.svg"
         alt="Attribution"
         width={64}
         height={64}

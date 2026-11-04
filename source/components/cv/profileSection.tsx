@@ -25,7 +25,7 @@ export const CvProfileSection = ({ profile }: Props): React.JSX.Element => {
             className="flex items-center text-gray-500 hover:text-gray-900 hover:bg-gray-50 px-2"
           >
             <Image
-              src="/GitHub-Mark.svg"
+              src="/images/github.svg"
               alt="GitHub logo"
               width={128}
               height={125}
@@ -56,7 +56,7 @@ export const CvProfileSection = ({ profile }: Props): React.JSX.Element => {
             className="flex items-center text-gray-500 hover:text-gray-900 hover:bg-gray-50 px-2"
           >
             <Image
-              src="/In-Blue-Logo.png"
+              src="/images/linkedin.png"
               alt="LinkedIn logo"
               width={256}
               height={256}
@@ -71,7 +71,7 @@ export const CvProfileSection = ({ profile }: Props): React.JSX.Element => {
             className="flex items-center text-gray-500 hover:text-gray-900 hover:bg-gray-50 px-2"
           >
             <Image
-              src="/TwitterLogo.svg"
+              src="/images/twitter.svg"
               alt="Twitter logo"
               width={248}
               height={204}

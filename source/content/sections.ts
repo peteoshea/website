@@ -6,19 +6,19 @@ export const sections: Section[] = [
     slug: 'ramblings',
     name: 'Ramblings',
     description: 'Thoughts, opinions and whatever else is on my mind.',
-    image: '/images/sections/ramblings.svg'
+    image: '/images/section-ramblings.svg'
   },
   {
     slug: 'systems',
     name: 'Systems',
     description: 'How I build and run things: software, tooling and the setups behind them.',
-    image: '/images/sections/systems.svg'
+    image: '/images/section-systems.svg'
   },
   {
     slug: 'personal',
     name: 'Personal',
     description: 'Life outside the keyboard.',
-    image: '/images/sections/personal.svg'
+    image: '/images/section-personal.svg'
   }
 ];
 

@@ -39,7 +39,7 @@ export const Home = ({ sections }: Props): React.JSX.Element => (
       <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
         <Image
           className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-          src="/Writing-Tools.jpg"
+          src="/photos/writing-tools.jpg"
           alt=""
           width={1824}
           height={1216}
