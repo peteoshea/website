@@ -27,6 +27,7 @@
     ]
   },
   "dependencies": {
+    "gray-matter": "^4.0.3",
     "micromark": "^4.0.3",
     "next": "^16.4.3",
     "react": "^19.3.1",
