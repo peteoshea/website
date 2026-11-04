@@ -1,7 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import matter from 'gray-matter';
+import sections from 'content/sections';
 import { Post, PostSummary } from 'types/post';
+import { Section } from 'types/section';
 
 const defaultContentRoot = path.join(process.cwd(), 'source', 'content');
 
@@ -37,3 +39,6 @@ export const getPosts = (section: string, contentRoot = defaultContentRoot): Pos
 
 export const getPost = (section: string, slug: string, contentRoot = defaultContentRoot): Post =>
   readPost(path.join(contentRoot, section, `${slug}.md`));
+
+export const getVisibleSections = (contentRoot = defaultContentRoot): Section[] =>
+  sections.filter((section) => getPosts(section.slug, contentRoot).length > 0);
