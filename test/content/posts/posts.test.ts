@@ -31,6 +31,10 @@ describe('getPost', () => {
       content: '\nNewer **body**.\n'
     });
   });
+
+  test('keeps a quoted date exactly as written', () => {
+    expect(getPost('systems', 'only-post', fixtureRoot).date).toBe('2026-02-10');
+  });
 });
 
 describe('getVisibleSections', () => {
