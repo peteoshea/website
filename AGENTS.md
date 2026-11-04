@@ -9,7 +9,8 @@ Generic agent instructions for this repo. Repo-specific details are recorded in 
 - `npm test` — Vitest (`npm run test-coverage` adds coverage)
 - `npm run lint` — eslint (eslint.config.mjs)
 - `npm run type-check` — `next typegen` (creates the untracked `next-env.d.ts`), then `tsc --noEmit`
-- `npm run format` — prettier
+- `npm run format` — prettier, writing fixes (`npm run format-check` only checks; it is part of
+  `npm run test-all`, which `script/test` and CI run)
 
 ## Agent skills
 
