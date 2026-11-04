@@ -32,7 +32,10 @@ Agree the seam before writing tests. This repo's seams are:
   The Posts module (`source/content/posts/`) is tested against fixture folders in
   `test/fixtures/content/`, never the real Posts.
 
-Run tests with `npm test` (Vitest). Coverage is enforced via `npm run test-coverage`.
+Run tests with `npm test` (Vitest). `npm run test-coverage` fails below 100% statements,
+branches, functions or lines, and CI runs it. Every new branch gets a test. Where a line truly
+cannot be reached from a test, mark it `/* v8 ignore next */` with a comment giving the reason,
+and leave the threshold alone.
 
 ## Async UI state
 
