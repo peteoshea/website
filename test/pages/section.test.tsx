@@ -37,7 +37,9 @@ describe('Section page', () => {
 
   test('shows the section header image', () => {
     const { getByAltText } = renderPage();
-    expect(getByAltText('Ramblings').getAttribute('src')).toContain('ramblings.svg');
+    expect(getByAltText('Ramblings').getAttribute('src')).toContain(
+      '/images/section-ramblings.svg'
+    );
   });
 
   test('shows the section description', () => {

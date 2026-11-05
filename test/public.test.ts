@@ -11,7 +11,12 @@ const filesIn = (dir: string): string[] =>
   });
 
 // Absolute site paths to pictures, e.g. '/images/github.svg' or '(/photos/x.jpg)'; not URLs.
-const assetPath = /(?<![\w:/.])(\/[\w./-]+\.(?:svg|png|jpe?g))/g;
+const assetPath = /(?<![\w:/.])(\/[\w./-]+\.(?:svg|png|jpe?g|gif|webp|avif|ico))/gi;
+
+// Compared exactly, because Windows and macOS ignore case but the host serving the site doesn't.
+const publicFiles = new Set(
+  filesIn(publicDir).map((file) => `/${path.relative(publicDir, file).split(path.sep).join('/')}`)
+);
 
 describe('public assets', () => {
   test('the root holds only the favicons and the images and photos folders', () => {
@@ -43,7 +48,7 @@ describe('public assets', () => {
     const missing = sources.flatMap((file) =>
       [...fs.readFileSync(file, 'utf8').matchAll(assetPath)]
         .map(([, asset]) => asset)
-        .filter((asset) => !fs.existsSync(path.join(publicDir, asset)))
+        .filter((asset) => !publicFiles.has(asset))
         .map((asset) => `${path.relative(root, file)}: ${asset}`)
     );
     expect(missing).toEqual([]);
