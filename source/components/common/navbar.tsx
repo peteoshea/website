@@ -36,7 +36,8 @@ export const Navbar = ({
           <div className="flex items-center justify-between w-full md:w-auto">
             <a href={currentPage == 'Home' ? '#' : '/'}>
               <Image
-                className="size-16 sm:size-24"
+                // The file is 96px: at 64px a high-resolution screen stretches it only by a third.
+                className="size-16"
                 src="/favicon-96x96.png"
                 alt="Home"
                 width={96}
