@@ -69,6 +69,14 @@ describe('Post page', () => {
     expect(order & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
   });
 
+  test('keeps the body and back link to a readable, centred column', () => {
+    const { container, getByRole } = renderPage();
+    const column = container.querySelector('article').parentElement;
+    expect(column.className).toMatch(/\bmax-w-prose\b/);
+    expect(column.className).toMatch(/\bmx-auto\b/);
+    expect(column.contains(getByRole('link', { name: '← Back to Ramblings' }))).toBe(true);
+  });
+
   test('renders the markdown body', () => {
     const { container } = renderPage();
     expect(container.querySelector('main strong').textContent).toBe('bold');
