@@ -34,15 +34,18 @@ export const PostPage = ({ section, post, sections }: Props): React.JSX.Element 
     }
   >
     {post.date && <p className="text-center text-sm text-gray-500">{formatPostDate(post.date)}</p>}
-    <article className="mt-6">
-      <Markdown content={post.content} />
-    </article>
-    <a
-      href={`/${section.slug}`}
-      className="mt-8 inline-block font-medium text-gray-500 hover:text-gray-900"
-    >
-      ← Back to {section.name}
-    </a>
+    {/* About 65 characters a line, so long Posts stay comfortable to read on wide screens. */}
+    <div className="mx-auto max-w-prose sm:text-lg">
+      <article className="mt-6">
+        <Markdown content={post.content} />
+      </article>
+      <a
+        href={`/${section.slug}`}
+        className="mt-8 inline-block font-medium text-gray-500 hover:text-gray-900"
+      >
+        ← Back to {section.name}
+      </a>
+    </div>
   </Layout>
 );
 
