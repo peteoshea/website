@@ -11,7 +11,10 @@ type Props = {
 export const CvTimeline = ({ title, entries }: Props): React.JSX.Element => (
   <CvSection title={title}>
     {entries.map((entry, index) => (
-      <div className="grid grid-cols-3 md:grid-cols-12 md:gap-x-2 pt-4" key={index}>
+      <div
+        className="grid grid-cols-3 md:grid-cols-12 md:gap-x-2 pt-4 border-gray-200 not-first-of-type:mt-6 not-first-of-type:border-t"
+        key={index}
+      >
         <div className="col-start-3 md:col-start-1 md:col-span-2 tracking-tighter text-right md:text-center my-auto">
           {formatDateRange(entry.startDate, entry.endDate)}
         </div>
