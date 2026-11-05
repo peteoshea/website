@@ -1,4 +1,5 @@
 import type { GetStaticPaths, GetStaticProps } from 'next';
+import Image from 'next/image';
 import Layout from 'components/common/layout';
 import Markdown from 'components/common/markdown';
 import formatPostDate from 'content/posts/formatPostDate';
@@ -15,6 +16,16 @@ type Props = {
 export const PostPage = ({ section, post, sections }: Props): React.JSX.Element => (
   <Layout pageTitle={post.title} currentSection={section.name} sections={sections}>
     {post.date && <p className="text-center text-sm text-gray-500">{formatPostDate(post.date)}</p>}
+    {post.image && (
+      <Image
+        className="mt-4 w-full h-auto rounded-lg"
+        src={post.image}
+        alt={post.title}
+        width={1200}
+        height={675}
+        priority
+      />
+    )}
     <article className="mt-6">
       <Markdown content={post.content} />
     </article>
