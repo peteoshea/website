@@ -49,6 +49,14 @@ describe('getPost', () => {
     });
   });
 
+  test('treats details left blank in the front matter as missing', () => {
+    expect(getPost('blank', 'blank-details', fixtureRoot)).toStrictEqual({
+      slug: 'blank-details',
+      title: 'Blank details',
+      content: '\nBlank body.\n'
+    });
+  });
+
   test('carries the Post image when a post has one', () => {
     expect(getPost('pictured', 'with-image', fixtureRoot)).toStrictEqual({
       slug: 'with-image',
