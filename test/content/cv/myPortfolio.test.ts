@@ -3,7 +3,7 @@ import myPortfolio, { saransurf, skipad, thisWebsite } from 'content/cv/myPortfo
 describe('myPortfolio', () => {
   test('this website description is set', () => {
     expect(thisWebsite.description).toBe(
-      'Personal website created with Next.js. Written in TypesScript using TailwindCSS. Jest helped achieve 100% code coverage. Automatic type checking and linting with Husky, Prettier and ESLint. GitHub actions to automatically apply dependency updates and to ensure all tests pass before allowing merge of PR.'
+      'Personal website created with Next.js. Written in TypeScript using TailwindCSS. Vitest helped achieve 100% code coverage. Automatic type checking and linting with Husky, Prettier and ESLint. GitHub actions to automatically apply dependency updates and to ensure all tests pass before allowing merge of PR.'
     );
   });
 
