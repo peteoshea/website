@@ -13,7 +13,8 @@ describe('getPosts', () => {
   });
 
   test('lists undated posts after the dated ones, by title', () => {
-    expect(getPosts('optional', fixtureRoot)).toStrictEqual([
+    // The list is built from fs output in another realm, so copy it before a strict compare.
+    expect(Array.from(getPosts('optional', fixtureRoot))).toStrictEqual([
       { slug: 'dated', title: 'Dated', date: '2026-01-01' },
       { slug: 'zebra', title: 'Aardvark' },
       { slug: 'title-only', title: 'Only a title' }
