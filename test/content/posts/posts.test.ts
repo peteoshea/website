@@ -12,6 +12,14 @@ describe('getPosts', () => {
     ]);
   });
 
+  test('lists undated posts after the dated ones, by title', () => {
+    expect(getPosts('optional', fixtureRoot)).toStrictEqual([
+      { slug: 'dated', title: 'Dated', date: '2026-01-01' },
+      { slug: 'zebra', title: 'Aardvark' },
+      { slug: 'title-only', title: 'Only a title' }
+    ]);
+  });
+
   test('returns no posts for a section folder with no markdown files', () => {
     expect(getPosts('personal', fixtureRoot)).toEqual([]);
   });
