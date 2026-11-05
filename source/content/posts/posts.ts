@@ -17,13 +17,19 @@ const readPost = (file: string): Post => {
 };
 
 // Missing details are left out, not set to undefined, which Next.js cannot serialise.
-const toSummary = (file: string, data: Record<string, unknown>): PostSummary => ({
-  slug: path.basename(file, '.md'),
-  title: String(data.title),
-  ...(data.date != null && { date: toDateString(data.date) }),
-  ...(data.summary != null && { summary: String(data.summary) }),
-  ...(data.image != null && { image: String(data.image) })
-});
+const toSummary = (file: string, data: Record<string, unknown>): PostSummary => {
+  const slug = path.basename(file, '.md');
+  if (data.title == null) {
+    throw new Error(`Post "${slug}" has no title`);
+  }
+  return {
+    slug,
+    title: String(data.title),
+    ...(data.date != null && { date: toDateString(data.date) }),
+    ...(data.summary != null && { summary: String(data.summary) }),
+    ...(data.image != null && { image: String(data.image) })
+  };
+};
 
 const readSummary = (file: string): PostSummary =>
   toSummary(file, matter(fs.readFileSync(file, 'utf8')).data);
