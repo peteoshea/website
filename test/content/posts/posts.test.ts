@@ -63,6 +63,12 @@ describe('getPost', () => {
     );
   });
 
+  test('fails for a post whose date is not written as YYYY-MM-DD', () => {
+    expect(() => getPost('misdated', 'british-date', fixtureRoot)).toThrow(
+      'Post "british-date" has date "19/10/2012"; write it as YYYY-MM-DD'
+    );
+  });
+
   test('carries the Post image when a post has one', () => {
     expect(getPost('pictured', 'with-image', fixtureRoot)).toStrictEqual({
       slug: 'with-image',
