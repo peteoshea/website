@@ -132,7 +132,7 @@ describe('mySkills', () => {
 
       test('sql', () => {
         expect(sql).toBe(
-          'Lots of practise writing SQL and designing MySQL and Firebird databases.'
+          'Lots of practice writing SQL and designing MySQL and Firebird databases.'
         );
       });
 
