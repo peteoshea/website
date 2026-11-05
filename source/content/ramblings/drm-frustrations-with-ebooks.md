@@ -87,6 +87,6 @@ I have money that I would happily spend on books and films each month but with D
 
 The tide may well be changing though. There seems to be some progress towards DRM free content. This will hopefully lead to books that you can guarantee to be able to read well into the future, and on any device no matter which way technology goes…
 
-Some examples of early adopters are Tor-Forge books from Macmillan (see [announcement](http://www.tor.com/blogs/2012/06/torforge-books-announces-drm-free-e-book-store) for more details), [O'Reilly](https://www.oreilly.com/) and [Calibre](https://calibre-ebook.com/).
+Some examples of early adopters are Tor-Forge books from Macmillan (see [announcement](https://reactormag.com/torforge-books-announces-drm-free-e-book-store/) for more details), [O'Reilly](https://www.oreilly.com/) and [Calibre](https://calibre-ebook.com/).
 
 Let me know what you think on the subject below. Are you happy to pay for content that is DRM encrypted?
