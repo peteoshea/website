@@ -69,6 +69,13 @@ describe('getVisibleSections', () => {
     expect(slugs).toEqual(['ramblings', 'systems']);
   });
 
+  test('fails when two posts in different sections share a slug', () => {
+    const clashingRoot = path.resolve(__dirname, '../../fixtures/clashing-slugs');
+    expect(() => getVisibleSections(clashingRoot)).toThrow(
+      'Post slug "same-slug" is used in both ramblings and systems'
+    );
+  });
+
   test('each visible section carries its name, description and header image', () => {
     const [ramblings] = getVisibleSections(fixtureRoot);
     expect(ramblings.name).toBe('Ramblings');
