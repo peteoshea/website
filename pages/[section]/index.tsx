@@ -13,15 +13,21 @@ type Props = {
 };
 
 export const SectionPage = ({ section, posts, sections }: Props): React.JSX.Element => (
-  <Layout pageTitle={section.name} sections={sections}>
-    <Image
-      className="mt-4 w-full h-auto rounded-lg"
-      src={section.image}
-      alt={section.name}
-      width={1200}
-      height={300}
-      priority
-    />
+  <Layout
+    pageTitle={section.name}
+    sections={sections}
+    // The Section image already shows the name, and its alt text gives the heading its name.
+    heading={
+      <Image
+        className="mt-2 w-full h-auto rounded-lg"
+        src={section.image}
+        alt={section.name}
+        width={1200}
+        height={300}
+        priority
+      />
+    }
+  >
     <p className="mt-4 text-lg text-center">{section.description}</p>
     <ul className="mt-6 space-y-6">
       {posts.map((post) => (
