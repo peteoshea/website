@@ -32,8 +32,8 @@ export const SectionPage = ({ section, posts, sections }: Props): React.JSX.Elem
           >
             {post.title}
           </a>
-          <p className="text-sm text-gray-500">{formatPostDate(post.date)}</p>
-          <p className="mt-1">{post.summary}</p>
+          {post.date && <p className="text-sm text-gray-500">{formatPostDate(post.date)}</p>}
+          {post.summary && <p className="mt-1">{post.summary}</p>}
         </li>
       ))}
     </ul>
