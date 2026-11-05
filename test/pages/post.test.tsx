@@ -49,6 +49,34 @@ describe('Post page', () => {
     expect(getByText('4 November 2026')).toBeDefined();
   });
 
+  test('shows no date for a post without one', () => {
+    const undated: Post = { slug: 'undated', title: 'Undated', content: 'Body.' };
+    const { container } = render(
+      <PostPage section={ramblings} post={undated} sections={[ramblings]} />
+    );
+    expect(container.querySelector('main').textContent).toBe('Body.← Back to Ramblings');
+  });
+
+  test('shows the Post image above the title as a decorative 4:3 picture', () => {
+    const pictured: Post = { ...post, image: '/photos/hello.jpg' };
+    const { container, getByRole } = render(
+      <PostPage section={ramblings} post={pictured} sections={[ramblings]} />
+    );
+    const image = container.querySelector(`img[src*="${encodeURIComponent('/photos/hello.jpg')}"]`);
+    expect(image.getAttribute('alt')).toBe('');
+    expect(Number(image.getAttribute('width')) / Number(image.getAttribute('height'))).toBe(4 / 3);
+    const order = image.compareDocumentPosition(getByRole('heading', { level: 1 }));
+    expect(order & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+  });
+
+  test('keeps the body and back link to a readable, centred column', () => {
+    const { container, getByRole } = renderPage();
+    const column = container.querySelector('article').parentElement;
+    expect(column.className).toMatch(/\bmax-w-prose\b/);
+    expect(column.className).toMatch(/\bmx-auto\b/);
+    expect(column.contains(getByRole('link', { name: '← Back to Ramblings' }))).toBe(true);
+  });
+
   test('renders the markdown body', () => {
     const { container } = renderPage();
     expect(container.querySelector('main strong').textContent).toBe('bold');

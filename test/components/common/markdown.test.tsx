@@ -1,6 +1,23 @@
+import fs from 'node:fs';
+import path from 'node:path';
 import Markdown from 'components/common/markdown';
 import React from 'react';
 import { render } from '../../testUtils';
+
+// jsdom does not apply the stylesheet, so read it to check each element has a rule.
+const stylesheet = fs.readFileSync(
+  path.resolve('source/components/common/markdown.module.css'),
+  'utf8'
+);
+
+describe('Markdown styles', () => {
+  test.each(['h2', 'h3', 'h4', 'p', 'a', 'blockquote', 'code', 'pre'])(
+    'restyles %s, which the Tailwind reset leaves looking like body text',
+    (element) => {
+      expect(stylesheet).toMatch(new RegExp(`\\.markdown ${element}\\s*\\{`));
+    }
+  );
+});
 
 describe('Markdown', () => {
   test('contains a div', () => {

@@ -1,4 +1,5 @@
 import type { GetStaticPaths, GetStaticProps } from 'next';
+import Image from 'next/image';
 import Layout from 'components/common/layout';
 import Markdown from 'components/common/markdown';
 import formatPostDate from 'content/posts/formatPostDate';
@@ -13,17 +14,38 @@ type Props = {
 };
 
 export const PostPage = ({ section, post, sections }: Props): React.JSX.Element => (
-  <Layout pageTitle={post.title} currentSection={section.name} sections={sections}>
-    <p className="text-center text-sm text-gray-500">{formatPostDate(post.date)}</p>
-    <article className="mt-6">
-      <Markdown content={post.content} />
-    </article>
-    <a
-      href={`/${section.slug}`}
-      className="mt-8 inline-block font-medium text-gray-500 hover:text-gray-900"
-    >
-      ← Back to {section.name}
-    </a>
+  <Layout
+    pageTitle={post.title}
+    currentSection={section.name}
+    sections={sections}
+    banner={
+      post.image && (
+        // Decorative: the title beside it already says what it shows. Capped below the viewport
+        // height so the whole banner is seen before the page scrolls over it.
+        <Image
+          className="w-full aspect-4/3 max-h-[70vh] object-cover"
+          src={post.image}
+          alt=""
+          width={1200}
+          height={900}
+          priority
+        />
+      )
+    }
+  >
+    {post.date && <p className="text-center text-sm text-gray-500">{formatPostDate(post.date)}</p>}
+    {/* About 65 characters a line, so long Posts stay comfortable to read on wide screens. */}
+    <div className="mx-auto max-w-prose sm:text-lg">
+      <article className="mt-6">
+        <Markdown content={post.content} />
+      </article>
+      <a
+        href={`/${section.slug}`}
+        className="mt-8 inline-block font-medium text-gray-500 hover:text-gray-900"
+      >
+        ← Back to {section.name}
+      </a>
+    </div>
   </Layout>
 );
 

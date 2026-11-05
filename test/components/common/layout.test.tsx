@@ -96,6 +96,30 @@ describe('Page layout', () => {
     expect(element.innerHTML).toBe(subheading);
   });
 
+  test('banner sits above the page heading', () => {
+    const { getByTestId, getByRole } = render(
+      <Layout pageTitle={pageTitle} banner={<div data-testid="banner" />} />
+    );
+    const order = getByTestId('banner').compareDocumentPosition(getByRole('heading', { level: 1 }));
+    expect(order & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+  });
+
+  test('banner stays put while the heading and content scroll over it', () => {
+    const { getByTestId, container } = render(
+      <Layout pageTitle={pageTitle} banner={<div data-testid="banner" />} />
+    );
+    expect(getByTestId('banner').parentElement.className).toMatch(/\bsticky\b.*\btop-0\b/);
+    const layer = container.querySelector('header').parentElement.className;
+    expect(layer).toMatch(/\brelative\b/);
+    expect(layer).toMatch(/\bz-10\b/);
+    expect(layer).toMatch(/\bbg-white\b/);
+  });
+
+  test('has no banner by default', () => {
+    const { container } = render(<Layout pageTitle={pageTitle} />);
+    expect(container.querySelector('.sticky')).toBeNull();
+  });
+
   const navLink = (container: HTMLElement, label: string) =>
     Array.from(container.querySelectorAll('nav a')).find((a) => a.textContent === label);
 

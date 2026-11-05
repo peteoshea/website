@@ -8,19 +8,41 @@ import { Section } from 'types/section';
 const defaultContentRoot = path.join(process.cwd(), 'source', 'content');
 
 // YAML parses an unquoted YYYY-MM-DD as a Date, so normalise it back to the written form.
-const toDateString = (date: unknown): string =>
-  date instanceof Date ? date.toISOString().slice(0, 10) : String(date);
+// Dates are sorted as text and formatted for display, which both need exactly YYYY-MM-DD.
+const toDateString = (slug: string, date: unknown): string => {
+  const written = date instanceof Date ? date.toISOString().slice(0, 10) : String(date);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(written)) {
+    throw new Error(`Post "${slug}" has date "${written}"; write it as YYYY-MM-DD`);
+  }
+  return written;
+};
 
 const readPost = (file: string): Post => {
   const { data, content } = matter(fs.readFileSync(file, 'utf8'));
+  return { ...toSummary(file, data), content };
+};
+
+// Missing details are left out, not set to undefined, which Next.js cannot serialise.
+const toSummary = (file: string, data: Record<string, unknown>): PostSummary => {
+  const slug = path.basename(file, '.md');
+  if (data.title == null) {
+    throw new Error(`Post "${slug}" has no title`);
+  }
   return {
-    slug: path.basename(file, '.md'),
-    title: data.title,
-    date: toDateString(data.date),
-    summary: data.summary,
-    content
+    slug,
+    title: String(data.title),
+    ...(data.date != null && { date: toDateString(slug, data.date) }),
+    ...(data.summary != null && { summary: String(data.summary) }),
+    ...(data.image != null && { image: String(data.image) })
   };
 };
+
+const readSummary = (file: string): PostSummary =>
+  toSummary(file, matter(fs.readFileSync(file, 'utf8')).data);
+
+// Undated Posts sort as the oldest, so they follow the dated ones.
+const newestFirstThenByTitle = (a: PostSummary, b: PostSummary): number =>
+  (b.date ?? '').localeCompare(a.date ?? '') || a.title.localeCompare(b.title);
 
 export const getPosts = (section: string, contentRoot = defaultContentRoot): PostSummary[] => {
   const folder = path.join(contentRoot, section);
@@ -30,15 +52,33 @@ export const getPosts = (section: string, contentRoot = defaultContentRoot): Pos
   return fs
     .readdirSync(folder)
     .filter((file) => file.endsWith('.md'))
-    .map((file) => {
-      const { slug, title, date, summary } = readPost(path.join(folder, file));
-      return { slug, title, date, summary };
-    })
-    .sort((a, b) => b.date.localeCompare(a.date));
+    .map((file) => readSummary(path.join(folder, file)))
+    .sort(newestFirstThenByTitle);
 };
 
 export const getPost = (section: string, slug: string, contentRoot = defaultContentRoot): Post =>
   readPost(path.join(contentRoot, section, `${slug}.md`));
 
-export const getVisibleSections = (contentRoot = defaultContentRoot): Section[] =>
-  sections.filter((section) => getPosts(section.slug, contentRoot).length > 0);
+// A Post's photos are named after its slug, so a slug may only be used once across all Sections.
+const ensureUniqueSlugs = (postsBySection: [Section, PostSummary[]][]): void => {
+  const sectionOf = new Map<string, string>();
+  for (const [section, posts] of postsBySection) {
+    for (const { slug } of posts) {
+      if (sectionOf.has(slug)) {
+        throw new Error(
+          `Post slug "${slug}" is used in both ${sectionOf.get(slug)} and ${section.slug}`
+        );
+      }
+      sectionOf.set(slug, section.slug);
+    }
+  }
+};
+
+export const getVisibleSections = (contentRoot = defaultContentRoot): Section[] => {
+  const postsBySection = sections.map((section): [Section, PostSummary[]] => [
+    section,
+    getPosts(section.slug, contentRoot)
+  ]);
+  ensureUniqueSlugs(postsBySection);
+  return postsBySection.filter(([, posts]) => posts.length > 0).map(([section]) => section);
+};
