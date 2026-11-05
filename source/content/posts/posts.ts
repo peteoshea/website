@@ -8,8 +8,14 @@ import { Section } from 'types/section';
 const defaultContentRoot = path.join(process.cwd(), 'source', 'content');
 
 // YAML parses an unquoted YYYY-MM-DD as a Date, so normalise it back to the written form.
-const toDateString = (date: unknown): string =>
-  date instanceof Date ? date.toISOString().slice(0, 10) : String(date);
+// Dates are sorted as text and formatted for display, which both need exactly YYYY-MM-DD.
+const toDateString = (slug: string, date: unknown): string => {
+  const written = date instanceof Date ? date.toISOString().slice(0, 10) : String(date);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(written)) {
+    throw new Error(`Post "${slug}" has date "${written}"; write it as YYYY-MM-DD`);
+  }
+  return written;
+};
 
 const readPost = (file: string): Post => {
   const { data, content } = matter(fs.readFileSync(file, 'utf8'));
@@ -25,7 +31,7 @@ const toSummary = (file: string, data: Record<string, unknown>): PostSummary => 
   return {
     slug,
     title: String(data.title),
-    ...(data.date != null && { date: toDateString(data.date) }),
+    ...(data.date != null && { date: toDateString(slug, data.date) }),
     ...(data.summary != null && { summary: String(data.summary) }),
     ...(data.image != null && { image: String(data.image) })
   };
