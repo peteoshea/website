@@ -5,7 +5,7 @@ summary: Why DRM on films and ebooks punishes paying customers, and why music go
 image: /photos/drm-frustrations-with-ebooks.jpg
 ---
 
-Why, oh why, do we need [DRM](https://en.wikipedia.org/wiki/Digital_rights_management)! My first real run in with this copy protection scheme was with music. Then there are all of the issues surrounding films, including DVDs, Blu-Rays and now digital copies. Lately though the things that's really bugging me are ebooks!
+Why, oh why, do we need [DRM](https://en.wikipedia.org/wiki/Digital_rights_management)! My first real run in with this copy protection scheme was with music. Then there are all of the issues surrounding films, including DVDs, Blu-Rays and now digital copies. Lately though the thing that's really bugging me are ebooks!
 
 It's getting really frustrating that this extra layer of complication seems to be tacked onto everything. Not only does it restrict how you use the product that you have legitimately purchased but it also lowers the level of enjoyment you get out of a product.
 
@@ -37,7 +37,7 @@ Greed is not a nice trait. If the movie industry has become so greedy that they 
 
 Now, from my point of view, music is the major success story.
 
-When I was looking into selecting a licensing scheme for my work I talked a bit about DRM and how I had started buying music again. MP3's won the DRM battle and so at last you knew for sure that when you bought a song, not only would you be able to play it on any device but it would also still work 10 years from now.
+When I was looking into selecting a licensing scheme for my work I talked a bit about DRM and how I had started buying music again. MP3s won the DRM battle and so at last you knew for sure that when you bought a song, not only would you be able to play it on any device but it would also still work 10 years from now.
 
 There is always the possibility that there may be some leaps and bounds in the music industry going forward and there may be some fancy new technology that adds to the listening experience. It would then be up to you if you are happy to continue to listen to MP3s or maybe replace some of your favourite songs with the latest technological incarnation…
 
@@ -53,7 +53,7 @@ I suppose part of the issue is that it's quite a time intensive job to scan a wh
 
 The majority of books are just plain text and so are very easy to get onto an e-reader of some kind. Not only are they very flexible, allowing for different fonts and sizes, selectable and even changeable while reading, but also the books themselves tend to be very small, storage wise.
 
-So far so good everything sounds great. That's when DRM rears it's ugly head…
+So far so good everything sounds great. That's when DRM rears its ugly head…
 
 Both Shirley and I have a Kindle each. We also share an iPad. Wouldn't it be great if we could just buy a copy of a book and then we could both read it, whenever we liked, on any of our devices…
 
@@ -63,9 +63,9 @@ With the way technology moves who's to say Kindles will even still exist in a co
 
 Amazon are currently bringing out new models all the time. Currently there is the Kindle and the Kindle Fire along with the soon to be released Kindle Paperwhite and the Kindle Fire HD.
 
-I can understand where the idea of copy protection comes from. The big difference between physical and digital products if that it is much easier to copy the digital version. With a physical book only one person can have it at any one time. You can pass it on to all of your friends but they have to take it in turns…
+I can understand where the idea of copy protection comes from. The big difference between physical and digital products is that it is much easier to copy the digital version. With a physical book only one person can have it at any one time. You can pass it on to all of your friends but they have to take it in turns…
 
-If you had the urge you could just pass a digital file on to everyone you know, at the same time. That is what the publishers are afraid of but is that ever likely to really happen? Everyones tastes vary. Do you really want people to know that you are reading Shades of Grey?
+If you had the urge you could just pass a digital file on to everyone you know, at the same time. That is what the publishers are afraid of but is that ever likely to really happen? Everyone's tastes vary. Do you really want people to know that you are reading Fifty Shades of Grey?
 
 If the price is right and the process is as easy as buying music then why wouldn't you just buy a copy of a book you want when it first comes to your attention, for whatever reason? Unfortunately, as with films, the stance was taken that everyone wants to rip off the publishers. So DRM was added to stop any copying, or even sharing, at all!
 
