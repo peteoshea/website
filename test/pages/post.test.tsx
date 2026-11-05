@@ -57,14 +57,16 @@ describe('Post page', () => {
     expect(container.querySelector('main').textContent).toBe('Body.← Back to Ramblings');
   });
 
-  test('shows the Post image, described by the post title', () => {
+  test('shows the Post image above the title as a decorative 4:3 picture', () => {
     const pictured: Post = { ...post, image: '/photos/hello.jpg' };
-    const { getByAltText } = render(
+    const { container, getByRole } = render(
       <PostPage section={ramblings} post={pictured} sections={[ramblings]} />
     );
-    expect(getByAltText('Hello there').getAttribute('src')).toContain(
-      encodeURIComponent('/photos/hello.jpg')
-    );
+    const image = container.querySelector(`img[src*="${encodeURIComponent('/photos/hello.jpg')}"]`);
+    expect(image.getAttribute('alt')).toBe('');
+    expect(Number(image.getAttribute('width')) / Number(image.getAttribute('height'))).toBe(4 / 3);
+    const order = image.compareDocumentPosition(getByRole('heading', { level: 1 }));
+    expect(order & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
   });
 
   test('renders the markdown body', () => {
