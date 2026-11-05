@@ -47,6 +47,6 @@ describe('getVisibleSections', () => {
     const [ramblings] = getVisibleSections(fixtureRoot);
     expect(ramblings.name).toBe('Ramblings');
     expect(ramblings.description).not.toBe('');
-    expect(ramblings.image).toBe('/images/sections/ramblings.svg');
+    expect(ramblings.image).toBe('/images/section-ramblings.svg');
   });
 });

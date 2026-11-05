@@ -8,7 +8,11 @@ describe('myPortfolio', () => {
   });
 
   test('this website image is set', () => {
-    expect(thisWebsite.image).toEqual({ src: '/peteoshea.co.uk.png', width: 1534, height: 1152 });
+    expect(thisWebsite.image).toEqual({
+      src: '/images/peteoshea-co-uk.png',
+      width: 1534,
+      height: 1152
+    });
   });
 
   test('this website name is set', () => {
@@ -30,7 +34,11 @@ describe('myPortfolio', () => {
   });
 
   test('saransurf image is set', () => {
-    expect(saransurf.image).toEqual({ src: '/saransurf.co.uk.png', width: 1531, height: 1028 });
+    expect(saransurf.image).toEqual({
+      src: '/images/saransurf-co-uk.png',
+      width: 1531,
+      height: 1028
+    });
   });
 
   test('saransurf name is set', () => {
@@ -53,7 +61,11 @@ describe('myPortfolio', () => {
   });
 
   test('skipad image is set', () => {
-    expect(skipad.image).toEqual({ src: '/SkiPad_iPhone_4_Detail.png', width: 989, height: 1755 });
+    expect(skipad.image).toEqual({
+      src: '/images/skipad-iphone.png',
+      width: 989,
+      height: 1755
+    });
   });
 
   test('skipad name is set', () => {

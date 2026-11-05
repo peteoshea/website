@@ -31,6 +31,9 @@ Agree the seam before writing tests. This repo's seams are:
 - **Source modules** — `source/types/`, `source/*` (data shapes, helpers, pure functions).
   The Posts module (`source/content/posts/`) is tested against fixture folders in
   `test/fixtures/content/`, never the real Posts.
+- **Repository layout** — conventions for where files live and how they are named, such as the
+  `public/` folders and the pictures the site refers to (`test/public.test.ts`). These tests
+  read the real repo, so a move or rename starts with a red test of the new layout.
 
 Run tests with `npm test` (Vitest). `npm run test-coverage` fails below 100% statements,
 branches, functions or lines, and CI runs it. Every new branch gets a test. Where a line truly

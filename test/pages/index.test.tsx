@@ -33,7 +33,7 @@ describe('Home page', () => {
 
   test('hero image is not lazy-loaded because it is the LCP element', () => {
     const { container } = render(<Home />);
-    const element = container.querySelector('img[src*="Writing-Tools"]');
+    const element = container.querySelector('img[src*="writing-tools"]');
     expect(element.getAttribute('loading')).not.toBe('lazy');
   });
 
