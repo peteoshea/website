@@ -49,6 +49,15 @@ describe('getPost', () => {
     });
   });
 
+  test('carries the Post image when a post has one', () => {
+    expect(getPost('pictured', 'with-image', fixtureRoot)).toStrictEqual({
+      slug: 'with-image',
+      title: 'With an image',
+      image: '/photos/with-image.jpg',
+      content: '\nPictured body.\n'
+    });
+  });
+
   test('keeps a quoted date exactly as written', () => {
     expect(getPost('systems', 'only-post', fixtureRoot).date).toBe('2026-02-10');
   });
