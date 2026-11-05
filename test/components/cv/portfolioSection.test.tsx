@@ -90,6 +90,18 @@ describe('CvPortfolioSection', () => {
     expect(text).not.toMatch(/(^|\s)text-right(\s|$)/);
   });
 
+  test('shows the name in the link red and the description as normal text', () => {
+    const { container, getByText } = render(
+      <CvPortfolioSection projects={[projectWithDescription]} />
+    );
+    const name = getByText(projectWithDescription.name).className;
+    expect(name).toMatch(/(^|\s)text-red-800(\s|$)/);
+    expect(name).toMatch(/(^|\s)group-hover:text-red-600(\s|$)/);
+    const link = container.querySelector('a').className;
+    expect(link).toMatch(/(^|\s)group(\s|$)/);
+    expect(link).not.toContain('text-gray-500');
+  });
+
   test('image and text use the full width when stacked on a phone', () => {
     const { container, getByText } = render(<CvPortfolioSection projects={[projectWithImage]} />);
     expect(container.querySelector('img').className).toMatch(/(^|\s)w-full(\s|$)/);
