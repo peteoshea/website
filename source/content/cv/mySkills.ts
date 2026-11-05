@@ -19,7 +19,7 @@ export const javascript =
   'JavaScript/TypeScript using Node.js, React & Next.js with brief exposure to Svelte & Vue.js.';
 export const languages =
   'Extensive use of Delphi and PHP but have also worked with C, C#, Objective C, Python & Rust.';
-export const sql = 'Lots of practise writing SQL and designing MySQL and Firebird databases.';
+export const sql = 'Lots of practice writing SQL and designing MySQL and Firebird databases.';
 export const sysadmin =
   'System administration skills with Linux (mainly Red Hat and Debian based systems).';
 export const tdd =
