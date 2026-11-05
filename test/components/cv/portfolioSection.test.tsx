@@ -77,6 +77,19 @@ describe('CvPortfolioSection', () => {
     expect(element.getAttribute('loading')).not.toBe('lazy');
   });
 
+  test('alternates sides only from the sm breakpoint, so phones keep one order', () => {
+    const second: Project = { ...projectWithImage, name: 'Second Project' };
+    const { container, getByText } = render(
+      <CvPortfolioSection projects={[projectWithImage, second]} />
+    );
+    const image = container.querySelectorAll('img')[1].className;
+    expect(image).toMatch(/(^|\s)sm:order-last(\s|$)/);
+    expect(image).not.toMatch(/(^|\s)order-last(\s|$)/);
+    const text = getByText(second.name).parentElement.className;
+    expect(text).toMatch(/(^|\s)sm:text-right(\s|$)/);
+    expect(text).not.toMatch(/(^|\s)text-right(\s|$)/);
+  });
+
   test('image and text use the full width when stacked on a phone', () => {
     const { container, getByText } = render(<CvPortfolioSection projects={[projectWithImage]} />);
     expect(container.querySelector('img').className).toMatch(/(^|\s)w-full(\s|$)/);
