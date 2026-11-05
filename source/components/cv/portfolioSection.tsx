@@ -13,7 +13,7 @@ export const CvPortfolioSection = ({ projects }: Props): React.JSX.Element => (
         <div key={index}>
           <a
             href={project.url}
-            className="flex flex-col sm:flex-row items-center text-gray-500 hover:text-gray-900 hover:bg-gray-50"
+            className="group flex flex-col sm:flex-row items-center hover:bg-gray-50"
           >
             {project.image ? (
               <Image
@@ -29,7 +29,9 @@ export const CvPortfolioSection = ({ projects }: Props): React.JSX.Element => (
               />
             ) : null}
             <div className={'w-full sm:w-2/3 p-4' + (index % 2 ? ' sm:text-right' : '')}>
-              <h3 className="text-xl pb-2">{project.name}</h3>
+              <h3 className="text-xl font-semibold pb-2 text-red-800 group-hover:text-red-600">
+                {project.name}
+              </h3>
               {project.description ? <div>{project.description}</div> : null}
             </div>
           </a>
