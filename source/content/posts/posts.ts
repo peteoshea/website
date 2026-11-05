@@ -20,9 +20,9 @@ const readPost = (file: string): Post => {
 const toSummary = (file: string, data: Record<string, unknown>): PostSummary => ({
   slug: path.basename(file, '.md'),
   title: String(data.title),
-  ...(data.date !== undefined && { date: toDateString(data.date) }),
-  ...(data.summary !== undefined && { summary: String(data.summary) }),
-  ...(data.image !== undefined && { image: String(data.image) })
+  ...(data.date != null && { date: toDateString(data.date) }),
+  ...(data.summary != null && { summary: String(data.summary) }),
+  ...(data.image != null && { image: String(data.image) })
 });
 
 const readSummary = (file: string): PostSummary =>
