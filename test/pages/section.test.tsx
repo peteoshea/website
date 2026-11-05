@@ -42,6 +42,15 @@ describe('Section page', () => {
     );
   });
 
+  test('the section image is the heading, so the name is not repeated as text', () => {
+    const { getByRole } = renderPage();
+    const heading = getByRole('heading', { level: 1, name: 'Ramblings' });
+    expect(heading.querySelector('img').getAttribute('src')).toContain(
+      '/images/section-ramblings.svg'
+    );
+    expect(heading.textContent).toBe('');
+  });
+
   test('shows the section description', () => {
     const { getByText } = renderPage();
     expect(getByText('Thoughts and opinions.')).toBeDefined();
