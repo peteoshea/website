@@ -47,5 +47,22 @@ export const getPosts = (section: string, contentRoot = defaultContentRoot): Pos
 export const getPost = (section: string, slug: string, contentRoot = defaultContentRoot): Post =>
   readPost(path.join(contentRoot, section, `${slug}.md`));
 
-export const getVisibleSections = (contentRoot = defaultContentRoot): Section[] =>
-  sections.filter((section) => getPosts(section.slug, contentRoot).length > 0);
+// A Post's photos are named after its slug, so a slug may only be used once across all Sections.
+const ensureUniqueSlugs = (contentRoot: string): void => {
+  const sectionOf = new Map<string, string>();
+  for (const section of sections) {
+    for (const { slug } of getPosts(section.slug, contentRoot)) {
+      if (sectionOf.has(slug)) {
+        throw new Error(
+          `Post slug "${slug}" is used in both ${sectionOf.get(slug)} and ${section.slug}`
+        );
+      }
+      sectionOf.set(slug, section.slug);
+    }
+  }
+};
+
+export const getVisibleSections = (contentRoot = defaultContentRoot): Section[] => {
+  ensureUniqueSlugs(contentRoot);
+  return sections.filter((section) => getPosts(section.slug, contentRoot).length > 0);
+};
