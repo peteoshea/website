@@ -31,6 +31,13 @@ describe('CvSection', () => {
     expect(heading).toMatch(/(^|\s)font-semibold(\s|$)/);
   });
 
+  test('leaves clear space between sections, but less under the page heading', () => {
+    const { container } = render(<CvSection title={title} />);
+    const section = container.querySelector('h2').parentElement.className;
+    expect(section).toMatch(/(^|\s)mt-10(\s|$)/);
+    expect(section).toMatch(/(^|\s)first:mt-5(\s|$)/);
+  });
+
   test('contains children', () => {
     const { container } = render(
       <CvSection title={title}>
