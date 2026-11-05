@@ -24,11 +24,11 @@ export const CvPortfolioSection = ({ projects }: Props): React.JSX.Element => (
                 priority={index === 0}
                 className={
                   'w-full sm:w-1/3 h-auto object-contain max-h-60 md:max-h-72 p-4' +
-                  (index % 2 ? ' order-last' : '')
+                  (index % 2 ? ' sm:order-last' : '')
                 }
               />
             ) : null}
-            <div className={'w-full sm:w-2/3 p-4' + (index % 2 ? ' text-right' : '')}>
+            <div className={'w-full sm:w-2/3 p-4' + (index % 2 ? ' sm:text-right' : '')}>
               <h3 className="text-xl pb-2">{project.name}</h3>
               {project.description ? <div>{project.description}</div> : null}
             </div>
