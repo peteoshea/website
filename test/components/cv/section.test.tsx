@@ -24,6 +24,13 @@ describe('CvSection', () => {
     expect(element.innerHTML).toBe(title);
   });
 
+  test('heading is a bolder, darker shade of the page heading red', () => {
+    const { container } = render(<CvSection title={title} />);
+    const heading = container.querySelector('h2').className;
+    expect(heading).toMatch(/(^|\s)text-red-900(\s|$)/);
+    expect(heading).toMatch(/(^|\s)font-semibold(\s|$)/);
+  });
+
   test('contains children', () => {
     const { container } = render(
       <CvSection title={title}>
