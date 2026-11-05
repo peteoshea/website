@@ -2,9 +2,9 @@
 title: DRM Frustrations With Ebooks
 date: 2012-10-19
 summary: Why DRM on films and ebooks punishes paying customers, and why music got it right.
+image: /photos/drm-frustrations-with-ebooks.jpg
 ---
 
-![Kindle with Books](/images/sections/ramblings/drm-frustrations-with-ebooks/kindle-with-books.jpg)
 Why, oh why, do we need [DRM](https://en.wikipedia.org/wiki/Digital_rights_management)! My first real run in with this copy protection scheme was with music. Then there are all of the issues surrounding films, including DVDs, Blu-Rays and now digital copies. Lately though the things that's really bugging me are ebooks!
 
 It's getting really frustrating that this extra layer of complication seems to be tacked onto everything. Not only does it restrict how you use the product that you have legitimately purchased but it also lowers the level of enjoyment you get out of a product.
