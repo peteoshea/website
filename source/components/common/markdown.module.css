@@ -1,5 +1,44 @@
 @reference "tailwindcss";
 
+/* Tailwind's reset strips the browser's element styles, so each element a Post uses is
+   styled again here. Headings follow the page heading's red. */
+
+.markdown h2 {
+  @apply mt-8 mb-2 text-2xl font-bold tracking-tight text-red-800 sm:text-3xl;
+}
+
+.markdown h3 {
+  @apply mt-6 mb-2 text-xl font-bold tracking-tight text-red-800 sm:text-2xl;
+}
+
+.markdown h4 {
+  @apply mt-4 mb-2 text-lg font-semibold;
+}
+
+.markdown p {
+  @apply my-4;
+}
+
+.markdown a {
+  @apply text-red-800 underline hover:text-red-600;
+}
+
+.markdown blockquote {
+  @apply my-4 border-l-4 border-gray-300 pl-4 italic text-gray-600;
+}
+
+.markdown code {
+  @apply rounded bg-gray-100 px-1 font-mono text-sm;
+}
+
+.markdown pre {
+  @apply my-4 overflow-x-auto rounded bg-gray-100 p-4;
+}
+
+.markdown pre code {
+  @apply bg-transparent p-0;
+}
+
 .markdown ul {
   @apply list-disc px-10 py-2;
 }
