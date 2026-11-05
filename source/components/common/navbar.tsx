@@ -36,7 +36,7 @@ export const Navbar = ({
           <div className="flex items-center justify-between w-full md:w-auto">
             <a href={currentPage == 'Home' ? '#' : '/'}>
               <Image
-                className="h-auto w-auto"
+                className="size-16 sm:size-24"
                 src="/favicon-96x96.png"
                 alt="Home"
                 width={96}
@@ -49,7 +49,7 @@ export const Navbar = ({
           const isCurrentPage = label === currentPage;
           const isCurrentSection = label === currentSection;
           return (
-            <div key={label} className="block px-4">
+            <div key={label} className="block px-2 sm:px-4">
               <a
                 href={isCurrentPage ? '#' : href}
                 aria-current={isCurrentPage ? 'page' : isCurrentSection ? 'true' : undefined}
