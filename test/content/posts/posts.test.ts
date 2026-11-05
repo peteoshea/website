@@ -57,6 +57,12 @@ describe('getPost', () => {
     });
   });
 
+  test('fails for a post with no title', () => {
+    expect(() => getPost('untitled', 'no-title', fixtureRoot)).toThrow(
+      'Post "no-title" has no title'
+    );
+  });
+
   test('carries the Post image when a post has one', () => {
     expect(getPost('pictured', 'with-image', fixtureRoot)).toStrictEqual({
       slug: 'with-image',
