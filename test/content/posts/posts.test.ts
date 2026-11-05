@@ -32,6 +32,14 @@ describe('getPost', () => {
     });
   });
 
+  test('leaves out the date and summary when a post has none', () => {
+    expect(getPost('optional', 'title-only', fixtureRoot)).toStrictEqual({
+      slug: 'title-only',
+      title: 'Only a title',
+      content: '\nUntitled body.\n'
+    });
+  });
+
   test('keeps a quoted date exactly as written', () => {
     expect(getPost('systems', 'only-post', fixtureRoot).date).toBe('2026-02-10');
   });
