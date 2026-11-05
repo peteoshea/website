@@ -27,6 +27,10 @@ const toSummary = (file: string, data: Record<string, unknown>): PostSummary => 
 const readSummary = (file: string): PostSummary =>
   toSummary(file, matter(fs.readFileSync(file, 'utf8')).data);
 
+// Undated Posts sort as the oldest, so they follow the dated ones.
+const newestFirstThenByTitle = (a: PostSummary, b: PostSummary): number =>
+  (b.date ?? '').localeCompare(a.date ?? '') || a.title.localeCompare(b.title);
+
 export const getPosts = (section: string, contentRoot = defaultContentRoot): PostSummary[] => {
   const folder = path.join(contentRoot, section);
   if (!fs.existsSync(folder)) {
@@ -36,7 +40,7 @@ export const getPosts = (section: string, contentRoot = defaultContentRoot): Pos
     .readdirSync(folder)
     .filter((file) => file.endsWith('.md'))
     .map((file) => readSummary(path.join(folder, file)))
-    .sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''));
+    .sort(newestFirstThenByTitle);
 };
 
 export const getPost = (section: string, slug: string, contentRoot = defaultContentRoot): Post =>
