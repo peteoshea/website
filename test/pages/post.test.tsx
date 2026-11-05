@@ -57,6 +57,16 @@ describe('Post page', () => {
     expect(container.querySelector('main').textContent).toBe('Body.← Back to Ramblings');
   });
 
+  test('shows the Post image, described by the post title', () => {
+    const pictured: Post = { ...post, image: '/photos/hello.jpg' };
+    const { getByAltText } = render(
+      <PostPage section={ramblings} post={pictured} sections={[ramblings]} />
+    );
+    expect(getByAltText('Hello there').getAttribute('src')).toContain(
+      encodeURIComponent('/photos/hello.jpg')
+    );
+  });
+
   test('renders the markdown body', () => {
     const { container } = renderPage();
     expect(container.querySelector('main strong').textContent).toBe('bold');
