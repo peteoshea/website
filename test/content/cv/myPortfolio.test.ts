@@ -10,8 +10,8 @@ describe('myPortfolio', () => {
   test('this website image is set', () => {
     expect(thisWebsite.image).toEqual({
       src: '/images/peteoshea-co-uk.png',
-      width: 1534,
-      height: 1152
+      width: 1280,
+      height: 628
     });
   });
 
