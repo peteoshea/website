@@ -130,7 +130,7 @@ describe('Navbar', () => {
     const { container } = render(<Navbar />);
     const nav = container.querySelector('nav');
     expect(nav.className).toMatch(/(^|\s)h-20(\s|$)/);
-    expect(nav.parentElement.className).toMatch(/(^|\s)pt-2(\s|$)/);
+    expect(nav.parentElement.className).not.toMatch(/(^|\s)pt-/);
   });
 
   test('fits a phone screen: tighter link spacing below the sm breakpoint', () => {
