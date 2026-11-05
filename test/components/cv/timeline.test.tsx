@@ -33,6 +33,14 @@ describe('CvTimeline', () => {
     expect(getByText('Consultant')).toBeDefined();
   });
 
+  test('separates entries with a line and space, except above the first', () => {
+    const { getByText } = render(<CvTimeline title="T" entries={[entry]} />);
+    const row = getByText('Lead Developer').parentElement.className;
+    expect(row).toMatch(/(^|\s)not-first-of-type:border-t(\s|$)/);
+    expect(row).toMatch(/(^|\s)not-first-of-type:mt-6(\s|$)/);
+    expect(row).toMatch(/(^|\s)border-gray-200(\s|$)/);
+  });
+
   describe('description', () => {
     const renderWith = (description?: string): string =>
       render(<CvTimeline title="T" entries={[{ ...entry, description }]} />).container.innerHTML;
