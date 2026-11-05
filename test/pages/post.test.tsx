@@ -49,6 +49,14 @@ describe('Post page', () => {
     expect(getByText('4 November 2026')).toBeDefined();
   });
 
+  test('shows no date for a post without one', () => {
+    const undated: Post = { slug: 'undated', title: 'Undated', content: 'Body.' };
+    const { container } = render(
+      <PostPage section={ramblings} post={undated} sections={[ramblings]} />
+    );
+    expect(container.querySelector('main').textContent).toBe('Body.← Back to Ramblings');
+  });
+
   test('renders the markdown body', () => {
     const { container } = renderPage();
     expect(container.querySelector('main strong').textContent).toBe('bold');
