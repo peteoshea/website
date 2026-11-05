@@ -25,15 +25,26 @@ export const SectionPage = ({ section, posts, sections }: Props): React.JSX.Elem
     <p className="mt-4 text-lg text-center">{section.description}</p>
     <ul className="mt-6 space-y-6">
       {posts.map((post) => (
-        <li key={post.slug}>
-          <a
-            href={`/${section.slug}/${post.slug}`}
-            className="text-2xl font-bold text-red-800 hover:underline"
-          >
-            {post.title}
-          </a>
-          {post.date && <p className="text-sm text-gray-500">{formatPostDate(post.date)}</p>}
-          {post.summary && <p className="mt-1">{post.summary}</p>}
+        <li key={post.slug} className="flex items-start gap-4">
+          {post.image && (
+            <Image
+              className="size-20 shrink-0 rounded-lg object-cover"
+              src={post.image}
+              alt=""
+              width={80}
+              height={80}
+            />
+          )}
+          <div>
+            <a
+              href={`/${section.slug}/${post.slug}`}
+              className="text-2xl font-bold text-red-800 hover:underline"
+            >
+              {post.title}
+            </a>
+            {post.date && <p className="text-sm text-gray-500">{formatPostDate(post.date)}</p>}
+            {post.summary && <p className="mt-1">{post.summary}</p>}
+          </div>
         </li>
       ))}
     </ul>
