@@ -63,6 +63,17 @@ describe('Section page', () => {
     expect(within(newest).getByText('The newer one.')).toBeDefined();
   });
 
+  test('shows only the title for a post with no date or summary', () => {
+    const { getByRole } = render(
+      <SectionPage
+        section={ramblings}
+        posts={[{ slug: 'bare', title: 'Bare post' }]}
+        sections={[ramblings]}
+      />
+    );
+    expect(getByRole('listitem').textContent).toBe('Bare post');
+  });
+
   test('navbar links to the visible sections and marks this one current', () => {
     const { getByText } = renderPage();
     expect(getByText('Systems').getAttribute('href')).toBe('/systems');
