@@ -76,4 +76,10 @@ describe('CvPortfolioSection', () => {
     const element = container.querySelector('img');
     expect(element.getAttribute('loading')).not.toBe('lazy');
   });
+
+  test('image and text use the full width when stacked on a phone', () => {
+    const { container, getByText } = render(<CvPortfolioSection projects={[projectWithImage]} />);
+    expect(container.querySelector('img').className).toMatch(/(^|\s)w-full(\s|$)/);
+    expect(getByText(projectWithImage.name).parentElement.className).toMatch(/(^|\s)w-full(\s|$)/);
+  });
 });
