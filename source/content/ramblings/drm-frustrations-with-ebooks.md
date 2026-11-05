@@ -89,4 +89,4 @@ The tide may well be changing though. There seems to be some progress towards DR
 
 Some examples of early adopters are Tor-Forge books from Macmillan (see [announcement](https://reactormag.com/torforge-books-announces-drm-free-e-book-store/) for more details), [O'Reilly](https://www.oreilly.com/) and [Calibre](https://calibre-ebook.com/).
 
-Let me know what you think on the subject below. Are you happy to pay for content that is DRM encrypted?
+Are you happy to pay for content that is DRM encrypted?
