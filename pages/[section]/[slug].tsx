@@ -14,18 +14,26 @@ type Props = {
 };
 
 export const PostPage = ({ section, post, sections }: Props): React.JSX.Element => (
-  <Layout pageTitle={post.title} currentSection={section.name} sections={sections}>
+  <Layout
+    pageTitle={post.title}
+    currentSection={section.name}
+    sections={sections}
+    banner={
+      post.image && (
+        // Decorative: the title beside it already says what it shows. Capped below the viewport
+        // height so the whole banner is seen before the page scrolls over it.
+        <Image
+          className="w-full aspect-4/3 max-h-[70vh] object-cover"
+          src={post.image}
+          alt=""
+          width={1200}
+          height={900}
+          priority
+        />
+      )
+    }
+  >
     {post.date && <p className="text-center text-sm text-gray-500">{formatPostDate(post.date)}</p>}
-    {post.image && (
-      <Image
-        className="mt-4 w-full h-auto rounded-lg"
-        src={post.image}
-        alt={post.title}
-        width={1200}
-        height={675}
-        priority
-      />
-    )}
     <article className="mt-6">
       <Markdown content={post.content} />
     </article>
