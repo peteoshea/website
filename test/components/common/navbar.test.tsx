@@ -121,6 +121,25 @@ describe('Navbar', () => {
     expect(getByText('Ramblings').className).not.toContain('text-red-900');
   });
 
+  test('logo is 64px at every width, so the 96px file is barely stretched', () => {
+    const { container } = render(<Navbar />);
+    expect(container.querySelector('img').className).toBe('size-16');
+  });
+
+  test('leaves only a little space above the 64px logo', () => {
+    const { container } = render(<Navbar />);
+    const nav = container.querySelector('nav');
+    expect(nav.className).toMatch(/(^|\s)h-20(\s|$)/);
+    expect(nav.parentElement.className).not.toMatch(/(^|\s)pt-/);
+  });
+
+  test('fits a phone screen: tighter link spacing below the sm breakpoint', () => {
+    const { getByText } = render(<Navbar sections={visibleSections} />);
+    const linkBox = getByText('Ramblings').parentElement.className;
+    expect(linkBox).toMatch(/(^|\s)px-2(\s|$)/);
+    expect(linkBox).toMatch(/(^|\s)sm:px-4(\s|$)/);
+  });
+
   test('the highlighted link darkens further on hover', () => {
     const { getByText } = render(<Navbar currentPage="CV" />);
     expect(getByText('CV').className).toContain('hover:text-red-950');

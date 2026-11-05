@@ -8,7 +8,8 @@ type Props = {
   children?: React.ReactNode;
   // Shown above the heading, pinned in place while the rest of the page scrolls over it.
   banner?: React.ReactNode;
-  heading?: string;
+  // Text, or an element such as an image whose alt text names the page.
+  heading?: React.ReactNode;
   subheading?: string;
   pageTitle: string;
   currentPage?: string;
