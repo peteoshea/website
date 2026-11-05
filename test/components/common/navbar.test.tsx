@@ -121,11 +121,13 @@ describe('Navbar', () => {
     expect(getByText('Ramblings').className).not.toContain('text-red-900');
   });
 
-  test('fits a phone screen: smaller logo and tighter link spacing below the sm breakpoint', () => {
-    const { container, getByText } = render(<Navbar sections={visibleSections} />);
-    const logo = container.querySelector('img').className;
-    expect(logo).toMatch(/(^|\s)size-16(\s|$)/);
-    expect(logo).toMatch(/(^|\s)sm:size-24(\s|$)/);
+  test('logo is 64px at every width, so the 96px file is barely stretched', () => {
+    const { container } = render(<Navbar />);
+    expect(container.querySelector('img').className).toBe('size-16');
+  });
+
+  test('fits a phone screen: tighter link spacing below the sm breakpoint', () => {
+    const { getByText } = render(<Navbar sections={visibleSections} />);
     const linkBox = getByText('Ramblings').parentElement.className;
     expect(linkBox).toMatch(/(^|\s)px-2(\s|$)/);
     expect(linkBox).toMatch(/(^|\s)sm:px-4(\s|$)/);
