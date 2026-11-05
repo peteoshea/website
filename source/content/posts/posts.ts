@@ -13,14 +13,19 @@ const toDateString = (date: unknown): string =>
 
 const readPost = (file: string): Post => {
   const { data, content } = matter(fs.readFileSync(file, 'utf8'));
-  return {
-    slug: path.basename(file, '.md'),
-    title: data.title,
-    date: toDateString(data.date),
-    summary: data.summary,
-    content
-  };
+  return { ...toSummary(file, data), content };
 };
+
+// Missing details are left out, not set to undefined, which Next.js cannot serialise.
+const toSummary = (file: string, data: Record<string, unknown>): PostSummary => ({
+  slug: path.basename(file, '.md'),
+  title: String(data.title),
+  ...(data.date !== undefined && { date: toDateString(data.date) }),
+  ...(data.summary !== undefined && { summary: String(data.summary) })
+});
+
+const readSummary = (file: string): PostSummary =>
+  toSummary(file, matter(fs.readFileSync(file, 'utf8')).data);
 
 export const getPosts = (section: string, contentRoot = defaultContentRoot): PostSummary[] => {
   const folder = path.join(contentRoot, section);
@@ -30,11 +35,8 @@ export const getPosts = (section: string, contentRoot = defaultContentRoot): Pos
   return fs
     .readdirSync(folder)
     .filter((file) => file.endsWith('.md'))
-    .map((file) => {
-      const { slug, title, date, summary } = readPost(path.join(folder, file));
-      return { slug, title, date, summary };
-    })
-    .sort((a, b) => b.date.localeCompare(a.date));
+    .map((file) => readSummary(path.join(folder, file)))
+    .sort((a, b) => (b.date ?? '').localeCompare(a.date ?? ''));
 };
 
 export const getPost = (section: string, slug: string, contentRoot = defaultContentRoot): Post =>
