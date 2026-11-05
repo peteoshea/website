@@ -27,9 +27,9 @@ export const Navbar = ({
   ];
 
   return (
-    <div className="relative pt-4 px-4">
+    <div className="relative pt-2 px-4">
       <nav
-        className="relative flex items-center justify-between h-24 lg:justify-start"
+        className="relative flex items-center justify-between h-20 lg:justify-start"
         aria-label="navigation"
       >
         <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
