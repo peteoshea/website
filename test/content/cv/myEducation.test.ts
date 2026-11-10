@@ -9,12 +9,8 @@ describe('myEducation', () => {
     expect(gcses.endDate).toBe('1990');
   });
 
-  test('GCSEs description is set', () => {
-    expect(gcses.description).toBe(
-      'Maths (A), Physics (A), Chemistry (A), ' +
-        'Additional Maths (B), French (B), Biology (B), ' +
-        'Business Studies (C), English Language (C), English Literature (C)'
-    );
+  test('GCSEs description is not set', () => {
+    expect(gcses.description).toBeUndefined();
   });
 
   test('GCSEs location is Taunton', () => {
@@ -22,7 +18,7 @@ describe('myEducation', () => {
   });
 
   test('GCSEs name is set', () => {
-    expect(gcses.name).toBe('9 GCSEs');
+    expect(gcses.name).toBe('9 GCSEs, including Maths and English');
   });
 
   test('GCSEs school is Taunton', () => {
@@ -46,9 +42,7 @@ describe('myEducation', () => {
   });
 
   test('A-levels description is set', () => {
-    expect(alevels.description).toBe(
-      'Maths (A), Further Maths (C), Physics (C), Business Studies (C)'
-    );
+    expect(alevels.description).toBe('Maths, Further Maths, Physics, Business Studies');
   });
 
   test('A-levels location is Taunton', () => {
