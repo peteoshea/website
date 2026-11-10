@@ -7,7 +7,7 @@ const myProfile: Profile = {
   linkedInName: "Pete O'Shea",
   linkedInUrl: 'https://www.linkedin.com/in/pete-o-shea-9a072126/',
   summary:
-    'Highly motivated software engineer with over 25 years of experience using various languages and development environments. Works well as part of a team, with experience as junior programmer all the way up to lead developer, mentoring junior programmers, and peers. Also comfortable working on solo projects from concept all the way through to completion. Strong belief in clean, simple code, ideally test driven, and always keen to learn new skills, which is the most important part of being a developer.',
+    'Software engineer with over 25 years of experience across a range of languages and development environments, working from junior programmer up to lead developer and mentoring others along the way. Equally comfortable in a team or taking a solo project from concept to completion. Believes in clean, simple code, ideally test driven, and is always keen to learn new skills, most recently using AI coding agents to work faster without lowering quality.',
   title: 'Personal Statement'
 };
 
