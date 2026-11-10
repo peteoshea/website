@@ -3,7 +3,7 @@ import Qualification from 'types/qualification';
 export const alevels: Qualification = {
   startDate: '1990',
   endDate: '1992',
-  description: 'Maths (A), Further Maths (C), Physics (C), Business Studies (C)',
+  description: 'Maths, Further Maths, Physics, Business Studies',
   location: 'Taunton',
   name: '4 A-Levels',
   school: 'Taunton School'
@@ -18,12 +18,8 @@ export const degree: Qualification = {
 export const gcses: Qualification = {
   startDate: '1985',
   endDate: '1990',
-  description:
-    'Maths (A), Physics (A), Chemistry (A), ' +
-    'Additional Maths (B), French (B), Biology (B), ' +
-    'Business Studies (C), English Language (C), English Literature (C)',
   location: 'Taunton',
-  name: '9 GCSEs',
+  name: '9 GCSEs, including Maths and English',
   school: 'Taunton School'
 };
 export const scrumMaster: Qualification = {

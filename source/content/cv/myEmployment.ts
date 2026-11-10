@@ -7,7 +7,7 @@ export const brithene: Job = {
   employer: 'Brithene Films',
   location: 'Bridgwater',
   description:
-    'Database programmer for a manufacturing company. Developing mainly with UniVerse BASIC, but some contact with Visual Basic. The work comprised of controlling the entry, storage and analysis of data relating to production, sales and accounts along with maintaining a mainframe system.'
+    'Database programmer for a manufacturing company. Developing mainly with UniVerse BASIC, but some contact with Visual Basic. The work involved controlling the entry, storage and analysis of data relating to production, sales and accounts along with maintaining a mainframe system.'
 };
 export const fbh: Job = {
   startDate: '2000',
@@ -17,7 +17,7 @@ export const fbh: Job = {
   location: 'Taunton',
   description:
     'Started off working on UniVerse, and later jBASE, systems for the first few years. This included system administration of Unix, and later various Linux, systems.\n\n' +
-    'Cross trained to Delphi, outside office hours, creating a small Windows application which was used internally for many years. Soon became an integral part of the Delphi team working on the main POS products. Role included:\n' +
+    'Cross-trained to Delphi, outside office hours, creating a small Windows application which was used internally for many years. Soon became an integral part of the Delphi team working on the main POS products. Role included:\n' +
     '- Delphi development as part of a small team.\n' +
     '- Source control using CVS and later Subversion.\n' +
     '- Craft SQL to access the Firebird databases used to store the POS data.\n' +
@@ -27,6 +27,7 @@ export const fbh: Job = {
 };
 export const freelance: Job = {
   startDate: '2010',
+  endDate: '2018',
   title: 'Freelance Software Engineer',
   employer: 'Self Employed',
   location: 'Remote',
@@ -34,9 +35,9 @@ export const freelance: Job = {
     'Started a small business. Very varied work including:\n' +
     '- Creation of an iOS app to help find suitable ski accommodation.\n' +
     '- Bespoke Windows application for a waste management company.\n' +
-    '- Web site design and setup of e-commerce sites, using Crystallize GraphQL API.\n' +
+    '- Website design and setup of e-commerce sites, using the Crystallize GraphQL API.\n' +
     '- Regular software development for previous employer.\n\n' +
-    'This was the sole source of income for two years but was scaled back after returning to full-time employment. Now just occasional tinkering on personal projects.'
+    'This was the sole source of income for two years but was scaled back after returning to full-time employment.'
 };
 export const ibm: Job = {
   startDate: '1999',
@@ -45,7 +46,7 @@ export const ibm: Job = {
   employer: 'IBM Global Services Australia',
   location: 'Sydney',
   description:
-    '3 month contract during a year out travelling the world. Working as part of a team to check code for any Y2K issues and fix, as appropriate. This expanded to checking a variety of different languages including Visual Basic, Java and Unix shell scripts along with C and C++. Some simple Java programming helped locate tokens and automate fixes.'
+    '3-month contract during a year out travelling the world. Working as part of a team finding and fixing Y2K issues. This expanded to checking a variety of languages including Visual Basic, Java and Unix shell scripts along with C and C++. Wrote simple Java tools to locate tokens and automate fixes.'
 };
 export const icl: Job = {
   startDate: '1994',
@@ -54,11 +55,11 @@ export const icl: Job = {
   employer: 'ICL (now part of Fujitsu)',
   location: 'Bracknell',
   description:
-    'Placement year while studying at university. Role included the following:\n' +
+    'Placement year while studying at university. Role included:\n' +
     '- Programming in C under various Unix based systems.\n' +
     '- Writing shell scripts.\n' +
     '- Building, installing and testing new products on various machines.\n' +
-    '- Preparation and execution of presentations for new products.'
+    '- Preparing and giving presentations for new products.'
 };
 export const polarisLeadDeveloper: Job = {
   startDate: '2013',
@@ -67,11 +68,11 @@ export const polarisLeadDeveloper: Job = {
   employer: 'Polaris Elements',
   location: 'Taunton',
   description:
-    'Quickly promoted to Lead Developer, managing a team of 5 developers working on multiple projects including Windows applications and services based around POS systems, written in Delphi, and various web applications. Tasks included:\n' +
-    '- Actively developing on all of the Delphi and PHP projects.\n' +
-    '- Allocation of work to ensure the various projects stayed on track.\n' +
-    '- Mentoring developers to help improve the quality of code produced.\n' +
-    '- Unit testing, including getting a lot of legacy code under test.'
+    'Quickly promoted to Lead Developer, managing a team of 5 developers working on multiple projects including applications and services based around POS systems. Key contributions:\n' +
+    '- Actively developed on all of the Delphi, PHP and JavaScript projects.\n' +
+    '- Mentored developers to improve the quality of code produced by the team.\n' +
+    '- Introduced unit testing, bringing large parts of the legacy codebase under test.\n' +
+    '- Migrated the team to an agile framework based around Scrum.'
 };
 export const polarisLeadDeveloperScrum: Job = {
   startDate: '2017',
@@ -79,11 +80,13 @@ export const polarisLeadDeveloperScrum: Job = {
   employer: 'Polaris Elements',
   location: 'Remote',
   description:
-    'After company restructuring became a software engineer in multiple Scrum teams, keeping the title as leading by example and mentoring were still an essential part of the role. Tasks include:\n' +
-    '- Coding in various languages, including JavaScript and TypeScript, with a focus on TDD.\n' +
-    '- Consistent provisioning with automation where possible, using Terraform and Ansible.\n' +
-    '- Managing containers, including migrating certain projects to use dev containers.\n' +
-    '- Documentation and automation using various scripting languages.'
+    'Following a restructure, became an integral part of a Scrum team, keeping the Lead Developer title because leading by example and mentoring remained essential to the role. Tasks include:\n' +
+    '- Coding in various languages, including Delphi, PHP, JavaScript and TypeScript.\n' +
+    '- Mentoring developers through pairing and code review, and championing practices such as TDD, infrastructure as code and dev containers.\n' +
+    '- Automating provisioning of resources with Terraform and Ansible where possible.\n' +
+    '- Building CI/CD pipelines with GitHub Actions that automatically test and deploy changes, enabling faster, more reliable releases.\n' +
+    '- Containerising dev environments and supporting services such as databases, queues and APIs for faster onboarding.\n' +
+    '- Directing AI coding agents to produce test-driven code guided by agent instructions and verified through red-green TDD cycles and code review.'
 };
 export const polarisSeniorDeveloper: Job = {
   startDate: '2012',
@@ -92,11 +95,10 @@ export const polarisSeniorDeveloper: Job = {
   employer: 'Polaris Elements',
   location: 'Taunton',
   description:
-    'Re-joined previous employer after change of ownership and rebranding. Tasks included:\n' +
-    '- Solo project to design and build online loyalty system with a RESTful web service API.\n' +
-    '- Written in PHP using CodeIgniter, a Bootstrap based front-end with a MySQL database.\n' +
-    '- Migrated source code from Subversion to Git which greatly improved flexibility.\n' +
-    '- Setting up and maintaining various Linux VMs running on Citrix XenServer hosted on multiple dedicated physical on-prem servers.'
+    'Re-joined previous employer after change of ownership and rebranding. Key contributions:\n' +
+    '- Designed and built an online loyalty system as a solo project, with a RESTful API, using PHP (CodeIgniter), Bootstrap and MySQL.\n' +
+    '- Migrated source code from Subversion to Git, initially using GitLab and then later GitHub.\n' +
+    '- Set-up and maintained various Linux VMs running on Citrix XenServer hosted on multiple dedicated physical on-prem servers.'
 };
 
 const myEmployment: Job[] = [

@@ -9,7 +9,7 @@ export const CvSkillsSection = ({ skills }: Props): React.JSX.Element => {
   const title = skills.title ?? 'Skills';
   return (
     <CvSection title={title}>
-      <ul className="list-disc px-16">
+      <ul className="list-disc pl-5 sm:px-16">
         {skills.bulletPoints.map((skill, index) => (
           <li key={index}>{skill}</li>
         ))}

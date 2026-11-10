@@ -76,4 +76,35 @@ describe('CvPortfolioSection', () => {
     const element = container.querySelector('img');
     expect(element.getAttribute('loading')).not.toBe('lazy');
   });
+
+  test('alternates sides only from the sm breakpoint, so phones keep one order', () => {
+    const second: Project = { ...projectWithImage, name: 'Second Project' };
+    const { container, getByText } = render(
+      <CvPortfolioSection projects={[projectWithImage, second]} />
+    );
+    const image = container.querySelectorAll('img')[1].className;
+    expect(image).toMatch(/(^|\s)sm:order-last(\s|$)/);
+    expect(image).not.toMatch(/(^|\s)order-last(\s|$)/);
+    const text = getByText(second.name).parentElement.className;
+    expect(text).toMatch(/(^|\s)sm:text-right(\s|$)/);
+    expect(text).not.toMatch(/(^|\s)text-right(\s|$)/);
+  });
+
+  test('shows the name in the link red and the description as normal text', () => {
+    const { container, getByText } = render(
+      <CvPortfolioSection projects={[projectWithDescription]} />
+    );
+    const name = getByText(projectWithDescription.name).className;
+    expect(name).toMatch(/(^|\s)text-red-800(\s|$)/);
+    expect(name).toMatch(/(^|\s)group-hover:text-red-600(\s|$)/);
+    const link = container.querySelector('a').className;
+    expect(link).toMatch(/(^|\s)group(\s|$)/);
+    expect(link).not.toContain('text-gray-500');
+  });
+
+  test('image and text use the full width when stacked on a phone', () => {
+    const { container, getByText } = render(<CvPortfolioSection projects={[projectWithImage]} />);
+    expect(container.querySelector('img').className).toMatch(/(^|\s)w-full(\s|$)/);
+    expect(getByText(projectWithImage.name).parentElement.className).toMatch(/(^|\s)w-full(\s|$)/);
+  });
 });

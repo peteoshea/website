@@ -2,16 +2,11 @@ import mySkills, {
   agile,
   apis,
   ci,
-  delphi,
-  desktop,
   devops,
   docker,
   fullstack,
-  git,
   javascript,
-  languages,
   sql,
-  sysadmin,
   tdd
 } from 'content/cv/mySkills';
 
@@ -30,10 +25,6 @@ describe('mySkills', () => {
         expect(mySkills.bulletPoints).toContainEqual(ci);
       });
 
-      test('desktop', () => {
-        expect(mySkills.bulletPoints).toContainEqual(desktop);
-      });
-
       test('devops', () => {
         expect(mySkills.bulletPoints).toContainEqual(devops);
       });
@@ -46,20 +37,8 @@ describe('mySkills', () => {
         expect(mySkills.bulletPoints).toContainEqual(fullstack);
       });
 
-      test('git', () => {
-        expect(mySkills.bulletPoints).toContainEqual(git);
-      });
-
       test('javascript', () => {
         expect(mySkills.bulletPoints).toContainEqual(javascript);
-      });
-
-      test('languages', () => {
-        expect(mySkills.bulletPoints).toContainEqual(languages);
-      });
-
-      test('sysadmin', () => {
-        expect(mySkills.bulletPoints).toContainEqual(sysadmin);
       });
 
       test('tdd', () => {
@@ -80,25 +59,13 @@ describe('mySkills', () => {
 
       test('ci', () => {
         expect(ci).toBe(
-          'Automation using scripting languages like bash, including CI/CD using GitHub Actions.'
-        );
-      });
-
-      test('delphi', () => {
-        expect(delphi).toBe(
-          'Very experienced with Delphi, used as my main development environment for many years.'
-        );
-      });
-
-      test('desktop', () => {
-        expect(desktop).toBe(
-          'Current desktop OS of choice is Windows 11 but some experience with MacOS.'
+          'CI/CD with GitHub Actions and Bash scripting, using Git on GitHub, Bitbucket and GitLab.'
         );
       });
 
       test('devops', () => {
         expect(devops).toBe(
-          'DevOps/IaC experience, managing mainly AWS resources, with Terraform and Ansible.'
+          'DevOps and IaC on AWS using Terraform and Ansible, plus Linux administration (Red Hat and Debian).'
         );
       });
 
@@ -110,12 +77,8 @@ describe('mySkills', () => {
 
       test('fullstack', () => {
         expect(fullstack).toBe(
-          'Full stack developer with experience of a variety of, mainly object oriented, languages.'
+          'Full stack developer with extensive Delphi and PHP experience, plus C, C#, Objective-C, Python & Rust.'
         );
-      });
-
-      test('git', () => {
-        expect(git).toBe('Good working knowledge of Git using GitHub, BitBucket and GitLab.');
       });
 
       test('javascript', () => {
@@ -124,27 +87,13 @@ describe('mySkills', () => {
         );
       });
 
-      test('languages', () => {
-        expect(languages).toBe(
-          'Extensive use of Delphi and PHP but have also worked with C, C#, Objective C, Python & Rust.'
-        );
-      });
-
       test('sql', () => {
-        expect(sql).toBe(
-          'Lots of practise writing SQL and designing MySQL and Firebird databases.'
-        );
-      });
-
-      test('sysadmin', () => {
-        expect(sysadmin).toBe(
-          'System administration skills with Linux (mainly Red Hat and Debian based systems).'
-        );
+        expect(sql).toBe('Strong SQL and relational database design, mainly with MySQL.');
       });
 
       test('tdd', () => {
         expect(tdd).toBe(
-          'A love of Test Driven Development, which drives high code quality and maintainability.'
+          'A love of Test-Driven Development, which encourages high code quality and maintainability.'
         );
       });
     });
