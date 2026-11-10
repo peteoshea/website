@@ -3,7 +3,7 @@ import myPortfolio, { skipad, thisWebsite } from 'content/cv/myPortfolio';
 describe('myPortfolio', () => {
   test('this website description is set', () => {
     expect(thisWebsite.description).toBe(
-      'Personal website built with Next.js, TypeScript and Tailwind CSS. Vitest enforces 100% code coverage, with Husky, Prettier and ESLint handling linting and formatting. GitHub Actions apply dependency updates automatically and ensures all tests pass before a PR can be merged.'
+      'Personal website built with Next.js, TypeScript and Tailwind CSS. Vitest enforces 100% code coverage, with Husky, Prettier and ESLint handling linting and formatting. GitHub Actions apply dependency updates automatically and ensure all tests pass before a PR can be merged.'
     );
   });
 

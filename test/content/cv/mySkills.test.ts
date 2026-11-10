@@ -5,11 +5,8 @@ import mySkills, {
   devops,
   docker,
   fullstack,
-  git,
   javascript,
-  languages,
   sql,
-  sysadmin,
   tdd
 } from 'content/cv/mySkills';
 
@@ -40,20 +37,8 @@ describe('mySkills', () => {
         expect(mySkills.bulletPoints).toContainEqual(fullstack);
       });
 
-      test('git', () => {
-        expect(mySkills.bulletPoints).toContainEqual(git);
-      });
-
       test('javascript', () => {
         expect(mySkills.bulletPoints).toContainEqual(javascript);
-      });
-
-      test('languages', () => {
-        expect(mySkills.bulletPoints).toContainEqual(languages);
-      });
-
-      test('sysadmin', () => {
-        expect(mySkills.bulletPoints).toContainEqual(sysadmin);
       });
 
       test('tdd', () => {
@@ -74,13 +59,13 @@ describe('mySkills', () => {
 
       test('ci', () => {
         expect(ci).toBe(
-          'Automation using scripting languages like Bash, including CI/CD using GitHub Actions.'
+          'CI/CD with GitHub Actions and Bash scripting, using Git on GitHub, Bitbucket and GitLab.'
         );
       });
 
       test('devops', () => {
         expect(devops).toBe(
-          'DevOps and IaC experience, mainly managing AWS resources with Terraform and Ansible.'
+          'DevOps and IaC on AWS using Terraform and Ansible, plus Linux administration (Red Hat and Debian).'
         );
       });
 
@@ -92,12 +77,8 @@ describe('mySkills', () => {
 
       test('fullstack', () => {
         expect(fullstack).toBe(
-          'Full stack developer with experience across a variety of languages, mainly object oriented.'
+          'Full stack developer with extensive Delphi and PHP experience, plus C, C#, Objective-C, Python & Rust.'
         );
-      });
-
-      test('git', () => {
-        expect(git).toBe('Experienced with Git, using GitHub, BitBucket and GitLab.');
       });
 
       test('javascript', () => {
@@ -106,27 +87,13 @@ describe('mySkills', () => {
         );
       });
 
-      test('languages', () => {
-        expect(languages).toBe(
-          'Extensive use of Delphi and PHP, plus experience with C, C#, Objective C, Python & Rust.'
-        );
-      });
-
       test('sql', () => {
-        expect(sql).toBe(
-          'Lots of practice writing SQL and designing MySQL and Firebird databases.'
-        );
-      });
-
-      test('sysadmin', () => {
-        expect(sysadmin).toBe(
-          'System administration skills with Linux (mainly Red Hat and Debian based systems).'
-        );
+        expect(sql).toBe('Strong SQL and relational database design, mainly with MySQL.');
       });
 
       test('tdd', () => {
         expect(tdd).toBe(
-          'A love of Test Driven Development, which encourages high code quality and maintainability.'
+          'A love of Test-Driven Development, which encourages high code quality and maintainability.'
         );
       });
     });

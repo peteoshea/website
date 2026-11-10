@@ -2,7 +2,7 @@ import Project from 'types/project';
 
 export const thisWebsite: Project = {
   description:
-    'Personal website built with Next.js, TypeScript and Tailwind CSS. Vitest enforces 100% code coverage, with Husky, Prettier and ESLint handling linting and formatting. GitHub Actions apply dependency updates automatically and ensures all tests pass before a PR can be merged.',
+    'Personal website built with Next.js, TypeScript and Tailwind CSS. Vitest enforces 100% code coverage, with Husky, Prettier and ESLint handling linting and formatting. GitHub Actions apply dependency updates automatically and ensure all tests pass before a PR can be merged.',
   image: { src: '/images/peteoshea-co-uk.png', width: 1280, height: 628 },
   name: 'Source for this website',
   url: 'https://github.com/peteoshea/website/'

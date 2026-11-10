@@ -6,40 +6,21 @@ export const agile =
   'Agile development techniques, specifically Scrum, including some time as Scrum Master.';
 export const apis = 'Experience designing, implementing and using RESTful and GraphQL APIs.';
 export const ci =
-  'Automation using scripting languages like Bash, including CI/CD using GitHub Actions.';
+  'CI/CD with GitHub Actions and Bash scripting, using Git on GitHub, Bitbucket and GitLab.';
 export const devops =
-  'DevOps and IaC experience, mainly managing AWS resources with Terraform and Ansible.';
+  'DevOps and IaC on AWS using Terraform and Ansible, plus Linux administration (Red Hat and Debian).';
 export const docker =
   'Using Docker and dev containers to ensure consistency across different environments.';
 export const fullstack =
-  'Full stack developer with experience across a variety of languages, mainly object oriented.';
-export const git = 'Experienced with Git, using GitHub, BitBucket and GitLab.';
+  'Full stack developer with extensive Delphi and PHP experience, plus C, C#, Objective-C, Python & Rust.';
 export const javascript =
   'JavaScript/TypeScript using Node.js, React & Next.js with brief exposure to Svelte & Vue.js.';
-export const languages =
-  'Extensive use of Delphi and PHP, plus experience with C, C#, Objective C, Python & Rust.';
-export const sql = 'Lots of practice writing SQL and designing MySQL and Firebird databases.';
-export const sysadmin =
-  'System administration skills with Linux (mainly Red Hat and Debian based systems).';
+export const sql = 'Strong SQL and relational database design, mainly with MySQL.';
 export const tdd =
-  'A love of Test Driven Development, which encourages high code quality and maintainability.';
+  'A love of Test-Driven Development, which encourages high code quality and maintainability.';
 
 const mySkills: Skills = {
-  bulletPoints: [
-    fullstack,
-    tdd,
-    ai,
-    javascript,
-    languages,
-    devops,
-    sysadmin,
-    ci,
-    docker,
-    agile,
-    git,
-    sql,
-    apis
-  ],
+  bulletPoints: [fullstack, javascript, tdd, ai, devops, ci, docker, agile, apis, sql],
   title: 'Core Skills'
 };
 
