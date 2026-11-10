@@ -7,7 +7,7 @@ export const brithene: Job = {
   employer: 'Brithene Films',
   location: 'Bridgwater',
   description:
-    'Database programmer for a manufacturing company. Developing mainly with UniVerse BASIC, but some contact with Visual Basic. The work comprised of controlling the entry, storage and analysis of data relating to production, sales and accounts along with maintaining a mainframe system.'
+    'Database programmer for a manufacturing company. Developing mainly with UniVerse BASIC, but some contact with Visual Basic. The work involved controlling the entry, storage and analysis of data relating to production, sales and accounts along with maintaining a mainframe system.'
 };
 export const fbh: Job = {
   startDate: '2000',
@@ -27,6 +27,7 @@ export const fbh: Job = {
 };
 export const freelance: Job = {
   startDate: '2010',
+  endDate: '2018',
   title: 'Freelance Software Engineer',
   employer: 'Self Employed',
   location: 'Remote',
@@ -36,7 +37,7 @@ export const freelance: Job = {
     '- Bespoke Windows application for a waste management company.\n' +
     '- Web site design and setup of e-commerce sites, using Crystallize GraphQL API.\n' +
     '- Regular software development for previous employer.\n\n' +
-    'This was the sole source of income for two years but was scaled back after returning to full-time employment. Now just occasional tinkering on personal projects.'
+    'This was the sole source of income for two years but was scaled back after returning to full-time employment.'
 };
 export const ibm: Job = {
   startDate: '1999',
@@ -45,7 +46,7 @@ export const ibm: Job = {
   employer: 'IBM Global Services Australia',
   location: 'Sydney',
   description:
-    '3 month contract during a year out travelling the world. Working as part of a team to check code for any Y2K issues and fix, as appropriate. This expanded to checking a variety of different languages including Visual Basic, Java and Unix shell scripts along with C and C++. Some simple Java programming helped locate tokens and automate fixes.'
+    '3-month contract during a year out travelling the world. Working as part of a team finding and fixing Y2K issues. This expanded to checking a variety of languages including Visual Basic, Java and Unix shell scripts along with C and C++. Wrote simple Java tools to locate tokens and automate fixes.'
 };
 export const icl: Job = {
   startDate: '1994',
@@ -58,7 +59,7 @@ export const icl: Job = {
     '- Programming in C under various Unix based systems.\n' +
     '- Writing shell scripts.\n' +
     '- Building, installing and testing new products on various machines.\n' +
-    '- Preparation and execution of presentations for new products.'
+    '- Preparing and giving presentations for new products.'
 };
 export const polarisLeadDeveloper: Job = {
   startDate: '2013',
@@ -79,11 +80,13 @@ export const polarisLeadDeveloperScrum: Job = {
   employer: 'Polaris Elements',
   location: 'Remote',
   description:
-    'After company restructuring became a software engineer in multiple Scrum teams, keeping the title as leading by example and mentoring were still an essential part of the role. Tasks include:\n' +
-    '- Coding in various languages, including JavaScript and TypeScript, with a focus on TDD.\n' +
-    '- Consistent provisioning with automation where possible, using Terraform and Ansible.\n' +
-    '- Managing containers, including migrating certain projects to use dev containers.\n' +
-    '- Documentation and automation using various scripting languages.'
+    'Following a restructure, became an integral part of a Scrum team, keeping the Lead Developer title because leading by example and mentoring remained essential to the role. Tasks include:\n' +
+    '- Coding in various languages, including Delphi, PHP, JavaScript and TypeScript.\n' +
+    '- Mentoring developers through pairing and code review, and championing practices such as TDD, infrastructure as code and dev containers.\n' +
+    '- Automating provisioning of resources with Terraform and Ansible where possible.\n' +
+    '- Building CI/CD pipelines with GitHub Actions that automatically test and deploy changes, enabling faster, more reliable releases.\n' +
+    '- Containerising dev environments and supporting services such as databases, queues and APIs for faster onboarding.\n' +
+    '- Directing AI coding agents to produce test-driven code guided by agent instructions and verified through red-green TDD cycles and code review.'
 };
 export const polarisSeniorDeveloper: Job = {
   startDate: '2012',
@@ -93,8 +96,7 @@ export const polarisSeniorDeveloper: Job = {
   location: 'Taunton',
   description:
     'Re-joined previous employer after change of ownership and rebranding. Tasks included:\n' +
-    '- Solo project to design and build online loyalty system with a RESTful web service API.\n' +
-    '- Written in PHP using CodeIgniter, a Bootstrap based front-end with a MySQL database.\n' +
+    '- Designed and built an online loyalty system as a solo project, with a RESTful API, using PHP (CodeIgniter), Bootstrap and MySQL.\n' +
     '- Migrated source code from Subversion to Git which greatly improved flexibility.\n' +
     '- Setting up and maintaining various Linux VMs running on Citrix XenServer hosted on multiple dedicated physical on-prem servers.'
 };

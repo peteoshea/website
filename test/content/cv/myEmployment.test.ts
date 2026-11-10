@@ -32,11 +32,13 @@ describe('myEmployment', () => {
 
   test('polaris lead developer scrum role description is set', () => {
     expect(polarisLeadDeveloperScrum.description).toBe(
-      'After company restructuring became a software engineer in multiple Scrum teams, keeping the title as leading by example and mentoring were still an essential part of the role. Tasks include:\n' +
-        '- Coding in various languages, including JavaScript and TypeScript, with a focus on TDD.\n' +
-        '- Consistent provisioning with automation where possible, using Terraform and Ansible.\n' +
-        '- Managing containers, including migrating certain projects to use dev containers.\n' +
-        '- Documentation and automation using various scripting languages.'
+      'Following a restructure, became an integral part of a Scrum team, keeping the Lead Developer title because leading by example and mentoring remained essential to the role. Tasks include:\n' +
+        '- Coding in various languages, including Delphi, PHP, JavaScript and TypeScript.\n' +
+        '- Mentoring developers through pairing and code review, and championing practices such as TDD, infrastructure as code and dev containers.\n' +
+        '- Automating provisioning of resources with Terraform and Ansible where possible.\n' +
+        '- Building CI/CD pipelines with GitHub Actions that automatically test and deploy changes, enabling faster, more reliable releases.\n' +
+        '- Containerising dev environments and supporting services such as databases, queues and APIs for faster onboarding.\n' +
+        '- Directing AI coding agents to produce test-driven code guided by agent instructions and verified through red-green TDD cycles and code review.'
     );
   });
 
@@ -101,8 +103,7 @@ describe('myEmployment', () => {
   test('polaris senior developer job description is set', () => {
     expect(polarisSeniorDeveloper.description).toBe(
       'Re-joined previous employer after change of ownership and rebranding. Tasks included:\n' +
-        '- Solo project to design and build online loyalty system with a RESTful web service API.\n' +
-        '- Written in PHP using CodeIgniter, a Bootstrap based front-end with a MySQL database.\n' +
+        '- Designed and built an online loyalty system as a solo project, with a RESTful API, using PHP (CodeIgniter), Bootstrap and MySQL.\n' +
         '- Migrated source code from Subversion to Git which greatly improved flexibility.\n' +
         '- Setting up and maintaining various Linux VMs running on Citrix XenServer hosted on multiple dedicated physical on-prem servers.'
     );
@@ -116,8 +117,8 @@ describe('myEmployment', () => {
     expect(freelance.startDate).toBe('2010');
   });
 
-  test('freelance job has no end date', () => {
-    expect(freelance.endDate).not.toBeDefined();
+  test('freelance job has end date of 2018', () => {
+    expect(freelance.endDate).toBe('2018');
   });
 
   test('freelance job has title of freelance software engineer', () => {
@@ -139,7 +140,7 @@ describe('myEmployment', () => {
         '- Bespoke Windows application for a waste management company.\n' +
         '- Web site design and setup of e-commerce sites, using Crystallize GraphQL API.\n' +
         '- Regular software development for previous employer.\n\n' +
-        'This was the sole source of income for two years but was scaled back after returning to full-time employment. Now just occasional tinkering on personal projects.'
+        'This was the sole source of income for two years but was scaled back after returning to full-time employment.'
     );
   });
 
@@ -206,7 +207,7 @@ describe('myEmployment', () => {
 
   test('ibm job description is set', () => {
     expect(ibm.description).toBe(
-      '3 month contract during a year out travelling the world. Working as part of a team to check code for any Y2K issues and fix, as appropriate. This expanded to checking a variety of different languages including Visual Basic, Java and Unix shell scripts along with C and C++. Some simple Java programming helped locate tokens and automate fixes.'
+      '3-month contract during a year out travelling the world. Working as part of a team finding and fixing Y2K issues. This expanded to checking a variety of languages including Visual Basic, Java and Unix shell scripts along with C and C++. Wrote simple Java tools to locate tokens and automate fixes.'
     );
   });
 
@@ -236,7 +237,7 @@ describe('myEmployment', () => {
 
   test('brithene job description is set', () => {
     expect(brithene.description).toBe(
-      'Database programmer for a manufacturing company. Developing mainly with UniVerse BASIC, but some contact with Visual Basic. The work comprised of controlling the entry, storage and analysis of data relating to production, sales and accounts along with maintaining a mainframe system.'
+      'Database programmer for a manufacturing company. Developing mainly with UniVerse BASIC, but some contact with Visual Basic. The work involved controlling the entry, storage and analysis of data relating to production, sales and accounts along with maintaining a mainframe system.'
     );
   });
 
@@ -270,7 +271,7 @@ describe('myEmployment', () => {
         '- Programming in C under various Unix based systems.\n' +
         '- Writing shell scripts.\n' +
         '- Building, installing and testing new products on various machines.\n' +
-        '- Preparation and execution of presentations for new products.'
+        '- Preparing and giving presentations for new products.'
     );
   });
 
