@@ -3,7 +3,6 @@ import mySkills, {
   apis,
   ci,
   delphi,
-  desktop,
   devops,
   docker,
   fullstack,
@@ -28,10 +27,6 @@ describe('mySkills', () => {
 
       test('ci', () => {
         expect(mySkills.bulletPoints).toContainEqual(ci);
-      });
-
-      test('desktop', () => {
-        expect(mySkills.bulletPoints).toContainEqual(desktop);
       });
 
       test('devops', () => {
@@ -80,7 +75,7 @@ describe('mySkills', () => {
 
       test('ci', () => {
         expect(ci).toBe(
-          'Automation using scripting languages like bash, including CI/CD using GitHub Actions.'
+          'Automation using scripting languages like Bash, including CI/CD using GitHub Actions.'
         );
       });
 
@@ -90,15 +85,9 @@ describe('mySkills', () => {
         );
       });
 
-      test('desktop', () => {
-        expect(desktop).toBe(
-          'Current desktop OS of choice is Windows 11 but some experience with MacOS.'
-        );
-      });
-
       test('devops', () => {
         expect(devops).toBe(
-          'DevOps/IaC experience, managing mainly AWS resources, with Terraform and Ansible.'
+          'DevOps and IaC experience, mainly managing AWS resources with Terraform and Ansible.'
         );
       });
 
@@ -110,12 +99,12 @@ describe('mySkills', () => {
 
       test('fullstack', () => {
         expect(fullstack).toBe(
-          'Full stack developer with experience of a variety of, mainly object oriented, languages.'
+          'Full stack developer with experience across a variety of languages, mainly object oriented.'
         );
       });
 
       test('git', () => {
-        expect(git).toBe('Good working knowledge of Git using GitHub, BitBucket and GitLab.');
+        expect(git).toBe('Experienced with Git, using GitHub, BitBucket and GitLab.');
       });
 
       test('javascript', () => {
@@ -126,7 +115,7 @@ describe('mySkills', () => {
 
       test('languages', () => {
         expect(languages).toBe(
-          'Extensive use of Delphi and PHP but have also worked with C, C#, Objective C, Python & Rust.'
+          'Extensive use of Delphi and PHP, plus experience with C, C#, Objective C, Python & Rust.'
         );
       });
 
@@ -144,7 +133,7 @@ describe('mySkills', () => {
 
       test('tdd', () => {
         expect(tdd).toBe(
-          'A love of Test Driven Development, which drives high code quality and maintainability.'
+          'A love of Test Driven Development, which encourages high code quality and maintainability.'
         );
       });
     });
