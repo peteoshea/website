@@ -7,8 +7,6 @@ export const agile =
 export const apis = 'Experience designing, implementing and using RESTful and GraphQL APIs.';
 export const ci =
   'Automation using scripting languages like Bash, including CI/CD using GitHub Actions.';
-export const delphi =
-  'Very experienced with Delphi, used as my main development environment for many years.';
 export const devops =
   'DevOps and IaC experience, mainly managing AWS resources with Terraform and Ansible.';
 export const docker =

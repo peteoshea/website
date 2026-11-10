@@ -2,7 +2,6 @@ import mySkills, {
   agile,
   apis,
   ci,
-  delphi,
   devops,
   docker,
   fullstack,
@@ -76,12 +75,6 @@ describe('mySkills', () => {
       test('ci', () => {
         expect(ci).toBe(
           'Automation using scripting languages like Bash, including CI/CD using GitHub Actions.'
-        );
-      });
-
-      test('delphi', () => {
-        expect(delphi).toBe(
-          'Very experienced with Delphi, used as my main development environment for many years.'
         );
       });
 
