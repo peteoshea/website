@@ -1,9 +1,9 @@
-import myPortfolio, { saransurf, skipad, thisWebsite } from 'content/cv/myPortfolio';
+import myPortfolio, { skipad, thisWebsite } from 'content/cv/myPortfolio';
 
 describe('myPortfolio', () => {
   test('this website description is set', () => {
     expect(thisWebsite.description).toBe(
-      'Personal website created with Next.js. Written in TypeScript using TailwindCSS. Vitest helped achieve 100% code coverage. Automatic type checking and linting with Husky, Prettier and ESLint. GitHub actions to automatically apply dependency updates and to ensure all tests pass before allowing merge of PR.'
+      'Personal website built with Next.js, TypeScript and Tailwind CSS. Vitest enforces 100% code coverage, with Husky, Prettier and ESLint handling linting and formatting. GitHub Actions apply dependency updates automatically and ensures all tests pass before a PR can be merged.'
     );
   });
 
@@ -27,36 +27,9 @@ describe('myPortfolio', () => {
     expect(myPortfolio).toContainEqual(thisWebsite);
   });
 
-  test('saransurf description is set', () => {
-    expect(saransurf.description).toBe(
-      'Simple E-commerce website created from scratch with Next.js. Makes use of Crystallize GraphQL API to place orders and update inventory.'
-    );
-  });
-
-  test('saransurf image is set', () => {
-    expect(saransurf.image).toEqual({
-      src: '/images/saransurf-co-uk.png',
-      width: 1531,
-      height: 1028
-    });
-  });
-
-  test('saransurf name is set', () => {
-    expect(saransurf.name).toBe('Saransurf');
-  });
-
-  test('saransurf url is set', () => {
-    expect(saransurf.url).toBe('https://saransurf.co.uk/');
-  });
-
-  test('does not contain saransurf', () => {
-    // Waiting for the site to be finished before including it
-    expect(myPortfolio).not.toContainEqual(saransurf);
-  });
-
   test('skipad description is set', () => {
     expect(skipad.description).toBe(
-      'iPhone app written in Objective C. Unfortunately no longer available.'
+      'iPhone app for finding suitable ski accommodation, written in Objective-C. No longer available, but this video shows it in use.'
     );
   });
 
